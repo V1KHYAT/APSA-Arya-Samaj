@@ -3,7 +3,6 @@
    ============================================================ */
 
 /* ── Immersive Navbar Overrides for Homepage ── */
-/* ── Immersive Navbar Overrides for Homepage ── */
 .nav {
   position: fixed;
   top: 0;
@@ -18,6 +17,13 @@
 .nav .nav__brand-name, 
 .nav .nav__brand-sub {
   color: var(--white);
+}
+.nav .nav__link {
+  color: rgba(255, 255, 255, 0.9);
+}
+.nav .nav__link:hover,
+.nav .nav__link.active {
+  color: var(--saffron-light);
 }
 .nav .btn-outline {
   border-color: rgba(255, 255, 255, 0.3);
@@ -39,9 +45,20 @@
 .nav.scrolled .nav__brand-sub {
   color: var(--text-light);
 }
+.nav.scrolled .nav__link {
+  color: var(--text);
+}
+.nav.scrolled .nav__link:hover,
+.nav.scrolled .nav__link.active {
+  color: var(--saffron);
+}
 .nav.scrolled .btn-outline {
   border-color: var(--border);
   color: var(--text);
+}
+.nav.scrolled .btn-outline:hover {
+  background: var(--gray-light);
+  color: var(--primary);
 }
 .nav.scrolled .btn-outline:hover {
   background: var(--gray-light);
