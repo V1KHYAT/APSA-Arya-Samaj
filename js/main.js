@@ -8,8 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Lenis Smooth Scroll ── */
   if (typeof Lenis !== 'undefined') {
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.1, // use lerp instead of duration for a more standard feel
       smoothWheel: true
     });
     function raf(time) {
