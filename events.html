@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events &amp; Calendar — APSA</title>
+  <meta name="description" content="View upcoming APSA events, the Arya Maha Sammelan registration, regional satsangs, and the full community calendar." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__brand">
+      <div class="nav__logo-mark">ॐ</div>
+      <div><div class="nav__brand-name">APSA</div><div class="nav__brand-sub">Arya Pratinidhi Sabha of America</div></div>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html"    class="nav__link">Home</a></li>
+      <li><a href="about.html"   class="nav__link">About</a></li>
+      <li><a href="resources.html" class="nav__link">Resources</a></li>
+      <li><a href="programs.html"  class="nav__link">Programs</a></li>
+      <li><a href="events.html"    class="nav__link active">Events</a></li>
+      <li><a href="news.html"      class="nav__link">News</a></li>
+      <li><a href="contact.html"   class="nav__link">Contact</a></li>
+    </ul>
+    <div class="nav__actions"><a href="donate.html" class="btn btn-primary btn-sm">Donate</a></div>
+    <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__drawer">
+  <a href="index.html" class="nav__link">Home</a><a href="about.html" class="nav__link">About</a>
+  <a href="resources.html" class="nav__link">Resources</a><a href="programs.html" class="nav__link">Programs</a>
+  <a href="events.html" class="nav__link">Events</a><a href="news.html" class="nav__link">News</a>
+  <a href="contact.html" class="nav__link">Contact</a><a href="donate.html" class="btn btn-primary btn-sm">Donate</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <p class="page-hero__breadcrumb"><a href="index.html">Home</a> / Events</p>
+    <h1 class="page-hero__title">Events &amp; Calendar</h1>
+    <p class="page-hero__sub">Stay connected with the APSA community — find upcoming events, register for the Maha Sammelan, and join regional satsangs.</p>
+  </div>
+</section>
+
+<!-- SAMMELAN FEATURE BANNER -->
+<section style="background:linear-gradient(135deg, #0f2447 0%, #1A3A6B 70%, #2a5298 100%); padding:3.5rem 0" id="sammelan-registration">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:center">
+      <div>
+        <p style="font-family:var(--ff-heading); font-size:0.8rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.5rem">Featured Event</p>
+        <h2 style="font-family:var(--ff-heading); font-size:clamp(1.6rem,4vw,2.5rem); font-weight:700; color:var(--white); line-height:1.1; margin-bottom:0.75rem">Annual Arya Maha Sammelan 2025</h2>
+        <p style="color:rgba(255,255,255,0.7); font-size:1rem; margin-bottom:1rem">📅 September 14–16, 2025 &nbsp;·&nbsp; 📍 Irving, Texas (Dallas Metroplex)</p>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.92rem; max-width:52ch">Three days of havan, Vedic discourse, cultural performances, committee elections, and community fellowship. Early bird registration ends August 31.</p>
+      </div>
+      <div style="flex-shrink:0; text-align:center">
+        <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:var(--radius-lg); padding:1.5rem; margin-bottom:1rem">
+          <div style="font-family:var(--ff-heading); font-size:0.75rem; color:var(--gold-light); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.3rem">Early Bird Ends</div>
+          <div style="font-family:var(--ff-heading); font-size:2rem; font-weight:700; color:var(--white)">Aug 31</div>
+        </div>
+        <a href="#registration-form" class="btn btn-primary btn-lg">Register Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR FILTER + EVENT LIST -->
+<section class="section" id="calendar">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 320px; gap:3rem; align-items:start">
+
+      <!-- Main list -->
+      <div>
+        <p class="section-label">All Events</p>
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="divider"></div>
+
+        <div class="calendar-strip" role="group" aria-label="Filter by month">
+          <button class="cal-month active">All</button>
+          <button class="cal-month">August</button>
+          <button class="cal-month">September</button>
+          <button class="cal-month">October</button>
+          <button class="cal-month">November</button>
+          <button class="cal-month">December</button>
+        </div>
+
+        <div class="event-list">
+          <div class="event-card reveal">
+            <div class="event-card__date-block"><div class="event-card__day">14</div><div class="event-card__mon">Sep</div></div>
+            <div>
+              <div class="event-card__title">Annual Arya Maha Sammelan 2025</div>
+              <div class="event-card__meta">📍 Irving, Texas &nbsp;·&nbsp; 3-Day Conference &nbsp;·&nbsp; Sep 14–16</div>
+            </div>
+            <span class="event-card__tag" style="background:rgba(224,123,42,0.1); color:var(--saffron-dark)">Flagship</span>
+          </div>
+
+          <div class="event-card reveal">
+            <div class="event-card__date-block"><div class="event-card__day">22</div><div class="event-card__mon">Sep</div></div>
+            <div>
+              <div class="event-card__title">Vedic Dharma Aptitude Test — Fall 2025</div>
+              <div class="event-card__meta">🌐 Online &nbsp;·&nbsp; Registration closes Sep 15</div>
+            </div>
+            <span class="event-card__tag">Education</span>
+          </div>
+
+          <div class="event-card reveal">
+            <div class="event-card__date-block"><div class="event-card__day">05</div><div class="event-card__mon">Oct</div></div>
+            <div>
+              <div class="event-card__title">Navratri Satsang &amp; Havan</div>
+              <div class="event-card__meta">📍 New Jersey Arya Samaj, Edison &nbsp;·&nbsp; 6:00–9:00 PM</div>
+            </div>
+            <span class="event-card__tag">Satsang</span>
+          </div>
+
+          <div class="event-card reveal">
+            <div class="event-card__date-block"><div class="event-card__day">18</div><div class="event-card__mon">Oct</div></div>
+            <div>
+              <div class="event-card__title">VAYU Youth Leadership Retreat</div>
+              <div class="event-card__meta">📍 Atlanta, Georgia &nbsp;·&nbsp; Weekend Camp (Oct 18–20)</div>
+            </div>
+            <span class="event-card__tag" style="background:rgba(30,120,60,0.08); color:#1e783c">Youth</span>
+          </div>
+
+          <div class="event-card reveal">
+            <div class="event-card__date-block"><div class="event-card__day">02</div><div class="event-card__mon">Nov</div></div>
+            <div>
+              <div class="event-card__title">Vedic Purohit Training — Module 3</div>
+              <div class="event-card__meta">🌐 Online Webinar &nbsp;·&nbsp; 10:00 AM–1:00 PM EST</div>
+            </div>
+            <span class="event-card__tag">Training</span>
+          </div>
+
+          <div class="event-card reveal" id="webinars">
+            <div class="event-card__date-block"><div class="event-card__day">09</div><div class="event-card__mon">Nov</div></div>
+            <div>
+              <div class="event-card__title">Regional Satsang — Midwest Chapter</div>
+              <div class="event-card__meta">📍 Chicago Arya Samaj, Lombard &nbsp;·&nbsp; 4:00–7:00 PM</div>
+            </div>
+            <span class="event-card__tag">Satsang</span>
+          </div>
+
+          <div class="event-card reveal">
+            <div class="event-card__date-block"><div class="event-card__day">15</div><div class="event-card__mon">Nov</div></div>
+            <div>
+              <div class="event-card__title">Vedic Village Community Open Day</div>
+              <div class="event-card__meta">📍 Location TBD &nbsp;·&nbsp; 10:00 AM–4:00 PM</div>
+            </div>
+            <span class="event-card__tag" style="background:rgba(30,120,60,0.08); color:#1e783c">Community</span>
+          </div>
+
+          <div class="event-card reveal">
+            <div class="event-card__date-block"><div class="event-card__day">07</div><div class="event-card__mon">Dec</div></div>
+            <div>
+              <div class="event-card__title">APSA Annual General Meeting (Virtual)</div>
+              <div class="event-card__meta">🌐 Online &nbsp;·&nbsp; All affiliates welcome &nbsp;·&nbsp; 2:00 PM EST</div>
+            </div>
+            <span class="event-card__tag">Governance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar: Registration form -->
+      <div id="registration-form">
+        <div style="background:var(--cream); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.75rem; position:sticky; top:90px">
+          <h3 style="font-family:var(--ff-heading); font-size:1.1rem; font-weight:700; color:var(--blue); margin-bottom:0.3rem">Sammelan Registration</h3>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1.25rem">September 14–16 · Irving, TX</p>
+          <form class="ajax-form">
+            <div class="form-group">
+              <label class="form-label" for="r-name">Full Name</label>
+              <input class="form-input" type="text" id="r-name" placeholder="Full name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="r-email">Email Address</label>
+              <input class="form-input" type="email" id="r-email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="r-samaj">Affiliated Samaj</label>
+              <input class="form-input" type="text" id="r-samaj" placeholder="e.g. Dallas Arya Samaj" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="r-type">Registration Type</label>
+              <select class="form-select" id="r-type">
+                <option>Individual (Early Bird) — $75</option>
+                <option>Family (Early Bird) — $150</option>
+                <option>Youth (Under 25) — $40</option>
+                <option>Delegate — $60</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="r-attendees">Number of Attendees</label>
+              <input class="form-input" type="number" id="r-attendees" min="1" max="10" value="1" />
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%">Register &amp; Proceed to Payment</button>
+            <p style="font-size:0.75rem; color:var(--text-muted); margin-top:0.75rem; text-align:center">Secure payment via PayPal / Bank Transfer</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand-name">APSA</div>
+        <p class="footer__tagline">Arya Pratinidhi Sabha of America — upholding Vedic principles across North America.</p>
+        <div style="margin-bottom:0.75rem; font-size:0.8rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.08em">Stay Updated</div>
+        <div class="footer__newsletter"><input type="email" placeholder="Your email address" /><button type="button">Subscribe</button></div>
+      </div>
+      <div><div class="footer__col-title">Organisation</div><ul class="footer__links"><li><a href="about.html" class="footer__link">History</a></li><li><a href="about.html" class="footer__link">Ten Niyams</a></li><li><a href="about.html" class="footer__link">Leadership</a></li></ul></div>
+      <div><div class="footer__col-title">Programs</div><ul class="footer__links"><li><a href="programs.html" class="footer__link">VSS</a></li><li><a href="programs.html" class="footer__link">VAYU</a></li><li><a href="programs.html" class="footer__link">Sammelan</a></li></ul></div>
+      <div><div class="footer__col-title">Resources</div><ul class="footer__links"><li><a href="resources.html" class="footer__link">Digital Library</a></li><li><a href="resources.html" class="footer__link">Daily Practices</a></li><li><a href="donate.html" class="footer__link">Donate</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Arya Pratinidhi Sabha of America. All rights reserved.</span>
+      <div class="footer__socials"><a href="#" class="footer__social" aria-label="Facebook">f</a><a href="#" class="footer__social" aria-label="YouTube">▶</a><a href="#" class="footer__social" aria-label="Instagram">◉</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
