@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+
   /* ── Active nav link ── */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav__link').forEach(link => {
@@ -46,18 +47,30 @@ document.addEventListener('DOMContentLoaded', () => {
   if (slidesWrapper) {
     const slides = Array.from(slidesWrapper.querySelectorAll('.hero__slide'));
     const dots = Array.from(document.querySelectorAll('.hero__dot'));
-    const prevBtn = document.querySelector('.hero__arrow--prev');
-    const nextBtn = document.querySelector('.hero__arrow--next');
+    const prevBtn = document.querySelector('.hero__zone--prev');
+    const nextBtn = document.querySelector('.hero__zone--next');
     let current = 0;
     let timer;
 
     function goTo(idx) {
+      if (typeof gsap !== 'undefined') {
+        gsap.to(slides[current].querySelectorAll('.hero__eyebrow, .hero__title, .hero__body, .hero__actions'), { opacity: 0, y: 10, duration: 0.3 });
+      }
       slides[current].classList.remove('active');
       dots[current]?.classList.remove('active');
+      
       current = (idx + slides.length) % slides.length;
+      
       slides[current].classList.add('active');
       dots[current]?.classList.add('active');
       slidesWrapper.style.transform = `translateX(-${current * 100}%)`;
+      
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo(slides[current].querySelector('.hero__eyebrow'), {opacity: 0, y: 12}, {opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 0.2});
+        gsap.fromTo(slides[current].querySelector('.hero__title'), {opacity: 0, y: 16}, {opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 0.35});
+        gsap.fromTo(slides[current].querySelector('.hero__body'), {opacity: 0, y: 12}, {opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 0.5});
+        gsap.fromTo(slides[current].querySelector('.hero__actions'), {opacity: 0, y: 10}, {opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 0.65});
+      }
     }
 
     function startTimer() {
@@ -68,6 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Init
     slides[0].classList.add('active');
     dots[0]?.classList.add('active');
+    if (typeof gsap !== 'undefined') {
+      gsap.fromTo(slides[0].querySelector('.hero__eyebrow'), {opacity: 0, y: 12}, {opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 0.2});
+      gsap.fromTo(slides[0].querySelector('.hero__title'), {opacity: 0, y: 16}, {opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 0.35});
+      gsap.fromTo(slides[0].querySelector('.hero__body'), {opacity: 0, y: 12}, {opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 0.5});
+      gsap.fromTo(slides[0].querySelector('.hero__actions'), {opacity: 0, y: 10}, {opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 0.65});
+    }
     startTimer();
 
     prevBtn?.addEventListener('click', () => { goTo(current - 1); startTimer(); });
@@ -131,15 +150,37 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Scroll reveal ── */
   const reveals = document.querySelectorAll('.reveal');
   if (reveals.length) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+      reveals.forEach(el => {
+        gsap.fromTo(el, 
+          { opacity: 0, y: 30 },
+          {
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none none"
+            },
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: "power3.out"
+          }
+        );
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => io.observe(el));
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'none';
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(el => io.observe(el));
+    }
   }
 
   /* ── Samaj finder search ── */
