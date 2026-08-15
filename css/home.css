@@ -66,12 +66,15 @@
 .hero {
   position: sticky;
   top: 0;
+  width: 100%;
   z-index: 1; /* Below the subsequent sections */
 }
 /* Ensure everything after the hero slides over it */
 .hero ~ section {
   position: relative;
   z-index: 10;
+}
+:where(.hero ~ section) {
   background-color: var(--cream);
 }
 
