@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 40" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Left decorative line -->
+  <line x1="20" y1="20" x2="140" y2="20" stroke="#C9963A" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Left small petals -->
+  <path d="M148 20 Q152 14 156 20 Q152 26 148 20Z" stroke="#C9963A" stroke-width="0.6" opacity="0.25" fill="none"/>
+  <path d="M155 20 Q159 12 163 20 Q159 28 155 20Z" stroke="#C9963A" stroke-width="0.6" opacity="0.25" fill="none"/>
+  
+  <!-- Center lotus -->
+  <path d="M175 20 Q182 6 200 4 Q218 6 225 20 Q218 34 200 36 Q182 34 175 20Z" stroke="#C9963A" stroke-width="0.8" opacity="0.3" fill="none"/>
+  <path d="M185 20 Q192 10 200 8 Q208 10 215 20 Q208 30 200 32 Q192 30 185 20Z" stroke="#E07B2A" stroke-width="0.6" opacity="0.2" fill="none"/>
+  <circle cx="200" cy="20" r="3" stroke="#E07B2A" stroke-width="0.5" opacity="0.25" fill="none"/>
+  
+  <!-- Right small petals -->
+  <path d="M237 20 Q241 12 245 20 Q241 28 237 20Z" stroke="#C9963A" stroke-width="0.6" opacity="0.25" fill="none"/>
+  <path d="M244 20 Q248 14 252 20 Q248 26 244 20Z" stroke="#C9963A" stroke-width="0.6" opacity="0.25" fill="none"/>
+  
+  <!-- Right decorative line -->
+  <line x1="260" y1="20" x2="380" y2="20" stroke="#C9963A" stroke-width="0.5" opacity="0.3"/>
+</svg>

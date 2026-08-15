@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 180" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Base kund (trapezoidal altar) -->
+  <path d="M50 140 L30 170 L170 170 L150 140" stroke="#C9963A" stroke-width="1.2" opacity="0.35"/>
+  <path d="M38 158 L162 158" stroke="#C9963A" stroke-width="0.8" opacity="0.2"/>
+  
+  <!-- Inner fire bowl -->
+  <path d="M55 140 Q100 135 145 140" stroke="#C9963A" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Central flame -->
+  <path d="M100 130 Q95 105 100 80 Q105 55 100 35" stroke="#E07B2A" stroke-width="1.5" opacity="0.3" fill="none"/>
+  <path d="M100 35 Q97 45 93 60 Q89 80 95 100 Q98 115 100 130" stroke="#E07B2A" stroke-width="1" opacity="0.2" fill="none"/>
+  <path d="M100 35 Q103 45 107 60 Q111 80 105 100 Q102 115 100 130" stroke="#E07B2A" stroke-width="1" opacity="0.2" fill="none"/>
+  
+  <!-- Side flames (left) -->
+  <path d="M80 135 Q78 115 82 95 Q84 80 80 65" stroke="#C9963A" stroke-width="1" opacity="0.2" fill="none"/>
+  
+  <!-- Side flames (right) -->
+  <path d="M120 135 Q122 115 118 95 Q116 80 120 65" stroke="#C9963A" stroke-width="1" opacity="0.2" fill="none"/>
+  
+  <!-- Sparks -->
+  <circle cx="90" cy="50" r="1" fill="#E07B2A" opacity="0.15"/>
+  <circle cx="112" cy="45" r="0.8" fill="#E07B2A" opacity="0.12"/>
+  <circle cx="95" cy="38" r="0.6" fill="#C9963A" opacity="0.1"/>
+</svg>

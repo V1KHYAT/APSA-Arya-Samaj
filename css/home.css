@@ -869,3 +869,67 @@ footer {
   }
   .is-card { flex: 0 0 280px; min-height: 360px; }
 }
+
+/* ============================================================
+   VEDIC MOTIF ILLUSTRATIONS
+   ============================================================ */
+
+/* Base motif style — all illustrations are decorative, non-interactive */
+.vedic-motif {
+  pointer-events: none;
+  user-select: none;
+  display: block;
+}
+
+/* Havan Kund — floats below the intro text in the Niyams left column */
+.vedic-motif--kund {
+  width: 120px;
+  opacity: 0.45;
+  margin-bottom: 1.5rem;
+}
+
+/* Yantra — positioned as a large, faint watermark behind the Donation CTA */
+.vedic-motif--yantra {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  height: 320px;
+  opacity: 0.35;
+  z-index: 1;
+}
+
+/* Lotus divider — centered ornamental separator between sections */
+.vedic-divider {
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 0;
+  pointer-events: none;
+  user-select: none;
+  position: relative;
+  z-index: 10;
+  background: var(--cream);
+}
+.vedic-divider img {
+  width: 240px;
+  height: auto;
+  opacity: 0.6;
+}
+
+/* ── Responsive: hide or shrink motifs on small screens ── */
+@media (max-width: 768px) {
+  .vedic-motif--kund {
+    width: 80px;
+    opacity: 0.35;
+  }
+  .vedic-motif--yantra {
+    width: 200px;
+    height: 200px;
+    right: -30px;
+    opacity: 0.25;
+  }
+  .vedic-divider img {
+    width: 160px;
+  }
+}
