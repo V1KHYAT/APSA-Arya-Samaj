@@ -38,7 +38,7 @@
   --shadow-lg:  0 8px 32px rgba(0,0,0,0.14);
 
   --nav-height: 72px;
-  --container:  1280px;
+  --container:  1440px;
   --gap:        2rem;
 }
 
@@ -53,6 +53,22 @@ body {
   -webkit-font-smoothing: antialiased;
   position: relative;
 }
+body::before {
+  content: '||ओ३म्||';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--ff-heading);
+  font-size: 15vw;
+  font-weight: 700;
+  color: var(--saffron);
+  opacity: 0.025;
+  z-index: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
 body::after {
   content: '';
   position: fixed;
@@ -63,7 +79,7 @@ body::after {
   background: url('../images/texture-vedic.jpg') repeat;
   background-size: 400px;
   mix-blend-mode: multiply;
-  opacity: 0.04;
+  opacity: 0.07;
   pointer-events: none;
   z-index: 9999;
 }
@@ -117,11 +133,11 @@ input, textarea, select {
 .section-desc--light { color: rgba(255,255,255,0.75); }
 
 .divider {
-  width: 52px;
-  height: 3px;
-  background: var(--gold);
-  margin: 1rem 0 2rem;
-  border-radius: 2px;
+  width: 60px;
+  height: 6px;
+  border-top: 2px solid var(--saffron);
+  border-bottom: 2px solid var(--gold);
+  margin: 1.5rem 0 2.5rem;
 }
 .divider--center { margin-left: auto; margin-right: auto; }
 .divider--light { background: var(--gold-light); }

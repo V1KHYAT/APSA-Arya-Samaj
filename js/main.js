@@ -5,18 +5,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── Lenis Smooth Scroll ── */
-  if (typeof Lenis !== 'undefined') {
-    const lenis = new Lenis({
-      lerp: 0.1, // use lerp instead of duration for a more standard feel
-      smoothWheel: true
-    });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }
 
   /* ── Active nav link ── */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
