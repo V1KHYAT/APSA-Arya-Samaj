@@ -2,6 +2,82 @@
    APSA — Homepage Styles (Redesigned)
    ============================================================ */
 
+/* ── Immersive Navbar Overrides for Homepage ── */
+.nav {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+.nav .nav__brand-name, 
+.nav .nav__brand-sub {
+  color: var(--white);
+}
+.nav .btn-outline {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--white);
+}
+.nav .btn-outline:hover {
+  background: var(--white);
+  color: var(--navy);
+}
+.nav.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+.nav.scrolled .nav__brand-name {
+  color: var(--primary);
+}
+.nav.scrolled .nav__brand-sub {
+  color: var(--text-light);
+}
+.nav.scrolled .btn-outline {
+  border-color: var(--border);
+  color: var(--text);
+}
+.nav.scrolled .btn-outline:hover {
+  background: var(--gray-light);
+  color: var(--primary);
+}
+.nav__hamburger span {
+  background: currentColor;
+}
+
+/* ── Hero Custom Cursor Zones ── */
+.hero__zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 25%;
+  z-index: 100;
+}
+.hero__zone--prev {
+  left: 0;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='23' fill='none' stroke='white' stroke-width='2'/%3E%3Cpath d='M26 16l-8 8 8 8' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 24 24, auto;
+}
+.hero__zone--next {
+  right: 0;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='23' fill='none' stroke='white' stroke-width='2'/%3E%3Cpath d='M22 16l8 8-8 8' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 24 24, auto;
+}
+
+/* ── Sticky Parallax Hero ── */
+.hero {
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Below the subsequent sections */
+}
+/* Ensure everything after the hero slides over it */
+.hero ~ section {
+  position: relative;
+  z-index: 10;
+  background-color: var(--cream);
+}
+
+
+
+
 /* ── Floating Chat Bot ── */
 .chat-widget {
   position: fixed;

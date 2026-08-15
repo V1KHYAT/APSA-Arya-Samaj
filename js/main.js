@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (slidesWrapper) {
     const slides = Array.from(slidesWrapper.querySelectorAll('.hero__slide'));
     const dots = Array.from(document.querySelectorAll('.hero__dot'));
-    const prevBtn = document.querySelector('.hero__arrow--prev');
-    const nextBtn = document.querySelector('.hero__arrow--next');
+    const prevBtn = document.querySelector('.hero__zone--prev');
+    const nextBtn = document.querySelector('.hero__zone--next');
     let current = 0;
     let timer;
 
