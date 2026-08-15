@@ -542,23 +542,25 @@ footer {
 }
 .initiatives-scroll__header {
   display: flex;
-  align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 2.5rem;
-  gap: 1rem;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 .initiatives-scroll__nav {
   display: flex;
   gap: 0.5rem;
   flex-shrink: 0;
+  margin-bottom: 0.5rem;
 }
 .initiatives-scroll__nav button {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  border: 1.5px solid var(--border);
-  background: var(--white);
-  color: var(--blue);
+  border: 1px solid rgba(0,0,0,0.15);
+  background: transparent;
+  color: var(--saffron);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -566,9 +568,9 @@ footer {
   transition: var(--transition);
 }
 .initiatives-scroll__nav button:hover {
-  background: var(--blue);
-  color: var(--white);
-  border-color: var(--blue);
+  background: var(--white);
+  border-color: var(--saffron);
+  transform: scale(1.05);
 }
 .initiatives-scroll__track {
   display: flex;
@@ -577,28 +579,56 @@ footer {
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
+  
+  /* Full bleed layout to prevent card cutoff */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-left: max(1.5rem, calc((100vw - var(--container)) / 2 + 1.5rem));
+  padding-right: max(1.5rem, calc((100vw - var(--container)) / 2 + 1.5rem));
 }
 .initiatives-scroll__track::-webkit-scrollbar {
   display: none;
 }
 
+
+.motif-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--saffron);
+}
+.motif-diamond {
+  color: var(--saffron);
+}
+
 .is-card {
   flex: 0 0 340px;
   scroll-snap-align: start;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  position: relative;
-  min-height: 420px;
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   text-decoration: none;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.is-card:hover {
+  border-color: rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.06);
 }
 .is-card__img {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 }
 .is-card__img img {
   width: 100%;
@@ -607,55 +637,80 @@ footer {
   transition: transform 0.6s ease;
 }
 .is-card:hover .is-card__img img {
-  transform: scale(1.06);
-}
-.is-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(26,58,107,0.92) 0%, rgba(26,58,107,0.4) 45%, transparent 100%);
-  z-index: 2;
+  transform: scale(1.05);
 }
 .is-card__content {
-  position: relative;
-  z-index: 3;
-  padding: 2rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.is-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--saffron);
+  margin-bottom: 0.75rem;
 }
 .is-card__tag {
-  display: inline-block;
-  font-size: 0.65rem;
-  font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0.25rem 0.65rem;
-  border-radius: 99px;
-  background: rgba(255,255,255,0.15);
-  color: var(--white);
-  margin-bottom: 0.75rem;
-  backdrop-filter: blur(4px);
 }
 .is-card__title {
   font-family: var(--ff-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 0.5rem;
-  line-height: 1.15;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 1rem;
+  line-height: 1.25;
 }
 .is-card__text {
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.55;
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
 }
-.is-card__link {
-  font-family: var(--ff-heading);
+.is-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--saffron-light);
-  display: inline-flex;
+  color: var(--saffron);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+.is-card__arrow {
+  transition: transform 0.3s ease;
+}
+.is-card:hover .is-card__arrow {
+  transform: translateX(4px);
+}
+
+/* See All Card special styles */
+.is-card--more {
+  background: var(--cream);
+  justify-content: center;
+}
+.is-card--more .is-card__content {
+  justify-content: center;
   align-items: center;
-  gap: 0.4rem;
+  text-align: center;
+}
+.is-card--more .is-card__title {
+  font-size: 1.6rem;
+  margin-top: auto;
+}
+.is-card--more .is-card__footer {
+  width: 100%;
+  border-top: none;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-top: 0;
 }
 
 /* ── Mahasammelan: Stacked Banner ── */
