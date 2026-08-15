@@ -323,6 +323,18 @@ footer {
   background-image:
     repeating-linear-gradient(45deg, var(--white) 0px, var(--white) 1px, transparent 1px, transparent 28px),
     repeating-linear-gradient(-45deg, var(--white) 0px, var(--white) 1px, transparent 1px, transparent 28px);
+  z-index: 0;
+}
+.brahma-yajnya::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/pattern.png');
+  background-repeat: no-repeat;
+  background-position: right -300px center;
+  background-size: 1400px;
+  z-index: 1;
+  pointer-events: none;
 }
 .brahma-yajnya__inner {
   position: relative;
@@ -398,18 +410,13 @@ footer {
   top: calc(var(--nav-height) + 2rem);
 }
 .niyams-split__image-wrapper {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  max-width: 400px;
+  max-width: 420px;
 }
 .niyams-split__image-wrapper img {
   width: 100%;
-  height: 100%;
-  max-height: 380px;
-  object-fit: cover;
-  object-position: top;
+  height: auto;
   display: block;
+  mix-blend-mode: multiply;
 }
 
 .niyams-split__accordion-container {
@@ -799,16 +806,27 @@ footer {
   background: var(--saffron);
   color: var(--white);
   padding: 3rem 0;
+  overflow: hidden;
+  position: relative;
 }
 .mahasammelan__secondary .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+.mahasammelan__secondary-mandir {
+  height: 125px;
+  width: auto;
+  max-width: 280px;
+  object-fit: contain;
+  opacity: 1;
+  display: block;
+  flex-shrink: 0;
 }
 .mahasammelan__secondary-content {
-  max-width: 500px;
+  flex: 1;
+  max-width: 540px;
 }
 .mahasammelan__secondary h3 {
   font-family: var(--ff-heading);
@@ -923,4 +941,27 @@ footer {
     text-align: center;
   }
   .is-card { flex: 0 0 280px; min-height: 360px; }
+}
+
+/* ── Donation CTA Pattern ── */
+.donate-cta {
+  position: relative;
+  overflow: hidden;
+}
+.donate-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/pattern.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1600px;
+  filter: brightness(0); /* Turn light pixels into black so they show on beige */
+  opacity: 0.6; /* Boost opacity since the original image is very faint */
+  pointer-events: none;
+  z-index: 0;
+}
+.donate-cta .container {
+  position: relative;
+  z-index: 2;
 }
