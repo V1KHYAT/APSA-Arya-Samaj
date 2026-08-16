@@ -583,18 +583,21 @@ footer {
   display: flex;
   gap: 1.5rem;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding-bottom: 2rem;
   
-  /* Full bleed layout to prevent card cutoff */
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  padding-left: max(1.5rem, calc((100vw - var(--container)) / 2 + 1.5rem));
-  padding-right: max(1.5rem, calc((100vw - var(--container)) / 2 + 1.5rem));
+  /* Prevent scroll chaining (which causes the whole page to rubber-band and reveal the sticky hero) */
+  overscroll-behavior-x: contain;
+  
+  /* Bleed to both edges of the screen so cards don't cut off at the container bounds */
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50% + 1.5rem);
+  padding-right: calc(50vw - 50% + 1.5rem);
+  
+  /* Force hardware acceleration for smoother scrolling */
+  transform: translateZ(0);
 }
 .initiatives-scroll__track::-webkit-scrollbar {
   display: none;
@@ -615,7 +618,6 @@ footer {
 
 .is-card {
   flex: 0 0 340px;
-  scroll-snap-align: start;
   border-radius: var(--radius-sm);
   background: var(--white);
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -624,6 +626,7 @@ footer {
   flex-direction: column;
   text-decoration: none;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
 }
 .is-card:hover {
   border-color: rgba(0, 0, 0, 0.12);
