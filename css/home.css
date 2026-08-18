@@ -712,6 +712,9 @@ footer {
   text-align: center;
 }
 .is-card--more .is-card__title {
+  font-size: 1.6rem;
+  margin-top: auto;
+}
 .is-card--more .is-card__footer {
   width: 100%;
   border-top: none;
@@ -760,10 +763,24 @@ footer {
   line-height: 1.7;
   margin-bottom: 2.5rem;
 }
-.ms-card--image {
+.ms-card--saffron {
   min-height: 400px;
+  background: var(--saffron);
   color: var(--white);
-  justify-content: flex-end;
+  justify-content: flex-start;
+  position: relative;
+}
+.ms-card__mandir {
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  height: 250px;
+  width: auto;
+  object-fit: contain;
+  opacity: 1;
+  display: block;
+  z-index: 1;
+  pointer-events: none;
 }
 .ms-card__bg {
   position: absolute;
