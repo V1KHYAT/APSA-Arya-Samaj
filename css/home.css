@@ -712,9 +712,6 @@ footer {
   text-align: center;
 }
 .is-card--more .is-card__title {
-  font-size: 1.6rem;
-  margin-top: auto;
-}
 .is-card--more .is-card__footer {
   width: 100%;
   border-top: none;
@@ -723,123 +720,88 @@ footer {
   padding-top: 0;
 }
 
-/* ── Mahasammelan: Stacked Banner ── */
-.mahasammelan {
+/* ── Mahasammelan: Split Cards ── */
+.mahasammelan-split {
+  padding: 6rem 0;
+  background-color: var(--cream);
   position: relative;
-  overflow: hidden;
+  z-index: 10;
 }
-.mahasammelan__primary {
-  background: var(--blue);
+.ms-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.ms-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.ms-card--light {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+  padding: 3.5rem;
+  justify-content: center;
+}
+.ms-card__title {
+  font-family: var(--ff-heading);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+  line-height: 1.15;
+}
+.ms-card__text {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+.ms-card--image {
+  min-height: 400px;
   color: var(--white);
-  position: relative;
-  overflow: hidden;
+  justify-content: flex-end;
 }
-.mahasammelan__primary-bg {
+.ms-card__bg {
   position: absolute;
   inset: 0;
-  opacity: 0.2;
+  z-index: 1;
 }
-.mahasammelan__primary-bg img {
+.ms-card__bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease;
 }
-.mahasammelan__primary-inner {
+.ms-card:hover .ms-card__bg img {
+  transform: scale(1.05);
+}
+.ms-card__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,58,107,0.92) 0%, rgba(26,58,107,0.3) 100%);
+}
+.ms-card__overlay {
   position: relative;
   z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  padding: 5rem 0;
+  padding: 3.5rem;
 }
-.mahasammelan__primary-content {}
-.mahasammelan__eyebrow {
-  font-family: var(--ff-heading);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  margin-bottom: 0.75rem;
-}
-.mahasammelan__title {
-  font-family: var(--ff-heading);
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.08;
-  margin-bottom: 1.5rem;
-}
-.mahasammelan__text {
-  font-size: 1.05rem;
-  color: rgba(255,255,255,0.72);
-  line-height: 1.7;
-  margin-bottom: 2rem;
-  max-width: 46ch;
-}
-.mahasammelan__highlights {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-.mh-stat {
-  text-align: center;
-  padding: 1.25rem;
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: var(--radius);
-  background: rgba(0,0,0,0.25);
-  backdrop-filter: blur(8px);
-}
-.mh-stat__num {
+.ms-card__overlay h3 {
   font-family: var(--ff-heading);
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.15;
 }
-.mh-stat__label {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.55);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.mahasammelan__secondary {
-  background: var(--saffron);
-  color: var(--white);
-  padding: 3rem 0;
-  overflow: hidden;
-  position: relative;
-}
-.mahasammelan__secondary .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2.5rem;
-}
-.mahasammelan__secondary-mandir {
-  height: 125px;
-  width: auto;
-  max-width: 280px;
-  object-fit: contain;
-  opacity: 1;
-  display: block;
-  flex-shrink: 0;
-}
-.mahasammelan__secondary-content {
-  flex: 1;
-  max-width: 540px;
-}
-.mahasammelan__secondary h3 {
-  font-family: var(--ff-heading);
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-.mahasammelan__secondary p {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.85);
+.ms-card__overlay p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  max-width: 40ch;
   line-height: 1.6;
 }
 
@@ -924,7 +886,7 @@ footer {
     aspect-ratio: 16/9;
     max-height: 400px;
   }
-  .mahasammelan__primary-inner {
+  .ms-grid {
     grid-template-columns: 1fr;
   }
   .is-card { flex: 0 0 300px; }
@@ -934,14 +896,6 @@ footer {
   .about-intro__stats {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-  }
-  .mahasammelan__highlights {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.75rem;
-  }
-  .mahasammelan__secondary .container {
-    flex-direction: column;
-    text-align: center;
   }
   .is-card { flex: 0 0 280px; min-height: 360px; }
 }
