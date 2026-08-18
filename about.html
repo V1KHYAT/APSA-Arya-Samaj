@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About APSA — History, Leadership &amp; Principles</title>
   <meta name="description" content="Learn about APSA's history, the Ten Niyams of Arya Samaj, our executive leadership, affiliated directory, and governing constitution." />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=1" />
+  <link rel="stylesheet" href="css/about.css?v=1" />
 </head>
 <body>
 
@@ -31,7 +32,7 @@
 </nav>
 <div class="nav__drawer">
   <a href="index.html" class="nav__link">Home</a>
-  <a href="about.html" class="nav__link">About</a>
+  <a href="about.html" class="nav__link active">About</a>
   <a href="resources.html" class="nav__link">Resources</a>
   <a href="programs.html" class="nav__link">Programs</a>
   <a href="events.html" class="nav__link">Events</a>
@@ -40,270 +41,266 @@
   <a href="donate.html" class="btn btn-primary btn-sm">Donate</a>
 </div>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="container">
-    <p class="page-hero__breadcrumb"><a href="index.html">Home</a> / About APSA</p>
-    <h1 class="page-hero__title">About APSA</h1>
-    <p class="page-hero__sub">A century of Vedic leadership — preserving, promoting, and practising the principles of Swami Dayanand Saraswati across North America.</p>
+<!-- 1. PAGE HERO -->
+<section class="about-hero">
+  <div class="about-hero__bg">
+    <img src="images/hero1.png" alt="Vedic Havan Fire" />
+  </div>
+  <div class="about-hero__overlay"></div>
+  <div class="about-hero__content reveal">
+    <h1 class="about-hero__title">About Arya Pratinidhi Sabha America</h1>
+    <p class="about-hero__sub">Uniting North America through the eternal values of Vedic Dharma.</p>
   </div>
 </section>
 
-<!-- ABOUT MAIN CONTENT -->
-<section class="section" id="about-content">
+<!-- 2. MISSION & VISION -->
+<section class="mission-vision">
   <div class="container">
-
-    <div class="tabs" data-tabs>
-      <button class="tab-btn active" data-tab="history">History &amp; Heritage</button>
-      <button class="tab-btn" data-tab="niyams">Ten Niyams</button>
-      <button class="tab-btn" data-tab="leadership">Leadership</button>
-      <button class="tab-btn" data-tab="directory">Directory</button>
-      <button class="tab-btn" data-tab="governance">Governance</button>
-    </div>
-
-    <!-- ── History ── -->
-    <div class="tab-panel active" data-panel="history" id="history">
-      <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:3rem; align-items:start" class="reveal">
-        <div>
-          <p class="section-label">Our Story</p>
-          <h2 class="section-title">A Century of Vedic Leadership</h2>
-          <div class="divider"></div>
-          <p style="color:var(--text-muted); line-height:1.8; margin-bottom:1.25rem">
-            The Arya Pratinidhi Sabha of America traces its roots to the early 20th century, when Arya Samaj
-            immigrants from South Asia brought with them the reformist teachings of Swami Dayanand Saraswati
-            — a vision of a society guided by reason, the Vedas, and universal brotherhood.
-          </p>
-          <p style="color:var(--text-muted); line-height:1.8; margin-bottom:1.25rem">
-            APSA was formally established to coordinate the growing number of Arya Samaj centres across the
-            United States, creating a unified platform for spiritual education, community service, and the
-            preservation of Vedic heritage in the diaspora.
-          </p>
-          <p style="color:var(--text-muted); line-height:1.8">
-            Today, APSA serves as the apex body representing over 50 affiliated Arya Samaj organisations,
-            conducting annual Sammelans, supporting youth programs, and providing resources to communities
-            from coast to coast.
-          </p>
-        </div>
-        <div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-item__year">EARLY 1900s</div>
-              <div class="timeline-item__title">First Arya Samaj Centres Established</div>
-              <div class="timeline-item__body">Early South Asian immigrants establish the first Arya Samaj prayer halls in New York and New Jersey, conducting havan and Vedic study circles.</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-item__year">1930s</div>
-              <div class="timeline-item__title">Formation of Regional Coordination</div>
-              <div class="timeline-item__body">Growing Samaj communities in major cities begin formal coordination, hosting inter-Samaj events and joint Sammelans.</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-item__year">1970s</div>
-              <div class="timeline-item__title">APSA Formally Incorporated</div>
-              <div class="timeline-item__body">APSA is officially constituted as the representative body for Arya Samaj organisations across the United States and Canada.</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-item__year">1990s</div>
-              <div class="timeline-item__title">Vedic Sanskriti Schools Launched</div>
-              <div class="timeline-item__body">Recognising the need for youth education, APSA launches the VSS curriculum — now taught at 20+ locations nationwide.</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-item__year">2010s</div>
-              <div class="timeline-item__title">Digital Expansion &amp; Youth Wing</div>
-              <div class="timeline-item__body">APSA launches VAYU — the Vedic Arya Youth Union — and begins digitalising the Vedic library, reaching thousands online.</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-item__year">Today</div>
-              <div class="timeline-item__title">Serving 50+ Communities</div>
-              <div class="timeline-item__body">APSA continues its mission with over 50 affiliated Samajs, 15 active programs, and a growing global diaspora network.</div>
-            </div>
-          </div>
-        </div>
+    <div class="mv-grid reveal">
+      
+      <!-- Mission -->
+      <div class="mv-card">
+        <svg class="mv-card__icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M2 12h20"></path>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <h2 class="mv-card__title">Our Mission</h2>
+        <p class="mv-card__text">The mission of Arya Pratinidhi Sabha America is to unite and empower Arya Samajs and Vedic organizations across North America in preserving, living, and propagating the eternal values of Vedic Dharma. Rooted in the teachings of Maharishi Dayanand Saraswati and guided by the Ten Principles of Arya Samaj, we strive to dispel ignorance, foster social equality, promote education, and work continuously for the physical, spiritual, and social well-being of all humanity.</p>
       </div>
-    </div>
 
-    <!-- ── Ten Niyams ── -->
-    <div class="tab-panel" data-panel="niyams" id="ten-niyams">
-      <div class="reveal">
-        <p class="section-label">Foundational Principles</p>
-        <h2 class="section-title">The Ten Niyams of Arya Samaj</h2>
+      <!-- Vision -->
+      <div class="mv-card">
+        <svg class="mv-card__icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <h2 class="mv-card__title">Our Vision</h2>
+        <p class="mv-card__text">To build a thriving, dynamic legacy across North America that empowers individuals and families to live Vedic principles daily, bridges cultural heritage with modern life, and leads global efforts in service, education, and social reform.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 3. HISTORY AND HERITAGE -->
+<section class="history-section">
+  <div class="container">
+    <div class="history-grid reveal">
+      
+      <div class="history-content">
+        <p class="section-label">A Legacy of Unity and Service</p>
+        <h2>Our History</h2>
         <div class="divider"></div>
-        <p style="color:var(--text-muted); max-width:60ch; margin-bottom:2.5rem; line-height:1.8">
-          Established by Swami Dayanand Saraswati, the Ten Niyams (rules) form the ideological foundation of every
-          Arya Samaj worldwide. They are a comprehensive guide to individual conduct, community responsibility, and
-          the pursuit of truth.
-        </p>
+        <p>The Arya Pratinidhi Sabha America (APSA) traces its roots to 1988, when Girish Khosla began connecting with Arya Samaj members across North America through correspondence to unite a scattered community. His efforts, supported by leaders like Lala Ram Chand Mahajan, Pt Ramlal, and Amar Erry, culminated in the first Arya Mahasammelan on April 13, 1991, in Detroit, Michigan. This landmark event gathered Aryas under one roof, establishing APSA as an umbrella organization dedicated to promoting and preserving Vedic values across the continent.</p>
+        <p>Since its inception, APSA has grown into a cohesive family that holds annual Mahasammelans across North America and remains committed to charitable service. The organization has provided vital support during global crises, including earthquakes in Gujarat, Haiti, and Nepal, the South India tsunami, hurricanes Irma and Harvey, and COVID-19 relief efforts in India.</p>
+        <p>Today, guided by the legacy of Maharshi Dayanand Saraswati and sustained by a new generation of leadership, APSA continues its mission to unite forces and pursue the vision of making the world noble.</p>
       </div>
 
-      <div class="niyam-accordion reveal">
-        <div class="acc-item">
-          <button class="acc-trigger"><div class="acc-trigger__left"><span class="acc-trigger__num">01</span><span class="acc-trigger__title">God is the Primal and True Knowledge</span></div><span class="acc-trigger__icon">▾</span></button>
-          <div class="acc-body">God is the efficient cause of all true knowledge and all that is known by means of it. This niyam establishes the supremacy of God as the ultimate source of wisdom and the foundation of all existence.</div>
+      <div class="history-collage">
+        <div class="history-collage__img-1">
+          <img src="images/hero2.png" alt="Archival Gathering" />
         </div>
-        <div class="acc-item">
-          <button class="acc-trigger"><div class="acc-trigger__left"><span class="acc-trigger__num">02</span><span class="acc-trigger__title">God is Existent, Conscious and Blissful</span></div><span class="acc-trigger__icon">▾</span></button>
-          <div class="acc-body">God is without form, omnipotent, just, merciful, unborn, infinite, unchangeable, without beginning, incomparable, the support of all, the master of all, omnipresent, omniscient and controller of all from within.</div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-trigger"><div class="acc-trigger__left"><span class="acc-trigger__num">03</span><span class="acc-trigger__title">The Vedas are the Scripture of All True Knowledge</span></div><span class="acc-trigger__icon">▾</span></button>
-          <div class="acc-body">The Vedas are the scripture of all true knowledge. It is the paramount duty of all Aryas to read them, teach them, recite them, and hear them being recited. The Vedas are eternal revelations from God to humanity.</div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-trigger"><div class="acc-trigger__left"><span class="acc-trigger__num">04</span><span class="acc-trigger__title">Always Be Ready to Accept Truth and Forsake Untruth</span></div><span class="acc-trigger__icon">▾</span></button>
-          <div class="acc-body">One should always be ready to accept truth and to renounce untruth. This pursuit of truth over tradition or convenience is central to the Arya Samaj reformist spirit.</div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-trigger"><div class="acc-trigger__left"><span class="acc-trigger__num">05</span><span class="acc-trigger__title">All Actions Should Conform to Dharma</span></div><span class="acc-trigger__icon">▾</span></button>
-          <div class="acc-body">All acts should be done in conformity with virtue, i.e. after due consideration of right and wrong. Individual conduct must be grounded in righteousness, not expediency.</div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-trigger"><div class="acc-trigger__left"><span class="acc-trigger__num">06</span><span class="acc-trigger__title">The Goal is Benefiting the World</span></div><span class="acc-trigger__icon">▾</span></button>
-          <div class="acc-body">The prime object of Arya Samaj is to do good to the world — that is, to promote physical, spiritual, and social good of all. This niyam anchors APSA's service mission.</div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-trigger"><div class="acc-trigger__left"><span class="acc-trigger__num">07</span><span class="acc-trigger__title">Conduct Towards Others Must be Guided by Love</span></div><span class="acc-trigger__icon">▾</span></button>
-          <div class="acc-body">All ought to be treated with love, justice, and with regard to their merit. Love for all creation — not just one's own community — is essential to Arya Samaj ethics.</div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-trigger"><div class="acc-trigger__left"><span class="acc-trigger__num">08</span><span class="acc-trigger__title">Dispel Ignorance and Promote Knowledge</span></div><span class="acc-trigger__icon">▾</span></button>
-          <div class="acc-body">One should dispel avidya (ignorance) and promote vidya (knowledge). Education — of the Vedas, of science, of ethics — is a sacred duty for every Arya.</div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-trigger"><div class="acc-trigger__left"><span class="acc-trigger__num">09</span><span class="acc-trigger__title">One's Progress Depends on All Others</span></div><span class="acc-trigger__icon">▾</span></button>
-          <div class="acc-body">One's own progress should be dependent on the upliftment of all others. Individual and collective progress are inseparable — a foundational principle of community service.</div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-trigger"><div class="acc-trigger__left"><span class="acc-trigger__num">10</span><span class="acc-trigger__title">Social Wellbeing Must Take Precedence</span></div><span class="acc-trigger__icon">▾</span></button>
-          <div class="acc-body">All persons should subordinate their personal benefit to social benefit — in matters of social, ethical, and regulatory conduct. This final niyam grounds all individual action in collective responsibility.</div>
+        <div class="history-collage__img-2">
+          <img src="images/init3.jpg" alt="Community Service" />
         </div>
       </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 4. THE TEN PRINCIPLES -->
+<section class="niyams-section">
+  <div class="container">
+    <div class="niyams-header reveal">
+      <p class="section-label">The Principles of Arya Samaj</p>
+      <h2 class="section-title">The Ten Niyams</h2>
+      <div class="divider" style="margin: 0 auto 1.5rem;"></div>
+      <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.7;">The foundation of the Arya Samaj is built upon ten core principles that emphasize truth, logic, and universal welfare:</p>
     </div>
 
-    <!-- ── Leadership ── -->
-    <div class="tab-panel" data-panel="leadership" id="leadership">
+    <div class="niyams-list reveal">
+      <div class="niyam-item">
+        <div class="niyam-item__num">01</div>
+        <div class="niyam-item__text">The first (efficient) cause of all true knowledge and all that is known through knowledge is Eeshwar (the Supreme, i.e. GOD).</div>
+      </div>
+      <div class="niyam-item">
+        <div class="niyam-item__num">02</div>
+        <div class="niyam-item__text">Eeshwar (GOD) is existent, intelligent, and blissful. He is formless, omniscient, just, merciful, unborn, endless, unchangeable, beginningless, unequalled, the support of all, the master of all, omnipresent, immanent, unaging, immortal, fearless, eternal, and holy, and the maker of all. He alone is to be worthy of worship.</div>
+      </div>
+      <div class="niyam-item">
+        <div class="niyam-item__num">03</div>
+        <div class="niyam-item__text">The Vedas are the scriptures of all true knowledge. It is the paramount duty of Aryas to read them, teach them, recite them, and hear them being read.</div>
+      </div>
+      <div class="niyam-item">
+        <div class="niyam-item__num">04</div>
+        <div class="niyam-item__text">One should always be ready to accept truth and renounce untruth.</div>
+      </div>
+      <div class="niyam-item">
+        <div class="niyam-item__num">05</div>
+        <div class="niyam-item__text">All acts ought to be performed in conformity to Dharma i.e., after deliberating what is right and wrong.</div>
+      </div>
+      <div class="niyam-item">
+        <div class="niyam-item__num">06</div>
+        <div class="niyam-item__text">The prime object of the Arya Samaj is to do good to the world, i.e., to ameliorate physical, spiritual and social welfare of all.</div>
+      </div>
+      <div class="niyam-item">
+        <div class="niyam-item__num">07</div>
+        <div class="niyam-item__text">All ought to be treated with affection, Justice, righteousness and due regard to their merits.</div>
+      </div>
+      <div class="niyam-item">
+        <div class="niyam-item__num">08</div>
+        <div class="niyam-item__text">One should promote Vidya (realization of true knowledge) and dispel Avidya (ignorance).</div>
+      </div>
+      <div class="niyam-item">
+        <div class="niyam-item__num">09</div>
+        <div class="niyam-item__text">One should not be content with one's own welfare alone, but should strive for one's own welfare in the welfare of all.</div>
+      </div>
+      <div class="niyam-item">
+        <div class="niyam-item__num">10</div>
+        <div class="niyam-item__text">In all matters affecting the well-being of the society the individual should subordinate his personal likings. In matters affecting him alone one should enjoy the freedom of action.</div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 4rem;">
+      <a href="about/ten-niyams.html" class="btn btn-outline btn-lg">Read Detailed Commentary</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- 5. APSA LEADERSHIP -->
+<section class="leadership-section">
+  <div class="container">
+    <div class="niyams-header reveal">
       <p class="section-label">Governance</p>
-      <h2 class="section-title">Executive Committee 2024–2026</h2>
-      <div class="divider"></div>
-      <p style="color:var(--text-muted); max-width:55ch; margin-bottom:2.5rem">The APSA Executive Committee is elected biennially at the Annual General Meeting during the Maha Sammelan. Members represent affiliated Samajs across the continent.</p>
+      <h2 class="section-title">Our Leadership</h2>
+      <div class="divider" style="margin: 0 auto 1.5rem;"></div>
+      <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.7;">APSA is guided by a dedicated team of leaders committed to the propagation of Vedic values, community service, and the continued growth of the Arya Samaj across North America.</p>
+    </div>
 
-      <div class="leadership-grid reveal">
-        <div class="leader-card">
-          <div class="leader-card__avatar">RS</div>
-          <div class="leader-card__name">Dr. Raj Sharma</div>
-          <div class="leader-card__role">President</div>
-          <div class="leader-card__region">Dallas, Texas</div>
-        </div>
-        <div class="leader-card">
-          <div class="leader-card__avatar">PV</div>
-          <div class="leader-card__name">Mrs. Priya Verma</div>
-          <div class="leader-card__role">Vice-President</div>
-          <div class="leader-card__region">Edison, New Jersey</div>
-        </div>
-        <div class="leader-card">
-          <div class="leader-card__avatar">AK</div>
-          <div class="leader-card__name">Mr. Arun Kumar</div>
-          <div class="leader-card__role">Secretary General</div>
-          <div class="leader-card__region">Chicago, Illinois</div>
-        </div>
-        <div class="leader-card">
-          <div class="leader-card__avatar">SM</div>
-          <div class="leader-card__name">Dr. Sunita Mehta</div>
-          <div class="leader-card__role">Treasurer</div>
-          <div class="leader-card__region">Fremont, California</div>
-        </div>
-        <div class="leader-card">
-          <div class="leader-card__avatar">VG</div>
-          <div class="leader-card__name">Mr. Vijay Gupta</div>
-          <div class="leader-card__role">Joint Secretary</div>
-          <div class="leader-card__region">Atlanta, Georgia</div>
-        </div>
-        <div class="leader-card">
-          <div class="leader-card__avatar">NT</div>
-          <div class="leader-card__name">Mrs. Nisha Tiwari</div>
-          <div class="leader-card__role">Director, Youth Affairs</div>
-          <div class="leader-card__region">Houston, Texas</div>
-        </div>
-        <div class="leader-card">
-          <div class="leader-card__avatar">MP</div>
-          <div class="leader-card__name">Pandit Mahesh Pandya</div>
-          <div class="leader-card__role">Director, Vedic Education</div>
-          <div class="leader-card__region">Jamaica, New York</div>
-        </div>
-        <div class="leader-card">
-          <div class="leader-card__avatar">RD</div>
-          <div class="leader-card__name">Dr. Rekha Dixit</div>
-          <div class="leader-card__role">Director, Social Services</div>
-          <div class="leader-card__region">Toronto, Ontario</div>
-        </div>
-        <div class="leader-card">
-          <div class="leader-card__avatar">SK</div>
-          <div class="leader-card__name">Mr. Suresh Kapoor</div>
-          <div class="leader-card__role">Director, Publications</div>
-          <div class="leader-card__region">Alpharetta, Georgia</div>
-        </div>
+    <!-- Executive Committee -->
+    <h3 style="font-family: var(--ff-heading); font-size: 1.8rem; color: var(--blue); margin-bottom: 2rem; text-align: center;">Executive Committee</h3>
+    <div class="leadership-grid reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+      <div class="leader-card">
+        <div class="leader-card__avatar">BK</div>
+        <div class="leader-card__name">Shri Bhuvnesh Khosla</div>
+        <div class="leader-card__role">President</div>
+        <div class="leader-card__region">Michigan</div>
+      </div>
+      <div class="leader-card">
+        <div class="leader-card__avatar">SS</div>
+        <div class="leader-card__name">Shri Sanjay Sood</div>
+        <div class="leader-card__role">General Secretary</div>
+        <div class="leader-card__region">Texas</div>
+      </div>
+      <div class="leader-card">
+        <div class="leader-card__avatar">RK</div>
+        <div class="leader-card__name">Sh. Rajesh Khosla</div>
+        <div class="leader-card__role">Treasurer</div>
+        <div class="leader-card__region">Texas</div>
+      </div>
+      <div class="leader-card">
+        <div class="leader-card__avatar">DA</div>
+        <div class="leader-card__name">Sh. Dinesh Arya</div>
+        <div class="leader-card__role">Joint Secretary</div>
+        <div class="leader-card__region">Ohio</div>
+      </div>
+      <div class="leader-card">
+        <div class="leader-card__avatar">AV</div>
+        <div class="leader-card__name">Sh. Atul Verma</div>
+        <div class="leader-card__role">Joint Treasurer</div>
+        <div class="leader-card__region">Pennsylvania</div>
+      </div>
+      <div class="leader-card">
+        <div class="leader-card__avatar">SB</div>
+        <div class="leader-card__name">Mrs. Sunita Bagga</div>
+        <div class="leader-card__role">Director, Vedic Education</div>
+        <div class="leader-card__region">Georgia</div>
+      </div>
+      <div class="leader-card">
+        <div class="leader-card__avatar">RK</div>
+        <div class="leader-card__name">Sh. Ranbir Kumar</div>
+        <div class="leader-card__role">Vice President, North East</div>
+        <div class="leader-card__region">New York</div>
+      </div>
+      <div class="leader-card">
+        <div class="leader-card__avatar">VA</div>
+        <div class="leader-card__name">Shri Vishrut Arya</div>
+        <div class="leader-card__role">Immediate Past President</div>
+        <div class="leader-card__region">Georgia</div>
       </div>
     </div>
 
-    <!-- ── Directory ── -->
-    <div class="tab-panel" data-panel="directory" id="directory">
-      <p class="section-label">Affiliated Organisations</p>
-      <h2 class="section-title">Arya Samaj Directory — North America</h2>
-      <div class="divider"></div>
-      <div class="finder__search" style="margin-bottom:2rem">
-        <input type="search" class="finder__input" placeholder="Search by name or city…" />
-        <button class="btn btn-primary">Search</button>
-      </div>
-      <div class="finder__grid reveal">
-        <div class="samaj-tile"><div class="samaj-tile__name">Arya Samaj Greater New York</div><div class="samaj-tile__loc">Jamaica, NY · Est. 1948</div></div>
-        <div class="samaj-tile"><div class="samaj-tile__name">Arya Samaj of New Jersey</div><div class="samaj-tile__loc">Edison, NJ · Est. 1972</div></div>
-        <div class="samaj-tile"><div class="samaj-tile__name">Dallas Arya Samaj</div><div class="samaj-tile__loc">Irving, TX · Est. 1984</div></div>
-        <div class="samaj-tile"><div class="samaj-tile__name">Arya Samaj of Chicago</div><div class="samaj-tile__loc">Lombard, IL · Est. 1976</div></div>
-        <div class="samaj-tile"><div class="samaj-tile__name">Atlanta Arya Samaj</div><div class="samaj-tile__loc">Alpharetta, GA · Est. 1991</div></div>
-        <div class="samaj-tile"><div class="samaj-tile__name">Arya Samaj of Houston</div><div class="samaj-tile__loc">Sugar Land, TX · Est. 1988</div></div>
-        <div class="samaj-tile"><div class="samaj-tile__name">Arya Samaj of Toronto</div><div class="samaj-tile__loc">Toronto, ON · Est. 1963</div></div>
-        <div class="samaj-tile"><div class="samaj-tile__name">Bay Area Arya Samaj</div><div class="samaj-tile__loc">Fremont, CA · Est. 1980</div></div>
-        <div class="samaj-tile"><div class="samaj-tile__name">Arya Samaj of Washington DC</div><div class="samaj-tile__loc">Herndon, VA · Est. 1979</div></div>
-        <div class="samaj-tile"><div class="samaj-tile__name">Arya Samaj of Los Angeles</div><div class="samaj-tile__loc">Artesia, CA · Est. 1975</div></div>
-        <div class="samaj-tile"><div class="samaj-tile__name">Arya Samaj of Detroit</div><div class="samaj-tile__loc">Troy, MI · Est. 1982</div></div>
-        <div class="samaj-tile"><div class="samaj-tile__name">Arya Samaj of Philadelphia</div><div class="samaj-tile__loc">Lansdale, PA · Est. 1987</div></div>
-      </div>
+    <!-- Board of Directors -->
+    <div class="board-list-section reveal">
+      <h3 style="font-family: var(--ff-heading); font-size: 1.5rem; color: var(--blue); margin-bottom: 2rem;">Board of Directors</h3>
+      <ul class="board-list">
+        <li>Aryapathik Girish Khosla Vaanprasthi (MI) - Trustee</li>
+        <li>Shri Devinder Mahajan (TX) - Member Emeritus - Past President</li>
+        <li>Dr. Rajinder Gandhi (NJ) - Past President</li>
+        <li>Dr. Bhushan Verma (TX) - Past President</li>
+        <li>Dr. Ramesh Gupta (NJ) - Past President</li>
+        <li>Shri Vishrut Arya (GA) - Past President</li>
+        <li>Dr. Kulbhushan Gulati (NY) - Past Treasurer</li>
+        <li>Behen Sati Gurdial (NY) - Past General Secretary</li>
+        <li>Shri Jethinder Abbi (NY) - Past Treasurer</li>
+        <li>Pt. Vedabrat Etwaru (NJ) - Past Joint Treasurer</li>
+        <li>Dr. Sudhir Anand (CA)</li>
+        <li>Shri Arun Kundra (FL)</li>
+        <li>Dr. Bhupender Gupta (NC)</li>
+        <li>Bhai Khishan Naraine (NY)</li>
+        <li>Behan Davi Lakhnath (NY)</li>
+        <li>Mr. Sanjay Jain (TX)</li>
+        <li>Dr. Vijay Arya (NY)</li>
+        <li>Dr. Yashpal Arya (NY)</li>
+        <li>Smt. Kamini Pahuja (VA)</li>
+        <li>Dr. Om &amp; Dr. Vijay Arora (GA)</li>
+      </ul>
     </div>
 
-    <!-- ── Governance ── -->
-    <div class="tab-panel" data-panel="governance" id="governance">
-      <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:3rem; align-items:start" class="reveal">
-        <div>
-          <p class="section-label">Governance</p>
-          <h2 class="section-title">Constitution &amp; Governance</h2>
-          <div class="divider"></div>
-          <p style="color:var(--text-muted); line-height:1.8; margin-bottom:1.25rem">
-            APSA is governed by a democratically elected Executive Committee and operates in accordance with a
-            formally adopted Constitution ratified by member Samajs. The organisation is a registered non-profit
-            operating under 501(c)(3) status in the United States.
-          </p>
-          <p style="color:var(--text-muted); line-height:1.8; margin-bottom:2rem">
-            The Annual General Meeting (AGM) is held during the Maha Sammelan each year. All affiliated Samajs
-            are entitled to send delegates, vote on resolutions, and participate in committee elections.
-          </p>
+  </div>
+</section>
 
-          <div style="display:flex; flex-direction:column; gap:0.85rem">
-            <a href="#" class="btn btn-outline" style="width:fit-content">📄 Download APSA Constitution (PDF)</a>
-            <a href="#" class="btn btn-outline" style="width:fit-content">📋 Annual Report 2024–25</a>
-            <a href="#" class="btn btn-outline" style="width:fit-content">📊 Financial Disclosures</a>
-          </div>
-        </div>
-
-        <div style="background:var(--cream-dark); border-radius:var(--radius-lg); padding:2rem">
-          <h3 style="font-family:var(--ff-heading); font-size:1.1rem; color:var(--blue); margin-bottom:1.25rem; border-bottom:1px solid var(--border); padding-bottom:0.75rem">Governance Structure</h3>
-          <div style="display:flex; flex-direction:column; gap:0.85rem; font-size:0.92rem; color:var(--text-muted)">
-            <div><strong style="color:var(--blue)">Annual General Meeting</strong><br>Supreme governing body. All affiliated Samajs represented.</div>
-            <div><strong style="color:var(--blue)">Executive Committee</strong><br>12-member elected body. Serves 2-year terms.</div>
-            <div><strong style="color:var(--blue)">Standing Committees</strong><br>Education, Youth, Publications, Finance, Social Services.</div>
-            <div><strong style="color:var(--blue)">Member Samajs</strong><br>50+ affiliated organisations across USA and Canada.</div>
-          </div>
-        </div>
+<!-- 6. DIRECTORY & GOVERNANCE -->
+<section class="cta-blocks-section">
+  <div class="container">
+    <div class="cta-blocks-grid reveal">
+      
+      <!-- Directory CTA -->
+      <div class="cta-block">
+        <svg class="cta-block__icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <h3>Affiliated Arya Samaj Directory</h3>
+        <p>We are a continental community. Find a local Arya Samaj chapter near you to connect with in-person events and community service projects.</p>
+        <a href="about/directory.html" class="btn btn-white">Find a Samaj Near You</a>
       </div>
-    </div>
 
+      <!-- Governance CTA -->
+      <div class="cta-block cta-block--alt">
+        <svg class="cta-block__icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <h3>Constitution &amp; Governance</h3>
+        <p>APSA operates with full transparency and democratic governance. View our organizational bylaws and constitution.</p>
+        <a href="about/governance.html" class="btn btn-white">View Constitution</a>
+      </div>
+
+    </div>
   </div>
 </section>
 
