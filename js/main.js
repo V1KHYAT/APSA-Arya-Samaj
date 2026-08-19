@@ -23,6 +23,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  /* ── Dropdown Hover & Click Behavior ── */
+  const dropdownItems = document.querySelectorAll('.has-dropdown');
+  dropdownItems.forEach(item => {
+    const trigger = item.querySelector('a.nav__link');
+    if (trigger) {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault(); // Clicking parent links like About Us does not navigate
+      });
+    }
+
+    let hoverTimer;
+    item.addEventListener('mouseenter', () => {
+      clearTimeout(hoverTimer);
+      dropdownItems.forEach(other => {
+        if (other !== item) other.classList.remove('is-open');
+      });
+      item.classList.add('is-open');
+    });
+
+    item.addEventListener('mouseleave', () => {
+      hoverTimer = setTimeout(() => {
+        item.classList.remove('is-open');
+      }, 180);
+    });
+  });
+
   /* ── Mobile hamburger ── */
   const hamburger = document.querySelector('.nav__hamburger');
   const drawer = document.querySelector('.nav__drawer');

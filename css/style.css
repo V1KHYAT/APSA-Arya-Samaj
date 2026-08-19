@@ -1411,21 +1411,31 @@ input, textarea, select {
   z-index: 999;
 }
 
+.nav__inner {
+  height: 100%;
+}
+
 .nav__links {
   position: static;
   display: flex;
   align-items: center;
   gap: 0.2rem;
+  height: 100%;
 }
 
-.nav__links li {
+.nav__links > li {
   position: static !important;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .has-dropdown > a {
   display: flex;
   align-items: center;
   gap: 0.35rem;
+  cursor: pointer;
+  user-select: none;
 }
 
 .dropdown-icon {
@@ -1438,7 +1448,8 @@ input, textarea, select {
   margin-top: 1px;
 }
 
-.nav__links li:hover .dropdown-icon {
+.nav__links li:hover .dropdown-icon,
+.nav__links li.is-open .dropdown-icon {
   transform: rotate(180deg);
 }
 
@@ -1447,26 +1458,36 @@ input, textarea, select {
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(12px);
+  transform: translateX(-50%);
   background: #ffffff;
   border-radius: 14px;
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.12), 0 6px 18px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.14), 0 6px 18px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.08);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.25s;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
   z-index: 1000;
   overflow: hidden;
 }
 
-.nav__links li:hover > .dropdown-menu {
+/* Hover bridge: spans above the dropdown so cursor never loses hover */
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: transparent;
+  display: block;
+}
+
+.nav__links li:hover > .dropdown-menu,
+.nav__links li.is-open > .dropdown-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
 }
 
 /* 3-Column Mega Menu Box (Universal for all dropdowns) */
