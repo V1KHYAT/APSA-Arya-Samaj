@@ -808,72 +808,158 @@
   gap: 2rem;
 }
 .cta-card {
-  background: #fff;
-  padding: 4rem 3.5rem;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
+  position: relative;
+  background: #faf7f2;
+  border: 1px solid;
+  padding: 4rem 4rem 4rem 5rem; /* extra left padding for the thick stripe */
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 .cta-card--blue {
-  border-top-color: var(--blue);
-  border-bottom-color: var(--blue);
+  border-color: rgba(26, 42, 79, 0.4);
+  --theme: var(--blue);
 }
 .cta-card--saffron {
-  border-top-color: #d97736;
-  border-bottom-color: #d97736;
+  border-color: rgba(217, 119, 54, 0.4);
+  --theme: #d97736;
 }
-.cta-card__icon {
-  margin-bottom: 2rem;
-}
-.cta-card__icon svg {
-  width: 40px;
-  height: 40px;
-  fill: none;
-  stroke-width: 1.2;
-}
-.cta-card--blue .cta-card__icon svg { stroke: var(--blue); }
-.cta-card--saffron .cta-card__icon svg { stroke: #d97736; }
 
-.cta-card__title {
-  font-family: var(--ff-heading);
-  font-size: 2.5rem;
-  font-weight: 400;
+/* Intricate side stripe */
+.cta-card__stripe {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  bottom: -1px;
+  width: 24px;
+  z-index: 2;
+}
+.cta-card__stripe::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 55%;
+  background: var(--theme);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 35% 100%, 0 100%);
+}
+.cta-card__stripe::after {
+  content: '';
+  position: absolute;
+  top: 55%; left: 0; bottom: 0; width: 35%;
+  background: var(--theme);
+  -webkit-mask-image: linear-gradient(to bottom, 
+    black 0%, black 80%, 
+    transparent 80%, transparent 81.5%, 
+    black 81.5%, black 85%, 
+    transparent 85%, transparent 86.5%, 
+    black 86.5%, black 100%
+  );
+  mask-image: linear-gradient(to bottom, 
+    black 0%, black 80%, 
+    transparent 80%, transparent 81.5%, 
+    black 81.5%, black 85%, 
+    transparent 85%, transparent 86.5%, 
+    black 86.5%, black 100%
+  );
+}
+
+/* Faint Background Graphics */
+.cta-bg-graphic {
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.15;
+}
+.cta-bg-graphic--sun {
+  width: 250px;
+  height: 250px;
+  color: #d97736;
+}
+.cta-bg-graphic--sun svg {
+  width: 100%;
+  height: 100%;
+}
+.cta-bg-graphic--text {
+  font-family: serif;
+  font-size: 3rem;
+  color: #d97736;
+  text-align: center;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
+  bottom: 2rem;
+  right: 2rem;
+  opacity: 0.12;
 }
-.cta-card--blue .cta-card__title { color: var(--blue); }
-.cta-card--saffron .cta-card__title { color: #d97736; }
 
-.cta-card__divider {
-  width: 40px;
-  height: 2px;
+/* Content */
+.cta-card__content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Icons */
+.cta-card__icon-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   margin-bottom: 2.5rem;
 }
-.cta-card--blue .cta-card__divider { background: #d97736; }
+.cta-card__vline {
+  height: 24px;
+  width: 1px;
+  background: var(--theme);
+}
+.cta-card__icon-svg {
+  width: 48px;
+  height: 48px;
+  stroke: var(--theme);
+  color: var(--theme);
+}
+
+/* Typography */
+.cta-card__title {
+  font-family: var(--ff-heading);
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: var(--theme);
+}
+
+.cta-card__divider {
+  width: 60px;
+  height: 1px;
+  background: var(--theme);
+  margin-bottom: 2rem;
+}
+.cta-card--blue .cta-card__divider { background: var(--blue); }
 .cta-card--saffron .cta-card__divider { background: #d97736; }
 
 .cta-card__desc {
-  font-size: 1.05rem;
+  font-family: var(--ff-heading); /* matching the serif look */
+  font-size: 1.15rem;
   color: #4a5568;
-  line-height: 1.8;
+  line-height: 1.6;
   margin-bottom: 4rem;
   flex-grow: 1;
 }
 
+/* Link */
 .cta-card__link {
   font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 1rem;
   text-transform: uppercase;
+  color: var(--theme);
 }
-.cta-card--blue .cta-card__link { color: var(--blue); }
-.cta-card--saffron .cta-card__link { color: #d97736; }
 .cta-card__link span {
   font-size: 1.2rem;
   transition: transform 0.3s ease;
@@ -881,6 +967,7 @@
 .cta-card__link:hover span {
   transform: translateX(5px);
 }
+
 @media (max-width: 992px) {
   .cta-grid { grid-template-columns: 1fr; }
 }
