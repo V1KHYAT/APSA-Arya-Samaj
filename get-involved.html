@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Involved — Volunteer & Seva Initiatives — APSA</title>
+  <meta name="description" content="Connect with national volunteer committees, disaster relief seva initiatives, youth mentorship programs, and register to volunteer with APSA." />
+  <link rel="stylesheet" href="css/style.css?v=8" />
+  <style>
+    /* ── Get Involved Custom Styling ── */
+    :root {
+      --inv-bg: #f9f5ee;
+      --inv-card-bg: #fdfbf7;
+      --inv-border: #ebdcd0;
+      --inv-terracotta: #c45b28;
+      --inv-gold: #ba6d32;
+      --inv-navy: #14233c;
+      --inv-navy-light: #1f3659;
+      --inv-charcoal: #384252;
+    }
+
+    body {
+      background-color: var(--inv-bg);
+    }
+
+    /* ── Hero Header ── */
+    .inv-hero-section {
+      background: #faf6f0;
+      padding: 3.5rem 0 3.5rem;
+      border-bottom: 1px solid var(--inv-border);
+      position: relative;
+    }
+
+    .inv-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.92rem;
+      color: #717d8e;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    .inv-breadcrumb a {
+      color: var(--inv-navy);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .inv-breadcrumb a:hover {
+      color: var(--inv-terracotta);
+    }
+    .inv-breadcrumb .active-hindi {
+      color: var(--inv-terracotta);
+      font-weight: 600;
+    }
+    .inv-breadcrumb .sep {
+      color: #a0aec0;
+    }
+
+    .inv-tagline {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--inv-terracotta);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .inv-tagline .tag-pipe {
+      font-size: 1.15rem;
+      font-weight: 400;
+      opacity: 0.85;
+    }
+    .inv-tagline .tag-hindi {
+      font-family: var(--ff-heading);
+      letter-spacing: 0.05em;
+      font-size: 1.05rem;
+    }
+    .inv-tagline .tag-dot {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    .inv-main-title {
+      font-family: var(--ff-heading);
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--inv-navy);
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+
+    .inv-title-line {
+      width: 54px;
+      height: 2.5px;
+      background: var(--inv-terracotta);
+      margin-bottom: 1.25rem;
+      border-radius: 2px;
+    }
+
+    .inv-subtitle {
+      font-family: var(--ff-heading);
+      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+      font-weight: 600;
+      color: var(--inv-gold);
+      margin-bottom: 2rem;
+      line-height: 1.4;
+      text-wrap: balance;
+    }
+
+    .inv-intro-card {
+      background: #fdfaf6;
+      border: 1px solid var(--inv-border);
+      border-radius: 16px;
+      padding: 1.85rem 2rem;
+      max-width: 780px;
+      box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: relative;
+    }
+    .inv-quote-strip {
+      background: #faf3e8;
+      border-left: 3.5px solid var(--inv-terracotta);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+    }
+    .inv-quote-strip__label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--inv-terracotta);
+      margin-bottom: 0.35rem;
+    }
+    .inv-quote-strip__text {
+      font-family: var(--ff-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.55;
+      margin: 0;
+      text-wrap: pretty;
+    }
+    .inv-intro-card__text {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: #4a5568;
+      margin: 0;
+      text-wrap: pretty;
+    }
+
+    /* ── Content Sections Layout ── */
+    .inv-body-section {
+      padding: 4.5rem 0 6rem;
+      background: var(--inv-bg);
+    }
+    .inv-container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .section-header-block {
+      margin-bottom: 2.5rem;
+    }
+    .section-header-block__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--inv-terracotta);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .section-header-block__title {
+      font-family: var(--ff-heading);
+      font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+      font-weight: 700;
+      color: var(--inv-navy);
+      line-height: 1.25;
+      margin: 0 0 0.5rem;
+      text-wrap: balance;
+    }
+    .section-header-block__desc {
+      color: #64748b;
+      font-size: 1.02rem;
+      max-width: 680px;
+      margin: 0;
+      text-wrap: pretty;
+    }
+
+    /* ── 3 Ways to Give Back Cards ── */
+    .ways-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 5.5rem;
+    }
+
+    .way-card {
+      background: var(--inv-card-bg);
+      border: 1px solid var(--inv-border);
+      border-radius: 20px;
+      padding: 2.25rem 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .way-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+      border-color: rgba(196, 91, 40, 0.4);
+    }
+    .way-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3.5px;
+      background: linear-gradient(90deg, var(--inv-terracotta) 0%, var(--inv-gold) 100%);
+    }
+
+    .way-card__top {
+      margin-bottom: 1.75rem;
+    }
+    .way-card__icon-box {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: #faf3e8;
+      border: 1px solid rgba(196, 91, 40, 0.2);
+      color: var(--inv-terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.35rem;
+      box-shadow: inset 0 0 0 2px #ffffff;
+    }
+    .way-card__icon-box svg {
+      width: 30px;
+      height: 30px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+    }
+    .way-card__title {
+      font-family: var(--ff-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--inv-navy);
+      margin: 0 0 0.75rem;
+      line-height: 1.3;
+      text-wrap: balance;
+    }
+    .way-card__desc {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: #4a5568;
+      margin: 0 0 1.25rem;
+      text-wrap: pretty;
+    }
+
+    .way-card__needs-box {
+      background: #faf6f0;
+      border: 1px solid rgba(235, 220, 208, 0.8);
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      margin-bottom: 1.5rem;
+    }
+    .way-card__needs-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--inv-terracotta);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .way-card__needs-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .way-card__needs-list li {
+      font-size: 0.88rem;
+      color: #384252;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.45;
+    }
+    .way-card__needs-list li svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--inv-terracotta);
+      fill: none;
+      stroke-width: 2.2;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .way-card__cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      width: 100%;
+      padding: 0.85rem 1.25rem;
+      min-height: 46px;
+      border-radius: 10px;
+      font-family: var(--ff-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #ffffff;
+      background: var(--inv-terracotta);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 3px 10px rgba(196, 91, 40, 0.25);
+    }
+    .way-card__cta:hover {
+      background: #a94b1f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(196, 91, 40, 0.35);
+    }
+    .way-card__cta:active {
+      transform: scale(0.96);
+    }
+    .way-card__cta:focus-visible {
+      outline: 2px solid var(--inv-navy);
+      outline-offset: 2px;
+    }
+
+    /* ── Volunteer Intake Form Section ── */
+    .volunteer-form-wrap {
+      background: #ffffff;
+      border: 1px solid var(--inv-border);
+      border-radius: 24px;
+      padding: 3.5rem 3rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+    .volunteer-form-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--inv-terracotta) 0%, var(--inv-gold) 100%);
+    }
+
+    .form-header-box {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3rem;
+    }
+    .form-header-box__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--inv-terracotta);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+    .form-header-box__title {
+      font-family: var(--ff-heading);
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--inv-navy);
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
+      text-wrap: balance;
+    }
+    .form-header-box__desc {
+      color: #64748b;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin: 0;
+      text-wrap: pretty;
+    }
+
+    .volunteer-form {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .form-label {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--inv-navy);
+    }
+    .form-label .required-mark {
+      color: var(--inv-terracotta);
+      margin-left: 0.2rem;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      border: 1px solid var(--inv-border);
+      border-radius: 10px;
+      font-size: 0.98rem;
+      color: var(--inv-navy);
+      background: #fdfbf7;
+      font-family: inherit;
+      transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .form-input:focus-visible,
+    .form-select:focus-visible,
+    .form-textarea:focus-visible {
+      outline: none;
+      border-color: var(--inv-terracotta);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(196, 91, 40, 0.15);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.6;
+    }
+
+    /* Checkbox Group Chips */
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.35rem;
+    }
+    .checkbox-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: #faf6f0;
+      border: 1px solid var(--inv-border);
+      border-radius: 8px;
+      padding: 0.65rem 0.85rem;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+    .checkbox-chip:hover {
+      background: #f5ede0;
+      border-color: rgba(196, 91, 40, 0.4);
+    }
+    .checkbox-chip input[type="checkbox"] {
+      width: 17px;
+      height: 17px;
+      accent-color: var(--inv-terracotta);
+      cursor: pointer;
+    }
+    .checkbox-chip span {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #384252;
+    }
+
+    .form-submit-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      background: var(--inv-terracotta);
+      color: #ffffff;
+      padding: 0.95rem 2rem;
+      min-height: 52px;
+      border-radius: 10px;
+      border: none;
+      font-family: var(--ff-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 14px rgba(196, 91, 40, 0.3);
+      width: 100%;
+    }
+    .form-submit-btn:hover {
+      background: #a94b1f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(196, 91, 40, 0.4);
+    }
+    .form-submit-btn:active {
+      transform: scale(0.96);
+    }
+    .form-submit-btn:focus-visible {
+      outline: 2px solid var(--inv-navy);
+      outline-offset: 2px;
+    }
+    .form-submit-btn svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .form-success-banner {
+      display: none;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      color: #065f46;
+      text-align: center;
+      margin-top: 1.5rem;
+      animation: fadeIn 0.3s ease;
+    }
+    .form-success-banner h4 {
+      font-family: var(--ff-heading);
+      font-size: 1.25rem;
+      margin: 0 0 0.4rem;
+      color: #047857;
+    }
+    .form-success-banner p {
+      font-size: 0.98rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      .volunteer-form-wrap {
+        padding: 2.5rem 1.5rem;
+      }
+      .checkbox-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__brand">
+      <div>
+        <div class="nav__brand-name">APSA</div>
+        <div class="nav__brand-sub">Arya Pratinidhi Sabha of America</div>
+      </div>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html" class="nav__link">Home</a></li>
+      
+      <li class="has-dropdown">
+        <a href="javascript:void(0)" class="nav__link active">About Us <svg class="dropdown-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dropdown-menu mega-menu-box">
+          <div class="mega-menu__body">
+            <div class="mega-column">
+              <h3 class="mega-column__title">Foundation & Vision</h3>
+              <div class="mega-column__line"></div>
+              <div class="mega-column__items">
+                <a href="about.html" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">Mission, Vision & History</span>
+                    <span class="mega-item__desc">Discover the founding principles and journey of APSA.</span>
+                  </div>
+                </a>
+                <a href="ten-niyams.html" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">Ten Niyams</span>
+                    <span class="mega-item__desc">The core guiding principles of the Arya Samaj.</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="mega-column">
+              <h3 class="mega-column__title">Leadership & Governance</h3>
+              <div class="mega-column__line"></div>
+              <div class="mega-column__items">
+                <a href="leadership.html" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">Executive Committee</span>
+                    <span class="mega-item__desc">Meet the dedicated officers guiding our mission.</span>
+                  </div>
+                </a>
+                <a href="governance.html" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><line x1="2" y1="20" x2="22" y2="20"/><line x1="6" y1="20" x2="6" y2="9"/><line x1="10" y1="20" x2="10" y2="9"/><line x1="14" y1="20" x2="14" y2="9"/><line x1="18" y1="20" x2="18" y2="9"/><polygon points="12 2 2 7 22 7 12 2"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">Constitution & Governance</span>
+                    <span class="mega-item__desc">Our organizational bylaws and commitment to transparency.</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="mega-column">
+              <h3 class="mega-column__title">Community Directory</h3>
+              <div class="mega-column__line"></div>
+              <div class="mega-column__items">
+                <a href="directory.html" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">Affiliated Directory</span>
+                    <span class="mega-item__desc">Find your local Arya Samaj chapter across North America.</span>
+                  </div>
+                </a>
+                <a href="get-involved.html" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">Get Involved</span>
+                    <span class="mega-item__desc">Connect with national committees and seva initiatives.</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown-footer">
+            <div class="dropdown-footer__left">
+              <span class="dropdown-footer__sanskrit">कृण्वन्तो विश्वमार्यम्</span>
+              <span class="dropdown-footer__sep">|</span>
+              <span class="dropdown-footer__text">Making the world noble through knowledge and deeds.</span>
+            </div>
+            <svg class="dropdown-footer__sunburst" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+              <circle cx="90" cy="90" r="30" stroke-width="1.5"/>
+              <circle cx="90" cy="90" r="50" stroke-width="1"/>
+              <circle cx="90" cy="90" r="70" stroke-width="0.75" stroke-dasharray="3 3"/>
+              <line x1="90" y1="20" x2="90" y2="55" stroke-width="1.2"/>
+              <line x1="20" y1="90" x2="55" y2="90" stroke-width="1.2"/>
+              <line x1="40" y1="40" x2="65" y2="65" stroke-width="1.2"/>
+              <line x1="28" y1="65" x2="58" y2="78" stroke-width="1"/>
+              <line x1="65" y1="28" x2="78" y2="58" stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+      </li>
+
+      <li class="has-dropdown">
+        <a href="javascript:void(0)" class="nav__link">Programs <svg class="dropdown-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dropdown-menu mega-menu-box">
+          <div class="mega-menu__body">
+            <div class="mega-column">
+              <h3 class="mega-column__title">Education & Youth</h3>
+              <div class="mega-column__line"></div>
+              <div class="mega-column__items">
+                <a href="programs.html#vss" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">Vedic Sanskriti Schools (VSS)</span>
+                    <span class="mega-item__desc">Structured value-based education for children and youth.</span>
+                  </div>
+                </a>
+                <a href="programs.html#vdat" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">Vedic Dharma Aptitude Test (VDAT)</span>
+                    <span class="mega-item__desc">National assessment fostering self-study and Vedic literacy.</span>
+                  </div>
+                </a>
+                <a href="programs.html#balwadi" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">Balwadi & Online Classes</span>
+                    <span class="mega-item__desc">Interactive moral storytelling and language learning.</span>
+                  </div>
+                </a>
+                <a href="programs.html#vayu" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2v20 M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">VAYU (Youth Umbrella)</span>
+                    <span class="mega-item__desc">Empowering young adults through leadership and discourse.</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="mega-column">
+              <h3 class="mega-column__title">Community & Wellness</h3>
+              <div class="mega-column__line"></div>
+              <div class="mega-column__items">
+                <a href="programs.html#village" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">Vedic Village</span>
+                    <span class="mega-item__desc">Eco-spiritual community living rooted in sustainable Dharma.</span>
+                  </div>
+                </a>
+                <a href="programs.html#mentalhealth" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">Mental Health Initiative</span>
+                    <span class="mega-item__desc">Integrating Vedic mindfulness and professional support.</span>
+                  </div>
+                </a>
+                <a href="programs.html#seniors" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">Vanaprastha (Seniors)</span>
+                    <span class="mega-item__desc">Vibrant fellowship and spiritual retreats for elder members.</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="mega-column">
+              <h3 class="mega-column__title">Global Seva</h3>
+              <div class="mega-column__line"></div>
+              <div class="mega-column__items">
+                <a href="programs.html#jeevanprabhat" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">Jeevan Prabhat</span>
+                    <span class="mega-item__desc">Comprehensive shelter and education for underprivileged children.</span>
+                  </div>
+                </a>
+                <a href="programs.html#disaster" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">Disaster Relief</span>
+                    <span class="mega-item__desc">Emergency humanitarian aid and long-term recovery support.</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown-footer">
+            <div class="dropdown-footer__left">
+              <span class="dropdown-footer__sanskrit">परोपकाराय पुण्याय</span>
+              <span class="dropdown-footer__sep">|</span>
+              <span class="dropdown-footer__text">Dedicated to selfless service and universal welfare.</span>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="resources.html" class="nav__link">Library</a></li>
+      <li><a href="events.html" class="nav__link">Events</a></li>
+      <li><a href="news.html" class="nav__link">News</a></li>
+      <li><a href="contact.html" class="nav__link">Contact</a></li>
+    </ul>
+
+    <div class="nav__actions">
+      <a href="directory.html" class="btn btn-outline btn-sm">Find a Samaj</a>
+      <a href="donate.html" class="btn btn-primary btn-sm">Donate</a>
+      <button class="nav__burger" id="burger-btn" aria-label="Toggle Navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer" id="nav-drawer">
+  <div class="drawer-group">
+    <a href="index.html" class="nav__link">Home</a>
+  </div>
+
+  <div class="drawer-group">
+    <a href="about.html" class="nav__link">About Us</a>
+    <div class="drawer-sub">
+      <a href="about.html">Mission, Vision & History</a>
+      <a href="ten-niyams.html">Ten Principles (Niyams)</a>
+      <a href="leadership.html">Executive Committee & Governance</a>
+      <a href="governance.html">Constitution & Governance</a>
+      <a href="directory.html">Affiliated Directory</a>
+      <a href="get-involved.html">Get Involved (Volunteer)</a>
+    </div>
+  </div>
+
+  <div class="drawer-group">
+    <a href="programs.html" class="nav__link">Programs</a>
+    <div class="drawer-sub">
+      <a href="programs.html#vss">Vedic Sanskriti School (VSS)</a>
+      <a href="programs.html#vdat">VDAT Assessment</a>
+      <a href="programs.html#vayu">VAYU Youth Movement</a>
+      <a href="programs.html#village">Vedic Village & Wellness</a>
+      <a href="programs.html#jeevanprabhat">Jeevan Prabhat (Seva)</a>
+      <a href="programs.html#disaster">Disaster Relief</a>
+    </div>
+  </div>
+
+  <div class="drawer-group">
+    <a href="resources.html" class="nav__link">Library & Resources</a>
+    <div class="drawer-sub">
+      <a href="resources.html#texts">Sacred Vedic Literature</a>
+      <a href="resources.html#satyarth">Satyarth Prakash Online</a>
+      <a href="resources.html#multimedia">Audio, Bhajans & Video</a>
+    </div>
+  </div>
+
+  <div class="drawer-group">
+    <a href="events.html" class="nav__link">Events & Sammelans</a>
+    <div class="drawer-sub">
+      <a href="events.html#mahasammelan">Annual Arya Mahasammelan</a>
+      <a href="events.html#webinars">Regional Webinars & Satsangs</a>
+    </div>
+  </div>
+
+  <div class="drawer-group">
+    <a href="news.html" class="nav__link">News & Publications</a>
+    <div class="drawer-sub">
+      <a href="news.html#navrang">Navrang Times Archive</a>
+      <a href="news.html#publications">APSA Publications</a>
+      <a href="news.html#press">Press Releases & Announcements</a>
+    </div>
+  </div>
+
+  <div class="drawer-group">
+    <a href="contact.html" class="nav__link">Contact Us</a>
+    <div class="drawer-sub">
+      <a href="contact.html#general">General Contact & Office Location</a>
+      <a href="contact.html#media">Media & Inquiries Form</a>
+    </div>
+  </div>
+
+  <a href="directory.html" class="btn btn-outline btn-sm">Find a Samaj</a>
+  <a href="donate.html" class="btn btn-primary btn-sm">Donate</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO SECTION
+     ═══════════════════════════════════════════════════════════ -->
+<section class="inv-hero-section">
+  <div class="container">
+    
+    <!-- Breadcrumb -->
+    <nav class="inv-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="about.html">About Us</a>
+      <span class="sep">/</span>
+      <span class="active-hindi">सेवा एवं सहभागिता</span>
+    </nav>
+
+    <!-- Tagline Badge -->
+    <div class="inv-tagline">
+      <span class="tag-pipe">|</span>
+      <span class="tag-hindi">सहभागिता</span>
+      <span class="tag-dot">•</span>
+      <span>VOLUNTEER & SEVA</span>
+    </div>
+
+    <!-- Main Heading -->
+    <h1 class="inv-main-title">Get Involved</h1>
+    
+    <!-- Saffron Underline Accent -->
+    <div class="inv-title-line"></div>
+
+    <!-- Subtitle -->
+    <div class="inv-subtitle">Connect with national committees and seva initiatives.</div>
+
+    <!-- Introduction Card with 6th Niyam Quote -->
+    <div class="inv-intro-card">
+      <div class="inv-quote-strip">
+        <div class="inv-quote-strip__label">The 6th Principle of Arya Samaj</div>
+        <blockquote class="inv-quote-strip__text">
+          “The prime object of the Arya Samaj is to do good to the world, i.e., to ameliorate physical, spiritual and social welfare of all.”
+        </blockquote>
+      </div>
+      <p class="inv-intro-card__text">
+        The Arya Pratinidhi Sabha America (APSA) is driven by the passion, intellect, and selfless service (Seva) of our community members. From organizing the annual Mahasammelan to leading disaster relief efforts, our work is only possible when we come together. Whether you can offer your professional skills, your time, or your financial support, there is a place for you to make a meaningful impact.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     WAYS TO GIVE BACK (3 ACTION CARDS)
+     ═══════════════════════════════════════════════════════════ -->
+<main class="inv-body-section">
+  <div class="container inv-container">
+
+    <section id="ways-to-help">
+      <div class="section-header-block">
+        <div class="section-header-block__tag">
+          <span>✿</span>
+          <span>Volunteer Pathways</span>
+        </div>
+        <h2 class="section-header-block__title">Ways to Give Back</h2>
+        <p class="section-header-block__desc">
+          Discover how your specialized skills, dedication, and compassionate spirit can elevate our community across North America.
+        </p>
+      </div>
+
+      <div class="ways-grid">
+        
+        <!-- 1. Join a National Committee -->
+        <article class="way-card">
+          <div class="way-card__top">
+            <div class="way-card__icon-box">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="way-card__title">1. Join a National Committee</h3>
+            <p class="way-card__desc">
+              APSA operates across North America through dedicated volunteer committees. We are always looking for passionate individuals to contribute their professional skills.
+            </p>
+            
+            <div class="way-card__needs-box">
+              <div class="way-card__needs-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Current Needs
+              </div>
+              <ul class="way-card__needs-list">
+                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> IT &amp; Website Management</li>
+                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Marketing &amp; Communications</li>
+                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Navrang Times Editorial Support</li>
+                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Event Planning (Mahasammelan)</li>
+                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Legal &amp; Governance</li>
+              </ul>
+            </div>
+          </div>
+
+          <button type="button" class="way-card__cta" onclick="preselectInterest('it')">
+            <span>Offer Your Skills</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </article>
+
+        <!-- 2. Seva & Humanitarian Relief -->
+        <article class="way-card">
+          <div class="way-card__top">
+            <div class="way-card__icon-box">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 class="way-card__title">2. Seva &amp; Humanitarian Relief</h3>
+            <p class="way-card__desc">
+              APSA has a long legacy of answering the call during global crises. Join our Seva network to help mobilize resources for natural disaster relief and support child welfare charities.
+            </p>
+            
+            <div class="way-card__needs-box">
+              <div class="way-card__needs-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Current Needs
+              </div>
+              <ul class="way-card__needs-list">
+                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Fundraising Coordinators</li>
+                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Local Relief Drive Organizers</li>
+                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> On-the-Ground Coordination</li>
+                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Jeevan Prabhat Center Support</li>
+              </ul>
+            </div>
+          </div>
+
+          <button type="button" class="way-card__cta" onclick="preselectInterest('seva')">
+            <span>Join the Seva Network</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </article>
+
+        <!-- 3. Mentor the Next Generation -->
+        <article class="way-card">
+          <div class="way-card__top">
+            <div class="way-card__icon-box">
+              <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3 class="way-card__title">3. Mentor the Next Generation</h3>
+            <p class="way-card__desc">
+              Help us bridge timeless Vedic wisdom with modern life by empowering our youth. Our educational initiatives are constantly growing and require dedicated mentors and teachers.
+            </p>
+            
+            <div class="way-card__needs-box">
+              <div class="way-card__needs-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Current Needs
+              </div>
+              <ul class="way-card__needs-list">
+                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Vedic Sanskriti School (VSS) Coordinators</li>
+                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> VDAT National Exam Proctors</li>
+                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> VAYU Youth Camp Counselors</li>
+                <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Balwadi Online Guides</li>
+              </ul>
+            </div>
+          </div>
+
+          <button type="button" class="way-card__cta" onclick="preselectInterest('mentorship')">
+            <span>Become a Mentor</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         VOLUNTEER INTAKE FORM
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="volunteer-form-wrap" id="volunteer-form-section">
+      <div class="form-header-box">
+        <div class="form-header-box__tag">
+          <span>❖</span>
+          <span>Get In Touch</span>
+        </div>
+        <h2 class="form-header-box__title">Ready to make the world noble? Let’s get to work.</h2>
+        <p class="form-header-box__desc">
+          Fill out the brief form below, and an APSA committee member will reach out to connect you with the right initiative.
+        </p>
+      </div>
+
+      <form id="volunteer-intake-form" class="volunteer-form" onsubmit="handleVolunteerSubmit(event)">
+        
+        <!-- Name & Email -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="vol-name" class="form-label">Full Name <span class="required-mark">*</span></label>
+            <input type="text" id="vol-name" class="form-input" required placeholder="e.g., Arya Sharma" autocomplete="name" />
+          </div>
+          
+          <div class="form-group">
+            <label for="vol-email" class="form-label">Email Address <span class="required-mark">*</span></label>
+            <input type="email" id="vol-email" class="form-input" required placeholder="e.g., arya.sharma@example.com" autocomplete="email" />
+          </div>
+        </div>
+
+        <!-- Phone & Chapter Dropdown -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="vol-phone" class="form-label">Phone Number</label>
+            <input type="tel" id="vol-phone" class="form-input" placeholder="e.g., (555) 000-0000" autocomplete="tel" />
+          </div>
+          
+          <div class="form-group">
+            <label for="vol-chapter" class="form-label">Your Local Arya Samaj (if applicable)</label>
+            <select id="vol-chapter" class="form-select">
+              <option value="">-- Select Your Local Chapter --</option>
+              <option value="California - SoCal">Arya Samaj Southern California (CA)</option>
+              <option value="California - Silicon Valley">Arya Samaj of Silicon Valley (CA)</option>
+              <option value="California - San Francisco">Arya Samaj San Francisco Bay Area (CA)</option>
+              <option value="Texas - Houston">Arya Samaj Greater Houston (TX)</option>
+              <option value="Texas - DFW">Arya Samaj of DFW (TX)</option>
+              <option value="Illinois - Chicago">Arya Samaj of Chicagoland (IL)</option>
+              <option value="Michigan - Detroit">Arya Samaj of Michigan / Detroit (MI)</option>
+              <option value="New York - Garden City">Arya Samaj of Long Island (NY)</option>
+              <option value="New York - Queens">Arya Samaj USA, Queens (NY)</option>
+              <option value="New Jersey - Central">Arya Samaj of Central New Jersey (NJ)</option>
+              <option value="New Jersey - Edison">Arya Samaj of New Jersey, Edison (NJ)</option>
+              <option value="Florida - Central">Arya Samaj Central Florida (FL)</option>
+              <option value="Florida - South">Arya Samaj of South Florida (FL)</option>
+              <option value="Georgia - Atlanta">Arya Samaj of Atlanta (GA)</option>
+              <option value="Ohio - Columbus">Arya Samaj of Central Ohio (OH)</option>
+              <option value="Ontario - Toronto">Arya Samaj Markham / Toronto (Canada)</option>
+              <option value="Other">Not Affiliated / Other Location</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Checkboxes: How would you like to help? -->
+        <div class="form-group">
+          <label class="form-label">How would you like to help? <span class="required-mark">*</span></label>
+          <div class="checkbox-grid">
+            <label class="checkbox-chip">
+              <input type="checkbox" name="interest" value="it" id="chk-it" />
+              <span>IT &amp; Website Management</span>
+            </label>
+            <label class="checkbox-chip">
+              <input type="checkbox" name="interest" value="marketing" id="chk-marketing" />
+              <span>Marketing &amp; Social Media</span>
+            </label>
+            <label class="checkbox-chip">
+              <input type="checkbox" name="interest" value="events" id="chk-events" />
+              <span>Event Planning (Mahasammelan)</span>
+            </label>
+            <label class="checkbox-chip">
+              <input type="checkbox" name="interest" value="mentorship" id="chk-mentorship" />
+              <span>Teaching &amp; Youth Mentoring</span>
+            </label>
+            <label class="checkbox-chip">
+              <input type="checkbox" name="interest" value="seva" id="chk-seva" />
+              <span>Disaster Relief &amp; Seva</span>
+            </label>
+            <label class="checkbox-chip">
+              <input type="checkbox" name="interest" value="writing" id="chk-writing" />
+              <span>Writing &amp; Navrang Times</span>
+            </label>
+            <label class="checkbox-chip">
+              <input type="checkbox" name="interest" value="governance" id="chk-governance" />
+              <span>Legal &amp; Governance</span>
+            </label>
+            <label class="checkbox-chip">
+              <input type="checkbox" name="interest" value="other" id="chk-other" />
+              <span>Other / General Volunteering</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Professional Background / Skills Textarea -->
+        <div class="form-group">
+          <label for="vol-skills" class="form-label">Briefly tell us about your professional background or skills</label>
+          <textarea id="vol-skills" class="form-textarea" placeholder="Share your background, profession, areas of expertise, or specific ways you would love to contribute to our mission..."></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="form-submit-btn" id="submit-btn">
+          <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <span>Sign Up to Volunteer</span>
+        </button>
+
+        <!-- Success Feedback Banner -->
+        <div class="form-success-banner" id="form-success">
+          <h4>Dhanyawad! Your Volunteer Sign-Up Has Been Received.</h4>
+          <p>An APSA committee coordinator will review your profile and reach out via email shortly to welcome you and connect you with the appropriate initiative.</p>
+        </div>
+
+      </form>
+    </section>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__top" style="grid-template-columns: 1fr 1fr; gap:4rem;">
+      <div>
+        <div class="footer__col-title">Subscribe for Updates</div>
+        <p class="footer__tagline" style="margin-bottom:1rem">
+          Get the latest event announcements, weekly Zoom links, and new issues of Navrang Times delivered to your inbox.
+        </p>
+        <div class="footer__newsletter">
+          <input type="email" placeholder="Enter your email address" aria-label="Subscribe to newsletter" />
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer__col-title">Quick Links</div>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About APSA</a></li>
+          <li><a href="ten-niyams.html" class="footer__link">The 10 Principles</a></li>
+          <li><a href="leadership.html" class="footer__link">Leadership</a></li>
+          <li><a href="governance.html" class="footer__link">Constitution &amp; Governance</a></li>
+          <li><a href="directory.html" class="footer__link">Affiliated Directory</a></li>
+          <li><a href="get-involved.html" class="footer__link">Get Involved</a></li>
+          <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom" style="justify-content:center; padding: 2rem 0; flex-direction:column; align-items:center; gap:0.5rem;">
+      <span style="font-family:var(--ff-heading); color:var(--gold-light); font-size:0.85rem; letter-spacing:0.1em;">कृण्वन्तो विश्वमार्यम् &nbsp;|&nbsp; Making the world noble through knowledge and deeds.</span>
+      <span>Copyright &copy; 2026 Arya Pratinidhi Sabha America (APSA). All Rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js?v=8"></script>
+<script>
+  // Helper to pre-select checkbox & smooth scroll to form
+  function preselectInterest(interestKey) {
+    const targetCheckbox = document.getElementById(`chk-${interestKey}`);
+    if (targetCheckbox) {
+      targetCheckbox.checked = true;
+    }
+    const formSection = document.getElementById('volunteer-form-section');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth' });
+      const nameInput = document.getElementById('vol-name');
+      if (nameInput) setTimeout(() => nameInput.focus(), 600);
+    }
+  }
+
+  // Handle Form Submission with client-side feedback
+  function handleVolunteerSubmit(e) {
+    e.preventDefault();
+    const submitBtn = document.getElementById('submit-btn');
+    const successBanner = document.getElementById('form-success');
+    
+    // Check at least one checkbox is checked
+    const checkboxes = document.querySelectorAll('input[name="interest"]:checked');
+    if (checkboxes.length === 0) {
+      alert('Please select at least one area where you would like to help.');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `
+      <svg class="spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10"/></svg>
+      <span>Submitting Your Details...</span>
+    `;
+
+    setTimeout(() => {
+      submitBtn.style.display = 'none';
+      successBanner.style.display = 'block';
+      successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 800);
+  }
+</script>
+</body>
+</html>
