@@ -3,10 +3,385 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>APSA — Arya Pratinidhi Sabha of America</title>
-  <meta name="description" content="Arya Pratinidhi Sabha of America — Rooted in the eternal wisdom of the Vedas, we bridge authentic spiritual heritage with modern North American life." />
+  <title>The Ten Principles (Niyams) of Arya Samaj — APSA</title>
+  <meta name="description" content="Explore the Ten Principles (Niyams) of Arya Samaj established by Maharshi Dayanand Saraswati, complete with in-depth philosophical commentary and practical ethical guidelines." />
   <link rel="stylesheet" href="css/style.css?v=8" />
-  <link rel="stylesheet" href="css/home.css?v=14" />
+  <style>
+    /* ── Ten Niyams Dedicated Page Styles ── */
+    .niyams-hero {
+      background: linear-gradient(135deg, #0d1e38 0%, #162f55 55%, #24497d 100%);
+      color: #ffffff;
+      padding: 5rem 0 4.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .niyams-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 85% 20%, rgba(224, 109, 59, 0.15), transparent 45%),
+                  radial-gradient(circle at 15% 85%, rgba(212, 160, 23, 0.12), transparent 40%);
+      pointer-events: none;
+    }
+    .niyams-hero__watermark {
+      position: absolute;
+      right: -30px;
+      bottom: -60px;
+      font-size: 16rem;
+      color: rgba(255, 255, 255, 0.03);
+      font-family: var(--ff-heading);
+      font-weight: 800;
+      pointer-events: none;
+      user-select: none;
+    }
+    .niyams-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(224, 109, 59, 0.18);
+      border: 1px solid rgba(224, 109, 59, 0.4);
+      color: #f7a97b;
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .niyams-hero__title {
+      font-family: var(--ff-heading);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .niyams-hero__subtitle {
+      font-family: var(--ff-heading);
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+      color: #e5b068;
+      margin-bottom: 1.75rem;
+      font-weight: 500;
+    }
+    .niyams-hero__intro-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      max-width: 820px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* ── Sticky Quick Jump Pill Bar ── */
+    .niyams-nav-bar {
+      position: sticky;
+      top: var(--nav-height, 70px);
+      z-index: 100;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      padding: 0.75rem 0;
+      transition: all 0.25s ease;
+    }
+    .niyams-nav-bar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .niyams-pills {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .niyams-pills::-webkit-scrollbar { display: none; }
+    .niyam-pill-btn {
+      flex-shrink: 0;
+      font-family: var(--ff-heading);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      background: #f4efe8;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .niyam-pill-btn:hover,
+    .niyam-pill-btn.active {
+      background: var(--saffron);
+      color: #ffffff;
+      border-color: var(--saffron);
+    }
+    .niyams-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+    .control-toggle-btn {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--blue);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .control-toggle-btn:hover {
+      background: var(--cream);
+      border-color: var(--blue);
+    }
+
+    /* ── Main Container & Layout ── */
+    .niyams-content-section {
+      padding: 4rem 0 6rem;
+      background: #fbf9f5;
+    }
+    .niyams-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ── Single Principle Card ── */
+    .niyam-card-detailed {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 15px -2px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+      transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+      scroll-margin-top: 140px;
+    }
+    .niyam-card-detailed:hover {
+      box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.08);
+      border-color: rgba(224, 109, 59, 0.3);
+    }
+
+    /* Header / Accordion trigger */
+    .niyam-card__header-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      background: #ffffff;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.2s ease;
+      gap: 1.25rem;
+    }
+    .niyam-card__header-btn:hover {
+      background: #fcfbfa;
+    }
+    .niyam-card__title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex: 1;
+    }
+    .niyam-badge {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      background: #fdf5eb;
+      border: 1px solid rgba(224, 109, 59, 0.25);
+      color: var(--saffron-dark);
+      font-family: var(--ff-heading);
+      font-weight: 700;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .niyam-card-detailed.is-open .niyam-badge {
+      background: var(--saffron);
+      color: #ffffff;
+      border-color: var(--saffron);
+    }
+    .niyam-title-text {
+      font-family: var(--ff-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    .niyam-chevron {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f4efe8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--charcoal);
+      flex-shrink: 0;
+      transition: transform 0.3s ease, background 0.2s ease;
+    }
+    .niyam-chevron svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      transition: transform 0.3s ease;
+    }
+    .niyam-card-detailed.is-open .niyam-chevron {
+      background: var(--blue);
+      color: #ffffff;
+    }
+    .niyam-card-detailed.is-open .niyam-chevron svg {
+      transform: rotate(180deg);
+    }
+
+    /* Accordion Body */
+    .niyam-card__body {
+      padding: 0 2rem 2.25rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      display: block;
+    }
+    .niyam-card-detailed:not(.is-open) .niyam-card__body {
+      display: none;
+    }
+
+    /* Stylized Principle Quote Box */
+    .niyam-principle-quote {
+      margin-top: 1.5rem;
+      position: relative;
+      background: #fdfaf6;
+      border-left: 4px solid var(--saffron);
+      border-radius: 0 12px 12px 0;
+      padding: 1.35rem 1.65rem 1.35rem 1.75rem;
+      border-top: 1px solid rgba(224, 109, 59, 0.12);
+      border-right: 1px solid rgba(224, 109, 59, 0.12);
+      border-bottom: 1px solid rgba(224, 109, 59, 0.12);
+    }
+    .niyam-principle-quote__label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--saffron-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .niyam-principle-quote__text {
+      font-family: var(--ff-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1a2f4c;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* Commentary Section */
+    .niyam-commentary-wrap {
+      margin-top: 1.75rem;
+    }
+    .niyam-commentary__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .niyam-commentary__tag::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--saffron);
+    }
+    .niyam-commentary__text {
+      font-size: 1.02rem;
+      line-height: 1.78;
+      color: #384252;
+      margin: 0;
+    }
+
+    /* Bottom Next Steps CTA */
+    .niyams-next-cta {
+      margin-top: 4rem;
+      background: linear-gradient(135deg, #102340 0%, #1a3a6b 100%);
+      border-radius: 20px;
+      padding: 3.5rem 3rem;
+      color: #ffffff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .niyams-next-cta::before {
+      content: 'कृण्वन्तो विश्वमार्यम्';
+      position: absolute;
+      top: -20px;
+      right: 20px;
+      font-size: 5rem;
+      font-family: var(--ff-heading);
+      color: rgba(255, 255, 255, 0.04);
+      pointer-events: none;
+      font-weight: 800;
+    }
+    .niyams-next-cta__title {
+      font-family: var(--ff-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+    .niyams-next-cta__text {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      line-height: 1.65;
+    }
+    .niyams-next-cta__actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .niyams-hero { padding: 3.5rem 0 3rem; }
+      .niyam-card__header-btn { padding: 1.25rem 1.25rem; gap: 0.75rem; }
+      .niyam-card__title-wrap { gap: 0.85rem; }
+      .niyam-badge { width: 40px; height: 40px; font-size: 1.1rem; }
+      .niyam-title-text { font-size: 1.1rem; }
+      .niyam-card__body { padding: 0 1.25rem 1.75rem; }
+      .niyam-principle-quote { padding: 1.1rem 1.25rem; }
+      .niyam-principle-quote__text { font-size: 1.05rem; }
+      .niyams-next-cta { padding: 2.5rem 1.5rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -23,7 +398,7 @@
       <li><a href="index.html" class="nav__link">Home</a></li>
       
       <li class="has-dropdown">
-        <a href="javascript:void(0)" class="nav__link">About Us <svg class="dropdown-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+        <a href="javascript:void(0)" class="nav__link active">About Us <svg class="dropdown-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="dropdown-menu mega-menu-box">
           <div class="mega-menu__body">
             <div class="mega-column">
@@ -134,35 +509,35 @@
                     <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
                   </div>
                   <div class="mega-item__content">
-                    <span class="mega-item__title">Vedic Sanskriti Schools</span>
-                    <span class="mega-item__desc">Preserving heritage for the next generation.</span>
+                    <span class="mega-item__title">Vedic Sanskriti Schools (VSS)</span>
+                    <span class="mega-item__desc">Structured value-based education for children and youth.</span>
                   </div>
                 </a>
                 <a href="programs.html#vdat" class="mega-item">
                   <div class="mega-item__icon">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
                   </div>
                   <div class="mega-item__content">
-                    <span class="mega-item__title">Vedic Dharma Aptitude Test</span>
-                    <span class="mega-item__desc">Annual test to evaluate Vedic knowledge.</span>
+                    <span class="mega-item__title">Vedic Dharma Aptitude Test (VDAT)</span>
+                    <span class="mega-item__desc">National assessment fostering self-study and Vedic literacy.</span>
                   </div>
                 </a>
                 <a href="programs.html#balwadi" class="mega-item">
                   <div class="mega-item__icon">
-                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                   </div>
                   <div class="mega-item__content">
-                    <span class="mega-item__title">Balwadi & Online Programs</span>
-                    <span class="mega-item__desc">Early childhood and remote learning.</span>
+                    <span class="mega-item__title">Balwadi & Online Classes</span>
+                    <span class="mega-item__desc">Interactive moral storytelling and language learning.</span>
                   </div>
                 </a>
                 <a href="programs.html#vayu" class="mega-item">
                   <div class="mega-item__icon">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2v20 M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                   </div>
                   <div class="mega-item__content">
-                    <span class="mega-item__title">VAYU</span>
-                    <span class="mega-item__desc">Vedic Arya Youth Umbrella initiatives.</span>
+                    <span class="mega-item__title">VAYU (Youth Umbrella)</span>
+                    <span class="mega-item__desc">Empowering young adults through leadership and discourse.</span>
                   </div>
                 </a>
               </div>
@@ -178,16 +553,16 @@
                   </div>
                   <div class="mega-item__content">
                     <span class="mega-item__title">Vedic Village</span>
-                    <span class="mega-item__desc">A sanctuary for spiritual and communal living.</span>
+                    <span class="mega-item__desc">Eco-spiritual community living rooted in sustainable Dharma.</span>
                   </div>
                 </a>
-                <a href="programs.html#aham" class="mega-item">
+                <a href="programs.html#mentalhealth" class="mega-item">
                   <div class="mega-item__icon">
                     <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                   </div>
                   <div class="mega-item__content">
-                    <span class="mega-item__title">AHAM</span>
-                    <span class="mega-item__desc">Mental health awareness and support.</span>
+                    <span class="mega-item__title">AHAM (Mental Health)</span>
+                    <span class="mega-item__desc">Compassionate emotional well-being and mindful support.</span>
                   </div>
                 </a>
                 <a href="programs.html#relief" class="mega-item">
@@ -196,16 +571,16 @@
                   </div>
                   <div class="mega-item__content">
                     <span class="mega-item__title">Natural Disaster Relief</span>
-                    <span class="mega-item__desc">Seva and aid for communities in need.</span>
+                    <span class="mega-item__desc">Immediate humanitarian aid and grassroots seva in crises.</span>
                   </div>
                 </a>
                 <a href="programs.html#paropkaar" class="mega-item">
                   <div class="mega-item__icon">
-                    <svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
                   </div>
                   <div class="mega-item__content">
                     <span class="mega-item__title">Paropkaar Foundation</span>
-                    <span class="mega-item__desc">Philanthropic initiatives for the greater good.</span>
+                    <span class="mega-item__desc">Philanthropic fund dedicated to global charitable causes.</span>
                   </div>
                 </a>
               </div>
@@ -220,35 +595,35 @@
                     <svg viewBox="0 0 24 24"><line x1="2" y1="20" x2="22" y2="20"/><line x1="6" y1="20" x2="6" y2="9"/><line x1="10" y1="20" x2="10" y2="9"/><line x1="14" y1="20" x2="14" y2="9"/><line x1="18" y1="20" x2="18" y2="9"/><polygon points="12 2 2 7 22 7 12 2"/></svg>
                   </div>
                   <div class="mega-item__content">
-                    <span class="mega-item__title">Establishing a New Samaj</span>
-                    <span class="mega-item__desc">Guidelines for starting a local chapter.</span>
+                    <span class="mega-item__title">Establish a New Arya Samaj</span>
+                    <span class="mega-item__desc">Step-by-step guidance for founding a local chapter.</span>
                   </div>
                 </a>
                 <a href="programs.html#apn" class="mega-item">
                   <div class="mega-item__icon">
-                    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    <svg viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                   </div>
                   <div class="mega-item__content">
                     <span class="mega-item__title">Arya Professional Network</span>
-                    <span class="mega-item__desc">Connecting professionals globally.</span>
+                    <span class="mega-item__desc">Career mentorship and professional collaboration.</span>
                   </div>
                 </a>
                 <a href="programs.html#amf" class="mega-item">
                   <div class="mega-item__icon">
-                    <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                    <svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="6"/><circle cx="15" cy="15" r="6"/></svg>
                   </div>
                   <div class="mega-item__content">
                     <span class="mega-item__title">Arya Matrimony Forum</span>
-                    <span class="mega-item__desc">A platform for meaningful Vedic connections.</span>
+                    <span class="mega-item__desc">Connecting Vedic individuals and families with shared values.</span>
                   </div>
                 </a>
                 <a href="programs.html#vpt" class="mega-item">
                   <div class="mega-item__icon">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
                   </div>
                   <div class="mega-item__content">
                     <span class="mega-item__title">Vedic Purohit Training</span>
-                    <span class="mega-item__desc">Training the next generation of scholars.</span>
+                    <span class="mega-item__desc">Rigorous training in Vedic rituals, Sanskrit, and philosophy.</span>
                   </div>
                 </a>
               </div>
@@ -279,24 +654,24 @@
         <div class="dropdown-menu mega-menu-box">
           <div class="mega-menu__body">
             <div class="mega-column">
-              <h3 class="mega-column__title">Sacred Literature</h3>
+              <h3 class="mega-column__title">Texts & Philosophy</h3>
               <div class="mega-column__line"></div>
               <div class="mega-column__items">
                 <a href="resources.html#library" class="mega-item">
                   <div class="mega-item__icon">
-                    <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                   </div>
                   <div class="mega-item__content">
-                    <span class="mega-item__title">Digital Library</span>
-                    <span class="mega-item__desc">Explore our collection of Vedas and sacred texts.</span>
+                    <span class="mega-item__title">Digital Vedic Library</span>
+                    <span class="mega-item__desc">Read the four Vedas, Satyarth Prakash, and Upanishads.</span>
                   </div>
                 </a>
                 <a href="resources.html#audio" class="mega-item">
                   <div class="mega-item__icon">
-                    <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                   </div>
                   <div class="mega-item__content">
-                    <span class="mega-item__title">Audio-Visual Recitations</span>
+                    <span class="mega-item__title">Audio & Video Archive</span>
                     <span class="mega-item__desc">Recordings of Sandhya, Yajnas, and Vedic chants.</span>
                   </div>
                 </a>
@@ -307,47 +682,47 @@
               <h3 class="mega-column__title">Daily Practices</h3>
               <div class="mega-column__line"></div>
               <div class="mega-column__items">
-                <a href="resources.html#practices" class="mega-item">
+                <a href="resources.html#sandhya" class="mega-item">
                   <div class="mega-item__icon">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                   </div>
                   <div class="mega-item__content">
                     <span class="mega-item__title">Sandhya & Yajna Guides</span>
-                    <span class="mega-item__desc">Step-by-step guides for daily rituals and prayers.</span>
+                    <span class="mega-item__desc">Step-by-step instructions for daily Vedic prayer.</span>
                   </div>
                 </a>
-                <a href="resources.html#mantras" class="mega-item">
+                <a href="resources.html#hawan" class="mega-item">
                   <div class="mega-item__icon">
-                    <svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
                   </div>
                   <div class="mega-item__content">
-                    <span class="mega-item__title">Daily Mantras & Meaning</span>
-                    <span class="mega-item__desc">Deep spiritual insights into Vedic verses.</span>
+                    <span class="mega-item__title">Hawan Mantras</span>
+                    <span class="mega-item__desc">Complete mantras with transliteration and English meaning.</span>
                   </div>
                 </a>
               </div>
             </div>
 
             <div class="mega-column">
-              <h3 class="mega-column__title">Ceremonial Services</h3>
+              <h3 class="mega-column__title">Rituals & Services</h3>
               <div class="mega-column__line"></div>
               <div class="mega-column__items">
+                <a href="resources.html#sanskar" class="mega-item">
+                  <div class="mega-item__icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                  </div>
+                  <div class="mega-item__content">
+                    <span class="mega-item__title">16 Sanskar Guides</span>
+                    <span class="mega-item__desc">Vedic rites of passage from birth to Vivah and beyond.</span>
+                  </div>
+                </a>
                 <a href="resources.html#purohit" class="mega-item">
                   <div class="mega-item__icon">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
                   </div>
                   <div class="mega-item__content">
                     <span class="mega-item__title">Purohit Services</span>
-                    <span class="mega-item__desc">Request qualified Purohits for family ceremonies.</span>
-                  </div>
-                </a>
-                <a href="resources.html#sanskaar" class="mega-item">
-                  <div class="mega-item__icon">
-                    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                  </div>
-                  <div class="mega-item__content">
-                    <span class="mega-item__title">Sanskaar Guidance</span>
-                    <span class="mega-item__desc">Guidelines for traditional Vedic rites of passage.</span>
+                    <span class="mega-item__desc">Book an accredited Vedic priest for ceremonies.</span>
                   </div>
                 </a>
               </div>
@@ -752,526 +1127,377 @@
   <a href="donate.html" class="btn btn-primary btn-sm">Donate</a>
 </div>
 
-
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     HERO CAROUSEL
-     ═══════════════════════════════════════════════════════════ -->
-<section class="hero" aria-label="Hero banner">
-  <div class="hero__slides">
-
-    <!-- Slide 1: The Core Philosophy -->
-    <div class="hero__slide hero__slide--1 active" style="background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.5)), url('images/hero1.png') center/cover;">
-      <div class="container hero__content">
-        <div class="hero__eyebrow">कृण्वन्तो विश्वमार्यम् &nbsp;|&nbsp; Krinvanto Vishvam Aryam</div>
-        <h1 class="hero__title">Make the Universe <span>Noble</span>.</h1>
-        <p class="hero__body">
-          Welcome to Arya Pratinidhi Sabha America. Rooted in the eternal wisdom of the Vedas, we bridge authentic spiritual heritage with modern North American life. A community built on intellect, logical spirituality, and the rejection of blind faith.
-        </p>
-        <div class="hero__actions">
-          <a href="about.html" class="btn btn-primary btn-lg">Explore Our Mission</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 2: Youth & Sanskar -->
-    <div class="hero__slide hero__slide--2" style="background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.5)), url('images/hero2.png') center/cover;">
-      <div class="container hero__content">
-        <div class="hero__eyebrow">Promoting Vidya, Dispelling Avidya</div>
-        <h1 class="hero__title">Rooted in Truth. <span>Ready for the World</span>.</h1>
-        <p class="hero__body">
-          Through our Vedic Sanskriti Schools (VSS) and the Vedic Dharma Aptitude Test (VDAT), we empower the next generation. We build proud ambassadors of Sanatana Dharma equipped with moral clarity and cultural confidence.
-        </p>
-        <div class="hero__actions">
-          <a href="programs.html#youth" class="btn btn-primary btn-lg">Discover Youth Programs</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 3: The APSA Footprint -->
-    <div class="hero__slide hero__slide--3" style="background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.5)), url('images/hero3.png') center/cover;">
-      <div class="container hero__content">
-        <div class="hero__eyebrow">Uniting North America Since 1988</div>
-        <h1 class="hero__title">A Continental <span>Family</span> of Action.</h1>
-        <p class="hero__body">
-          From local weekly Havans to global disaster relief, our affiliated Samajs are united by a single purpose: to promote the physical, spiritual, and social well-being of all humanity.
-        </p>
-        <div class="hero__actions">
-          <a href="about.html#directory" class="btn btn-primary btn-lg">Find Your Local Samaj</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="hero__zone hero__zone--prev" aria-label="Previous slide"></div>
-  <div class="hero__zone hero__zone--next" aria-label="Next slide"></div>
-
-  <div class="hero__controls" role="tablist" aria-label="Carousel controls">
-    <button class="hero__dot active" aria-label="Slide 1"></button>
-    <button class="hero__dot" aria-label="Slide 2"></button>
-    <button class="hero__dot" aria-label="Slide 3"></button>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     QUICK ACTION BAR
-     ═══════════════════════════════════════════════════════════ -->
-<section class="quick-links">
+<!-- PAGE HERO -->
+<section class="niyams-hero">
   <div class="container">
-    <div class="quick-links__grid">
-      <a href="events.html#webinars" class="ql-item">
-        <div class="ql-item__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
-        </div>
-        <div>
-          <div class="ql-item__title">Daily &amp; Weekly Sessions</div>
-          <div class="ql-item__text">Dainik Sandhya &amp; Swadhyaya (Mon–Fri @ 6:00 PM EST), Vedic Satsang &amp; Agnihotra (Saturdays @ 11:00 AM EST), and Rigvedadi Bhashya Bhumika (Wednesdays @ 8:00 PM EST).</div>
-        </div>
-      </a>
-      <a href="#samaj-map" class="ql-item">
-        <div class="ql-item__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        </div>
-        <div>
-          <div class="ql-item__title">Connect Locally</div>
-          <div class="ql-item__text">Universal brotherhood starts at home. Find an affiliated Arya Samaj near you.</div>
-        </div>
-      </a>
-      <a href="resources.html" class="ql-item">
-        <div class="ql-item__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-        </div>
-        <div>
-          <div class="ql-item__title">Digital Vedic Library</div>
-          <div class="ql-item__text">Download daily prayers, mantras, and philosophical treatises by Maharishi Dayanand.</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     HERITAGE & NIYAMS (Split Layout)
-     ═══════════════════════════════════════════════════════════ -->
-<section class="niyams-split" id="about-section">
-  <div class="container niyams-split__inner reveal">
-    
-    <!-- Left: Intro & Image -->
-    <div class="niyams-split__intro">
-      <h2 class="about-intro__title">Spirituality grounded in truth and action</h2>
-      <p class="about-intro__body" style="margin-bottom: 2.5rem; max-width: 450px;">
-        The Arya Samaj does not just study the Vedas — we apply their universal truths to solve modern problems. Explore the ten principles that guide every member.
-      </p>
-      <div class="niyams-split__image-wrapper">
-        <img src="images/saraswati_new.png" alt="Maharishi Dayanand Saraswati" class="niyams-split__image" />
-      </div>
-    </div>
-
-    <!-- Right: Vertical Accordion -->
-    <div class="niyams-split__accordion-container">
-      <div class="niyams-split__accordion">
-        
-        
-        
-        <div class="niyam-v-item" data-niyam>
-          <button class="niyam-v-item__header" aria-expanded="false">
-            <span class="niyam-v-item__num">०१</span>
-            <div class="niyam-v-item__title-group">
-              <span class="niyam-v-item__title">God is the primary source of all true knowledge</span>
-            </div>
-            <span class="niyam-v-item__icon"></span>
-          </button>
-          <div class="niyam-v-item__detail">
-            <div class="niyam-v-item__detail-inner">
-              <p>God is the primary source of all true knowledge and of all that is known by its means. He is the efficient cause of the universe, all-knowing, eternal, and without form.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="niyam-v-item" data-niyam>
-          <button class="niyam-v-item__header" aria-expanded="false">
-            <span class="niyam-v-item__num">०२</span>
-            <div class="niyam-v-item__title-group">
-              <span class="niyam-v-item__title">God is existent, conscious and all-blissful</span>
-            </div>
-            <span class="niyam-v-item__icon"></span>
-          </button>
-          <div class="niyam-v-item__detail">
-            <div class="niyam-v-item__detail-inner">
-              <p>God is existent, conscious and all-blissful. He is formless, omnipotent, just, merciful, unborn, infinite, unchangeable, beginningless, incomparable, the support of all, the lord of all, all-pervading, omniscient, imperishable, immortal, exempt from fear, eternal, holy and the maker of the universe. To Him alone worship is due.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="niyam-v-item" data-niyam>
-          <button class="niyam-v-item__header" aria-expanded="false">
-            <span class="niyam-v-item__num">०३</span>
-            <div class="niyam-v-item__title-group">
-              <span class="niyam-v-item__title">The Vedas are the books of true knowledge</span>
-            </div>
-            <span class="niyam-v-item__icon"></span>
-          </button>
-          <div class="niyam-v-item__detail">
-            <div class="niyam-v-item__detail-inner">
-              <p>The Vedas are the scriptures of true knowledge. It is the paramount duty of every Arya to read them, to teach them to others, to hear them, and to recite them to others.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="niyam-v-item" data-niyam>
-          <button class="niyam-v-item__header" aria-expanded="false">
-            <span class="niyam-v-item__num">०४</span>
-            <div class="niyam-v-item__title-group">
-              <span class="niyam-v-item__title">Always be ready to accept truth and renounce untruth</span>
-            </div>
-            <span class="niyam-v-item__icon"></span>
-          </button>
-          <div class="niyam-v-item__detail">
-            <div class="niyam-v-item__detail-inner">
-              <p>One should always be ready to accept truth and renounce untruth. All actions should be performed in conformity with Dharma, that is, after due reflection upon what is right and wrong.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="niyam-v-item" data-niyam>
-          <button class="niyam-v-item__header" aria-expanded="false">
-            <span class="niyam-v-item__num">०५</span>
-            <div class="niyam-v-item__title-group">
-              <span class="niyam-v-item__title">All acts should conform to Dharma</span>
-            </div>
-            <span class="niyam-v-item__icon"></span>
-          </button>
-          <div class="niyam-v-item__detail">
-            <div class="niyam-v-item__detail-inner">
-              <p>All acts should be performed in accordance with Dharma, that is, after due consideration of truth and falsehood, right and wrong. Dharma is the path of righteousness that leads to spiritual progress.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="niyam-v-item" data-niyam>
-          <button class="niyam-v-item__header" aria-expanded="false">
-            <span class="niyam-v-item__num">०६</span>
-            <div class="niyam-v-item__title-group">
-              <span class="niyam-v-item__title">The prime object is to do good to the world</span>
-            </div>
-            <span class="niyam-v-item__icon"></span>
-          </button>
-          <div class="niyam-v-item__detail">
-            <div class="niyam-v-item__detail-inner">
-              <p>The prime object of the Arya Samaj is to do good to the whole world, that is, to ameliorate the physical, spiritual, and social conditions of all humankind.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="niyam-v-item" data-niyam>
-          <button class="niyam-v-item__header" aria-expanded="false">
-            <span class="niyam-v-item__num">०७</span>
-            <div class="niyam-v-item__title-group">
-              <span class="niyam-v-item__title">Conduct guided by love and justice</span>
-            </div>
-            <span class="niyam-v-item__icon"></span>
-          </button>
-          <div class="niyam-v-item__detail">
-            <div class="niyam-v-item__detail-inner">
-              <p>Our conduct towards all should be guided by love, by righteousness, and by justice. We should treat others as we would want to be treated ourselves.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="niyam-v-item" data-niyam>
-          <button class="niyam-v-item__header" aria-expanded="false">
-            <span class="niyam-v-item__num">०८</span>
-            <div class="niyam-v-item__title-group">
-              <span class="niyam-v-item__title">We should dispel Avidya and promote Vidya</span>
-            </div>
-            <span class="niyam-v-item__icon"></span>
-          </button>
-          <div class="niyam-v-item__detail">
-            <div class="niyam-v-item__detail-inner">
-              <p>We should dispel Avidya (ignorance) and promote Vidya (true knowledge).</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="niyam-v-item" data-niyam>
-          <button class="niyam-v-item__header" aria-expanded="false">
-            <span class="niyam-v-item__num">०९</span>
-            <div class="niyam-v-item__title-group">
-              <span class="niyam-v-item__title">No one should be content with their own welfare alone</span>
-            </div>
-            <span class="niyam-v-item__icon"></span>
-          </button>
-          <div class="niyam-v-item__detail">
-            <div class="niyam-v-item__detail-inner">
-              <p>No one should be content with promoting their own welfare only, but should look for it in the welfare of all.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="niyam-v-item" data-niyam>
-          <button class="niyam-v-item__header" aria-expanded="false">
-            <span class="niyam-v-item__num">१०</span>
-            <div class="niyam-v-item__title-group">
-              <span class="niyam-v-item__title">Subordination to social rules for the well-being of all</span>
-            </div>
-            <span class="niyam-v-item__icon"></span>
-          </button>
-          <div class="niyam-v-item__detail">
-            <div class="niyam-v-item__detail-inner">
-              <p>One should subordinate oneself to the rules of society calculated to promote the well-being of all, while remaining free to follow the rules of individual welfare.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     BRAHMA YAJNYA — Daily Practices / Sandhya
-     ═══════════════════════════════════════════════════════════ -->
-<section class="brahma-yajnya" id="sandhya">
-  <div class="brahma-yajnya__bg"></div>
-  <div class="container">
-    <div class="brahma-yajnya__inner reveal">
-      <div class="brahma-yajnya__content">
-        <div class="about-intro__eyebrow" style="color: var(--gold-light);">Vedic Living</div>
-        <h2 class="brahma-yajnya__title">An Invitation to Stillness.</h2>
-        <p class="brahma-yajnya__text">
-          Sandhya is not a rote ritual, but a deliberate time to align your consciousness with the Divine. Consistent practice sharpens the intellect, cultivates emotional resilience, and deepens your relationship with the Supreme.
-        </p>
-        <a href="resources.html#sandhya" class="btn btn-white">Learn How to Practice Sandhya</a>
-      </div>
-      <div class="brahma-yajnya__quote">
-        <div class="brahma-yajnya__quote-mark">❝</div>
-        <blockquote>
-          Oh God, the Giver of life, Remover of pains… May You inspire and guide our intellect in the right direction.
-        </blockquote>
-        <cite>— The Gayatri Mantra</cite>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     FEATURED INITIATIVES — Horizontal Scroll Cards
-     ═══════════════════════════════════════════════════════════ -->
-<section class="initiatives-scroll" id="initiatives">
-  <div class="container">
-    <div class="initiatives-scroll__header reveal">
-      <div>
-        <p class="section-label motif-label">
-          <svg class="motif-diamond" viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/></svg>
-          ACTIVE IN THE SERVICE OF HUMANITY
-          <svg class="motif-diamond" viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/></svg>
-        </p>
-        <h2 class="section-title">Featured Initiatives</h2>
-      </div>
-      <div class="initiatives-scroll__nav">
-        <button aria-label="Scroll left" id="init-prev" class="init-nav-btn">&#8592;</button>
-        <button aria-label="Scroll right" id="init-next" class="init-nav-btn">&#8594;</button>
-      </div>
-    </div>
-
-    <div class="initiatives-scroll__track reveal" id="init-track">
-
-      <a href="programs.html#vss" class="is-card">
-        <div class="is-card__img"><img src="images/init1.png" alt="Vedic Learning" /></div>
-        <div class="is-card__content">
-          <div class="is-card__meta">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
-            <span class="is-card__tag">Education</span>
-          </div>
-          <div class="is-card__title">Vedic Learning <br>(VSS &amp; VDAT)</div>
-          <div class="is-card__text">Structured moral education and self-directed aptitude testing to build a foundation of true knowledge (Vidya).</div>
-          <div class="is-card__footer">
-            <span>Learn More</span>
-            <span class="is-card__arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="programs.html#mentalhealth" class="is-card">
-        <div class="is-card__img"><img src="images/init2.png" alt="AHAM Mental Health" /></div>
-        <div class="is-card__content">
-          <div class="is-card__meta">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-            <span class="is-card__tag">Wellness</span>
-          </div>
-          <div class="is-card__title">AHAM <br>(Mental Health)</div>
-          <div class="is-card__text">Promoting culturally sensitive mental health education and well-being advocacy for the Hindu-American community.</div>
-          <div class="is-card__footer">
-            <span>Learn More</span>
-            <span class="is-card__arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="programs.html#paropkaar" class="is-card">
-        <div class="is-card__img"><img src="images/init3.jpg" alt="Paropkaar Foundation" /></div>
-        <div class="is-card__content">
-          <div class="is-card__meta">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            <span class="is-card__tag">Relief</span>
-          </div>
-          <div class="is-card__title">Paropkaar Foundation <br>(Disaster Relief)</div>
-          <div class="is-card__text">Embodying the 6th Principle: Ameliorating the physical, spiritual, and social welfare of the world through active relief efforts.</div>
-          <div class="is-card__footer">
-            <span>Learn More</span>
-            <span class="is-card__arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="programs.html#vayu" class="is-card">
-        <div class="is-card__img"><img src="images/init4.png" alt="VAYU Youth" /></div>
-        <div class="is-card__content">
-          <div class="is-card__meta">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            <span class="is-card__tag">Youth</span>
-          </div>
-          <div class="is-card__title">VAYU <br>(Youth Engagement)</div>
-          <div class="is-card__text">Connecting young adults across North America to explore their identity and develop leadership through Vedic values.</div>
-          <div class="is-card__footer">
-            <span>Learn More</span>
-            <span class="is-card__arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="programs.html" class="is-card is-card--more">
-        <div class="is-card__content">
-          <div class="is-card__title">See All Programs</div>
-          <div class="is-card__text">Explore the full range of APSA programs across education, service, and community building.</div>
-          <div class="is-card__footer">
-            <span>View All</span>
-            <span class="is-card__arrow">&rarr;</span>
-          </div>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-
-<section class="mahasammelan-split">
-  <div class="container">
-    
-    <!-- Traditional Header -->
-    <div class="ms-header reveal" style="text-align: center; margin-bottom: 3.5rem;">
-      <div style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 1rem;">
-        <div style="height: 1px; background: var(--saffron); flex: 0 0 80px; opacity: 0.6;"></div>
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--saffron)" stroke-width="1">
-          <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="var(--saffron)" fill-opacity="0.15"/>
-          <circle cx="12" cy="12" r="3" fill="var(--saffron)"/>
-        </svg>
-        <div style="height: 1px; background: var(--saffron); flex: 0 0 80px; opacity: 0.6;"></div>
-      </div>
-      <h2 class="section-title">The Arya Mahasammelan</h2>
-    </div>
-
-    <div class="ms-grid reveal">
-      
-      <div class="ms-card ms-card--light">
-        <div class="ms-card__inner">
-          <h2 class="ms-card__title">A Continental Gathering</h2>
-          <p class="ms-card__text">
-            The largest transformative convention of the global Arya Samaj community. Join us for four incredible days of profound discourses, spiritual growth, and universal brotherhood connecting you to your Vedic roots.
-          </p>
-          <a href="https://ams.aryasamaj.com" target="_blank" class="btn btn-primary">Visit the Sammelan Website &rarr;</a>
-        </div>
-      </div>
-
-      <div class="ms-card ms-card--saffron">
-        <div class="ms-card__overlay">
-          <h3>Save the Date for 2027!</h3>
-          <p>Preparations are already underway for our 37th annual convention.</p>
-          <a href="https://ams.aryasamaj.com" target="_blank" class="btn btn-white">Get Early Updates</a>
-        </div>
-        <img src="images/mandir.png" alt="Arya Samaj Mandir" class="ms-card__mandir" />
-      </div>
-      
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     SAMAJ MAP FINDER — Full-bleed
-     ═══════════════════════════════════════════════════════════ -->
-<section class="samaj-map" id="samaj-map">
-  <div class="container">
-    <div class="samaj-map__header reveal">
-      <h2 class="section-title">Connect with a Samaj Near You</h2>
-      <div class="divider divider--center"></div>
-      <p class="section-desc" style="margin: 0 auto;">
-        With over 20 active chapters spanning from California and Texas to New York and Toronto, your spiritual home is closer than you think. Locate an affiliated Arya Samaj chapter near you to join community service projects, weekly Sunday Satsangs, and in-person Havans.
-      </p>
-    </div>
-    <div class="samaj-map__search reveal">
-      <select class="samaj-map__select" aria-label="Select your State / Province">
-        <option value="">Select Your State / Province...</option>
-        <option value="CA">California</option>
-        <option value="GA">Georgia</option>
-        <option value="IL">Illinois</option>
-        <option value="NJ">New Jersey</option>
-        <option value="NY">New York</option>
-        <option value="ON">Ontario</option>
-        <option value="TX">Texas</option>
-      </select>
-      <button class="btn btn-primary">Search</button>
-    </div>
-  </div>
-  <div class="samaj-map__visual reveal">
-    <img src="images/map.png" alt="Map of affiliated Arya Samaj chapters across North America" />
-  </div>
-  <div class="samaj-map__cta">
-    <p style="font-size:0.95rem; color:var(--text-muted);">
-      Don't see a Samaj near you? <a href="contact.html" style="color:var(--saffron); font-weight:600;">Learn how to establish an APSA chapter in your city.</a>
+    <p class="page-hero__breadcrumb" style="color: rgba(255,255,255,0.6); margin-bottom: 1rem;">
+      <a href="index.html" style="color: #ffffff;">Home</a> / <a href="about.html" style="color: #ffffff;">About Us</a> / Ten Niyams
     </p>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     DONATION CTA SECTION
-     ═══════════════════════════════════════════════════════════ -->
-<section class="section section--alt donate-cta" style="text-align: center; border-top: 1px solid var(--border);">
-  <div class="container" style="max-width: 800px;">
-    <h2 class="section-title">Fuel the Future of Vedic Dharma</h2>
-    <p class="section-desc" style="margin: 0 auto 2.5rem;">
-      APSA is a registered not-for-profit organization. Your contributions directly fund youth scholarships, global natural disaster relief, and the spread of Vedic knowledge.
-    </p>
-    <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom: 2rem;">
-      <a href="donate.html" class="btn btn-primary">Donate Securely (Zeffy)</a>
-      <a href="donate.html" class="btn btn-outline">Donate via Zelle / PayPal</a>
+    
+    <div class="niyams-hero__badge">
+      <span>✿</span>
+      <span>दश नियमाः &nbsp;·&nbsp; Ethical Philosophy</span>
     </div>
-    <div class="footer-payments" style="justify-content:center; color: var(--text-muted);">
-      <span>Zeffy</span>
-      <span>Zelle</span>
-      <span>PayPal</span>
-      <span>Visa</span>
-      <span>Mastercard</span>
-      <span>Amex</span>
+
+    <h1 class="niyams-hero__title">The Ten Principles (Niyams) of Arya Samaj</h1>
+    <div class="niyams-hero__subtitle">The core guiding principles of the Arya Samaj.</div>
+
+    <div class="niyams-hero__intro-card">
+      The foundation of the Arya Samaj is built upon ten core principles (Niyams) established by Maharshi Dayanand Saraswati. These principles provide a practical, logical framework for seeking truth, living ethically, and fostering universal brotherhood. Below is each principle alongside its philosophical commentary.
     </div>
   </div>
+  <div class="niyams-hero__watermark">ओ३म्</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════════════════════════ -->
+<!-- STICKY QUICK JUMP PILLS -->
+<div class="niyams-nav-bar">
+  <div class="container niyams-nav-bar__inner">
+    <div class="niyams-pills">
+      <a href="#niyam-1" class="niyam-pill-btn">1. Knowledge</a>
+      <a href="#niyam-2" class="niyam-pill-btn">2. God's Nature</a>
+      <a href="#niyam-3" class="niyam-pill-btn">3. The Vedas</a>
+      <a href="#niyam-4" class="niyam-pill-btn">4. Truth</a>
+      <a href="#niyam-5" class="niyam-pill-btn">5. Dharma</a>
+      <a href="#niyam-6" class="niyam-pill-btn">6. Welfare</a>
+      <a href="#niyam-7" class="niyam-pill-btn">7. Love & Justice</a>
+      <a href="#niyam-8" class="niyam-pill-btn">8. Vidya (Knowledge)</a>
+      <a href="#niyam-9" class="niyam-pill-btn">9. Shared Success</a>
+      <a href="#niyam-10" class="niyam-pill-btn">10. Social Duty</a>
+    </div>
+    <div class="niyams-controls">
+      <button type="button" class="control-toggle-btn" id="btn-expand-all">Expand All</button>
+      <button type="button" class="control-toggle-btn" id="btn-collapse-all">Collapse All</button>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN ACCORDION / CARD SECTION -->
+<main class="niyams-content-section">
+  <div class="container">
+    <div class="niyams-list">
+
+      <!-- Principle 1 -->
+      <article class="niyam-card-detailed is-open" id="niyam-1">
+        <button class="niyam-card__header-btn" aria-expanded="true">
+          <div class="niyam-card__title-wrap">
+            <div class="niyam-badge">०१</div>
+            <h2 class="niyam-title-text">1. The First Principle: The Source of True Knowledge</h2>
+          </div>
+          <div class="niyam-chevron">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="niyam-card__body">
+          <div class="niyam-principle-quote">
+            <div class="niyam-principle-quote__label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
+              The Sacred Principle
+            </div>
+            <p class="niyam-principle-quote__text">
+              The first (efficient) cause of all true knowledge and all that is known through knowledge is Eeshwar (the Supreme, i.e. GOD).
+            </p>
+          </div>
+          <div class="niyam-commentary-wrap">
+            <div class="niyam-commentary__tag">Philosophical Commentary</div>
+            <p class="niyam-commentary__text">
+              An efficient cause is the force that brings something into existence. Just as Eeshwar shapes timeless, formless Prakriti into the physical universe, He is the ultimate source of all reality. For the Arya Samaj, God is Truth, and true knowledge—whether realized through everyday awareness, deep yogic intuition, or the foundational insights of the ancient Rishis—stems directly from Him. Our faith, at its core, is a commitment to seeking and living by that Truth.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Principle 2 -->
+      <article class="niyam-card-detailed is-open" id="niyam-2">
+        <button class="niyam-card__header-btn" aria-expanded="true">
+          <div class="niyam-card__title-wrap">
+            <div class="niyam-badge">०२</div>
+            <h2 class="niyam-title-text">2. The Second Principle: The Nature of God</h2>
+          </div>
+          <div class="niyam-chevron">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="niyam-card__body">
+          <div class="niyam-principle-quote">
+            <div class="niyam-principle-quote__label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
+              The Sacred Principle
+            </div>
+            <p class="niyam-principle-quote__text">
+              Eeshwar (GOD) is existent, intelligent, and blissful. He is formless, omniscient, just, merciful, unborn, endless, unchangeable, beginningless, unequalled, the support of all, the master of all, omnipresent, immanent, unaging, immortal, fearless, eternal, and holy, and the maker of all. He alone is to be worthy of worship.
+            </p>
+          </div>
+          <div class="niyam-commentary-wrap">
+            <div class="niyam-commentary__tag">Philosophical Commentary</div>
+            <p class="niyam-commentary__text">
+              The Second Principle outlines the nature of Parameshvara (God) as Sat-Chit-Ananda—pure Existence, Consciousness, and Bliss. As a formless, infinite, and changeless Spirit, God is beyond birth, death, or physical limitation. Unbound by fear or hatred, He perfectly balances mercy and justice, providing everything souls need to live and reap the results of their actions. He is entirely self-sufficient, requiring no external help. Because God is formless (Nirakara) and purely equitable, Arya Samaj rejects flattery, idols, and the doctrine of divine incarnation—no human or creature can replace Him. Instead, true worship is reserved for God alone.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Principle 3 -->
+      <article class="niyam-card-detailed is-open" id="niyam-3">
+        <button class="niyam-card__header-btn" aria-expanded="true">
+          <div class="niyam-card__title-wrap">
+            <div class="niyam-badge">०३</div>
+            <h2 class="niyam-title-text">3. The Third Principle: The Authority of the Vedas</h2>
+          </div>
+          <div class="niyam-chevron">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="niyam-card__body">
+          <div class="niyam-principle-quote">
+            <div class="niyam-principle-quote__label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
+              The Sacred Principle
+            </div>
+            <p class="niyam-principle-quote__text">
+              The Vedas are the scriptures of all true knowledge. It is the paramount duty of Aryas to read them, teach them, recite them, and hear them being read.
+            </p>
+          </div>
+          <div class="niyam-commentary-wrap">
+            <div class="niyam-commentary__tag">Philosophical Commentary</div>
+            <p class="niyam-commentary__text">
+              The Vedas are the primary source of all true knowledge. It is our duty as Aryas to study, teach, recite, and listen to these sacred scriptures, using them as our guide for spiritual growth.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Principle 4 -->
+      <article class="niyam-card-detailed is-open" id="niyam-4">
+        <button class="niyam-card__header-btn" aria-expanded="true">
+          <div class="niyam-card__title-wrap">
+            <div class="niyam-badge">०४</div>
+            <h2 class="niyam-title-text">4. The Fourth Principle: Truth over Untruth</h2>
+          </div>
+          <div class="niyam-chevron">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="niyam-card__body">
+          <div class="niyam-principle-quote">
+            <div class="niyam-principle-quote__label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
+              The Sacred Principle
+            </div>
+            <p class="niyam-principle-quote__text">
+              One should always be ready to accept truth and renounce untruth.
+            </p>
+          </div>
+          <div class="niyam-commentary-wrap">
+            <div class="niyam-commentary__tag">Philosophical Commentary</div>
+            <p class="niyam-commentary__text">
+              We are committed to seeking the truth above all else. We remain open to new understanding and are always ready to renounce any belief that is proven false.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Principle 5 -->
+      <article class="niyam-card-detailed is-open" id="niyam-5">
+        <button class="niyam-card__header-btn" aria-expanded="true">
+          <div class="niyam-card__title-wrap">
+            <div class="niyam-badge">०५</div>
+            <h2 class="niyam-title-text">5. The Fifth Principle: Action Guided by Dharma</h2>
+          </div>
+          <div class="niyam-chevron">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="niyam-card__body">
+          <div class="niyam-principle-quote">
+            <div class="niyam-principle-quote__label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
+              The Sacred Principle
+            </div>
+            <p class="niyam-principle-quote__text">
+              All acts ought to be performed in conformity to Dharma i.e., after deliberating what is right and wrong.
+            </p>
+          </div>
+          <div class="niyam-commentary-wrap">
+            <div class="niyam-commentary__tag">Philosophical Commentary</div>
+            <p class="niyam-commentary__text">
+              Our actions must align with Dharma. Before acting, we weigh right against wrong, ensuring our behavior is guided by moral principles rather than impulse.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Principle 6 -->
+      <article class="niyam-card-detailed is-open" id="niyam-6">
+        <button class="niyam-card__header-btn" aria-expanded="true">
+          <div class="niyam-card__title-wrap">
+            <div class="niyam-badge">०६</div>
+            <h2 class="niyam-title-text">6. The Sixth Principle: Universal Welfare</h2>
+          </div>
+          <div class="niyam-chevron">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="niyam-card__body">
+          <div class="niyam-principle-quote">
+            <div class="niyam-principle-quote__label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
+              The Sacred Principle
+            </div>
+            <p class="niyam-principle-quote__text">
+              The prime object of the Arya Samaj is to do good to the world, i.e., to ameliorate physical, spiritual and social welfare of all.
+            </p>
+          </div>
+          <div class="niyam-commentary-wrap">
+            <div class="niyam-commentary__tag">Philosophical Commentary</div>
+            <p class="niyam-commentary__text">
+              The mission of the Arya Samaj is to uplift the world. We work to improve the physical, spiritual, and social well-being of all, actively engaging in service that creates a positive impact.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Principle 7 -->
+      <article class="niyam-card-detailed is-open" id="niyam-7">
+        <button class="niyam-card__header-btn" aria-expanded="true">
+          <div class="niyam-card__title-wrap">
+            <div class="niyam-badge">०७</div>
+            <h2 class="niyam-title-text">7. The Seventh Principle: Love and Justice</h2>
+          </div>
+          <div class="niyam-chevron">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="niyam-card__body">
+          <div class="niyam-principle-quote">
+            <div class="niyam-principle-quote__label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
+              The Sacred Principle
+            </div>
+            <p class="niyam-principle-quote__text">
+              All ought to be treated with affection, Justice, righteousness and due regard to their merits.
+            </p>
+          </div>
+          <div class="niyam-commentary-wrap">
+            <div class="niyam-commentary__tag">Philosophical Commentary</div>
+            <p class="niyam-commentary__text">
+              We treat every individual with affection, justice, and respect. We recognize the inherent merit in others and act with compassion and fairness in all our dealings.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Principle 8 -->
+      <article class="niyam-card-detailed is-open" id="niyam-8">
+        <button class="niyam-card__header-btn" aria-expanded="true">
+          <div class="niyam-card__title-wrap">
+            <div class="niyam-badge">०८</div>
+            <h2 class="niyam-title-text">8. The Eighth Principle: Promoting Knowledge</h2>
+          </div>
+          <div class="niyam-chevron">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="niyam-card__body">
+          <div class="niyam-principle-quote">
+            <div class="niyam-principle-quote__label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
+              The Sacred Principle
+            </div>
+            <p class="niyam-principle-quote__text">
+              One should promote Vidya (realization of true knowledge) and dispel Avidya (ignorance).
+            </p>
+          </div>
+          <div class="niyam-commentary-wrap">
+            <div class="niyam-commentary__tag">Philosophical Commentary</div>
+            <p class="niyam-commentary__text">
+              We actively promote Vidya (real knowledge) while working to dispel Avidya (ignorance). Our goal is to replace confusion with clarity, fostering an environment of learning and enlightenment.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Principle 9 -->
+      <article class="niyam-card-detailed is-open" id="niyam-9">
+        <button class="niyam-card__header-btn" aria-expanded="true">
+          <div class="niyam-card__title-wrap">
+            <div class="niyam-badge">०९</div>
+            <h2 class="niyam-title-text">9. The Ninth Principle: Shared Success</h2>
+          </div>
+          <div class="niyam-chevron">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="niyam-card__body">
+          <div class="niyam-principle-quote">
+            <div class="niyam-principle-quote__label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
+              The Sacred Principle
+            </div>
+            <p class="niyam-principle-quote__text">
+              One should not be content with one’s own welfare alone, but should strive for one’s own welfare in the welfare of all.
+            </p>
+          </div>
+          <div class="niyam-commentary-wrap">
+            <div class="niyam-commentary__tag">Philosophical Commentary</div>
+            <p class="niyam-commentary__text">
+              We recognize that individual growth is inseparable from social progress. We strive for our own success by contributing to the welfare of others, understanding that our well-being is deeply connected to the community.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Principle 10 -->
+      <article class="niyam-card-detailed is-open" id="niyam-10">
+        <button class="niyam-card__header-btn" aria-expanded="true">
+          <div class="niyam-card__title-wrap">
+            <div class="niyam-badge">१०</div>
+            <h2 class="niyam-title-text">10. The Tenth Principle: Social Duty vs. Personal Liberty</h2>
+          </div>
+          <div class="niyam-chevron">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="niyam-card__body">
+          <div class="niyam-principle-quote">
+            <div class="niyam-principle-quote__label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
+              The Sacred Principle
+            </div>
+            <p class="niyam-principle-quote__text">
+              In all matters affecting the well-being of the society the individual should subordinate his personal likings. In matters affecting him alone one should enjoy the freedom of action.
+            </p>
+          </div>
+          <div class="niyam-commentary-wrap">
+            <div class="niyam-commentary__tag">Philosophical Commentary</div>
+            <p class="niyam-commentary__text">
+              We balance personal freedom with social duty. While we enjoy individual liberty, we willingly prioritize the common good whenever the well-being of society depends on our commitment.
+            </p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Synthesis / Next Steps CTA -->
+    <div class="niyams-next-cta">
+      <h2 class="niyams-next-cta__title">Living the Ten Niyams</h2>
+      <p class="niyams-next-cta__text">
+        These ten principles form the bedrock of daily spiritual discipline, community service, and ethical living for Aryas worldwide. Explore how APSA translates these principles into active education, relief, and national initiatives.
+      </p>
+      <div class="niyams-next-cta__actions">
+        <a href="resources.html#library" class="btn btn-white">Explore Vedic Library</a>
+        <a href="programs.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.6); color: #ffffff;">View Our Programs</a>
+        <a href="about.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.6); color: #ffffff;">About APSA Leadership</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
 <footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer__top" style="grid-template-columns: 1fr 1fr; gap:4rem;">
-
-      <!-- Column 1: Stay Connected -->
       <div>
         <div class="footer__col-title">Subscribe for Updates</div>
         <p class="footer__tagline" style="margin-bottom:1rem">
@@ -1283,7 +1509,6 @@
         </div>
       </div>
 
-      <!-- Column 2: Quick Links -->
       <div>
         <div class="footer__col-title">Quick Links</div>
         <ul class="footer__links">
@@ -1295,7 +1520,6 @@
           <li><a href="#" class="footer__link">Privacy Policy</a></li>
         </ul>
       </div>
-
     </div>
 
     <div class="footer__bottom" style="justify-content:center; padding: 2rem 0; flex-direction:column; align-items:center; gap:0.5rem;">
@@ -1305,100 +1529,59 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="js/main.js?v=8"></script>
 <script>
-  // Initiatives horizontal scroll
-  (function() {
-    const track = document.getElementById('init-track');
-    const prev = document.getElementById('init-prev');
-    const next = document.getElementById('init-next');
-    if (!track) return;
-    const scrollAmount = 360;
-    prev?.addEventListener('click', () => track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
-    next?.addEventListener('click', () => track.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
-  })();
-
-  // Niyam Vertical Accordion toggle with GSAP Auto-Rotation
-  (function() {
-    const items = document.querySelectorAll('.niyam-v-item');
-    if (!items.length) return;
-
-    let currentIndex = 0;
-    let autoRotateTween;
-    const ROTATION_DURATION = 6; // seconds per item
-
-    // Initialize DOM and open first item
-    items.forEach((item, index) => {
-      const header = item.querySelector('.niyam-v-item__header');
-      if (!header) return;
-
-      // Create progress bar element dynamically
-      const progressBar = document.createElement('div');
-      progressBar.className = 'niyam-progress-bar';
-      header.appendChild(progressBar);
-
-      if (index === 0) {
-        item.classList.add('open');
-        header.setAttribute('aria-expanded', 'true');
-      }
-
-      header.addEventListener('click', () => {
-        if (autoRotateTween) autoRotateTween.kill();
-        openItem(index);
-        startAutoRotate(index);
+  // Accordion Toggle Behavior
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.niyam-card-detailed');
+    
+    cards.forEach(card => {
+      const btn = card.querySelector('.niyam-card__header-btn');
+      btn.addEventListener('click', () => {
+        const isOpen = card.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
     });
 
-    function openItem(index) {
-      items.forEach((item, i) => {
-        const header = item.querySelector('.niyam-v-item__header');
-        const progressBar = item.querySelector('.niyam-progress-bar');
-        
-        if (i === index) {
-          item.classList.add('open');
-          header.setAttribute('aria-expanded', 'true');
-        } else {
-          item.classList.remove('open');
-          header.setAttribute('aria-expanded', 'false');
-          gsap.set(progressBar, { width: '0%' }); // Reset other progress bars
-        }
+    // Expand All / Collapse All Controls
+    const expandAllBtn = document.getElementById('btn-expand-all');
+    const collapseAllBtn = document.getElementById('btn-collapse-all');
+
+    if (expandAllBtn && collapseAllBtn) {
+      expandAllBtn.addEventListener('click', () => {
+        cards.forEach(card => {
+          card.classList.add('is-open');
+          card.querySelector('.niyam-card__header-btn').setAttribute('aria-expanded', 'true');
+        });
+      });
+
+      collapseAllBtn.addEventListener('click', () => {
+        cards.forEach(card => {
+          card.classList.remove('is-open');
+          card.querySelector('.niyam-card__header-btn').setAttribute('aria-expanded', 'false');
+        });
       });
     }
 
-    function startAutoRotate(startIndex) {
-      currentIndex = startIndex;
-      const currentItem = items[currentIndex];
-      const progressBar = currentItem.querySelector('.niyam-progress-bar');
-
-      gsap.set(progressBar, { width: '0%' });
-      
-      autoRotateTween = gsap.to(progressBar, {
-        width: '100%',
-        duration: ROTATION_DURATION,
-        ease: 'none',
-        onComplete: () => {
-          let nextIndex = (currentIndex + 1) % items.length;
-          openItem(nextIndex);
-          
-          // Scroll slightly if item is out of view (optional, but good for UX)
-          const nextItem = items[nextIndex];
-          const container = document.querySelector('.niyams-split__accordion-container');
-          if(container) {
-             const offset = nextItem.offsetTop - container.offsetTop;
-             // Only scroll if we are not manually hovering maybe? 
-             // We'll keep it simple for now without auto page scroll, just let it expand
-          }
-          
-          startAutoRotate(nextIndex);
+    // Active pill highlight on scroll
+    const pillLinks = document.querySelectorAll('.niyam-pill-btn');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          pillLinks.forEach(link => {
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
         }
       });
-    }
+    }, { rootMargin: '-20% 0px -60% 0px' });
 
-    // Start initial rotation
-    startAutoRotate(0);
-  })();
+    cards.forEach(card => observer.observe(card));
+  });
 </script>
 </body>
 </html>
