@@ -7,379 +7,372 @@
   <meta name="description" content="Explore the Ten Principles (Niyams) of Arya Samaj established by Maharshi Dayanand Saraswati, complete with in-depth philosophical commentary and practical ethical guidelines." />
   <link rel="stylesheet" href="css/style.css?v=8" />
   <style>
-    /* ── Ten Niyams Dedicated Page Styles ── */
-    .niyams-hero {
-      background: linear-gradient(135deg, #0d1e38 0%, #162f55 55%, #24497d 100%);
-      color: #ffffff;
-      padding: 5rem 0 4.5rem;
+    /* ── Ten Niyams Dedicated Page Custom Styling ── */
+    :root {
+      --niyam-bg: #f9f5ee;
+      --niyam-card-bg: #fdfbf7;
+      --niyam-border: #ebdcd0;
+      --niyam-terracotta: #c45b28;
+      --niyam-gold: #ba6d32;
+      --niyam-navy: #14233c;
+      --niyam-charcoal: #384252;
+    }
+
+    body {
+      background-color: var(--niyam-bg);
+    }
+
+    /* ── Hero Section (Matching Mockup 1) ── */
+    .niyams-hero-section {
+      background: #faf6f0;
+      padding: 3.5rem 0 3.5rem;
+      border-bottom: 1px solid var(--niyam-border);
       position: relative;
-      overflow: hidden;
     }
-    .niyams-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 85% 20%, rgba(224, 109, 59, 0.15), transparent 45%),
-                  radial-gradient(circle at 15% 85%, rgba(212, 160, 23, 0.12), transparent 40%);
-      pointer-events: none;
-    }
-    .niyams-hero__watermark {
-      position: absolute;
-      right: -30px;
-      bottom: -60px;
-      font-size: 16rem;
-      color: rgba(255, 255, 255, 0.03);
-      font-family: var(--ff-heading);
-      font-weight: 800;
-      pointer-events: none;
-      user-select: none;
-    }
-    .niyams-hero__badge {
-      display: inline-flex;
+
+    .niyams-breadcrumb {
+      display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(224, 109, 59, 0.18);
-      border: 1px solid rgba(224, 109, 59, 0.4);
-      color: #f7a97b;
-      padding: 0.35rem 1rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
+      font-size: 0.92rem;
+      color: #717d8e;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    .niyams-breadcrumb a {
+      color: var(--niyam-navy);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .niyams-breadcrumb a:hover {
+      color: var(--niyam-terracotta);
+    }
+    .niyams-breadcrumb .active-hindi {
+      color: var(--niyam-terracotta);
+      font-weight: 600;
+    }
+    .niyams-breadcrumb .sep {
+      color: #a0aec0;
+    }
+
+    .niyams-tagline {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--niyam-terracotta);
+      font-size: 0.9rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       margin-bottom: 1.25rem;
     }
-    .niyams-hero__title {
+    .niyams-tagline .tag-pipe {
+      font-size: 1.15rem;
+      font-weight: 400;
+      opacity: 0.85;
+    }
+    .niyams-tagline .tag-hindi {
       font-family: var(--ff-heading);
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      letter-spacing: 0.05em;
+      font-size: 1.05rem;
+    }
+    .niyams-tagline .tag-dot {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    .niyams-main-title {
+      font-family: var(--ff-heading);
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
       font-weight: 700;
       line-height: 1.15;
-      color: #ffffff;
-      margin-bottom: 0.75rem;
+      color: var(--niyam-navy);
+      margin: 0 0 1rem;
       letter-spacing: -0.02em;
     }
-    .niyams-hero__subtitle {
-      font-family: var(--ff-heading);
-      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
-      color: #e5b068;
-      margin-bottom: 1.75rem;
-      font-weight: 500;
-    }
-    .niyams-hero__intro-card {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      padding: 1.5rem 1.75rem;
-      max-width: 820px;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.9);
+
+    .niyams-title-line {
+      width: 54px;
+      height: 2.5px;
+      background: var(--niyam-terracotta);
+      margin-bottom: 1.25rem;
+      border-radius: 2px;
     }
 
-    /* ── Sticky Quick Jump Pill Bar ── */
-    .niyams-nav-bar {
-      position: sticky;
-      top: var(--nav-height, 70px);
-      z-index: 100;
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-      padding: 0.75rem 0;
-      transition: all 0.25s ease;
-    }
-    .niyams-nav-bar__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .niyams-pills {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      overflow-x: auto;
-      padding-bottom: 2px;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    .niyams-pills::-webkit-scrollbar { display: none; }
-    .niyam-pill-btn {
-      flex-shrink: 0;
+    .niyams-subtitle {
       font-family: var(--ff-heading);
-      font-size: 0.82rem;
+      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
       font-weight: 600;
-      color: var(--charcoal);
-      background: #f4efe8;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-    .niyam-pill-btn:hover,
-    .niyam-pill-btn.active {
-      background: var(--saffron);
-      color: #ffffff;
-      border-color: var(--saffron);
-    }
-    .niyams-controls {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex-shrink: 0;
-    }
-    .control-toggle-btn {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--blue);
-      background: transparent;
-      border: 1px solid var(--border);
-      padding: 0.35rem 0.75rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .control-toggle-btn:hover {
-      background: var(--cream);
-      border-color: var(--blue);
+      color: var(--niyam-gold);
+      margin-bottom: 2rem;
+      line-height: 1.4;
     }
 
-    /* ── Main Container & Layout ── */
-    .niyams-content-section {
-      padding: 4rem 0 6rem;
-      background: #fbf9f5;
-    }
-    .niyams-list {
+    .niyams-intro-card {
+      background: #fdfaf6;
+      border: 1px solid var(--niyam-border);
+      border-radius: 14px;
+      padding: 1.5rem 1.85rem;
+      max-width: 680px;
+      box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.02);
       display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      max-width: 960px;
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+    .niyams-intro-card__bar {
+      width: 3.5px;
+      background: var(--niyam-terracotta);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .niyams-intro-card__text {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: #4a5568;
+      margin: 0;
+    }
+
+    /* ── Main Principles Container ── */
+    .niyams-body-section {
+      padding: 4.5rem 0 6rem;
+      background: var(--niyam-bg);
+    }
+    .niyams-container {
+      max-width: 1060px;
       margin: 0 auto;
     }
-
-    /* ── Single Principle Card ── */
-    .niyam-card-detailed {
-      background: #ffffff;
-      border-radius: 16px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      box-shadow: 0 4px 15px -2px rgba(0, 0, 0, 0.04);
-      overflow: hidden;
-      transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
-      scroll-margin-top: 140px;
-    }
-    .niyam-card-detailed:hover {
-      box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.08);
-      border-color: rgba(224, 109, 59, 0.3);
+    .niyams-cards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.25rem;
     }
 
-    /* Header / Accordion trigger */
-    .niyam-card__header-btn {
-      width: 100%;
+    /* ── Individual Principle Card (Matching Mockup 2) ── */
+    .niyam-card {
+      background: var(--niyam-card-bg);
+      border: 1px solid var(--niyam-border);
+      border-radius: 20px;
+      padding: 2.25rem 2.25rem 2.25rem 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+    .niyam-card:hover {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      border-color: rgba(196, 91, 40, 0.35);
+    }
+
+    /* Left Arched Pill Badge */
+    .niyam-card__arch {
+      border: 1px solid rgba(210, 165, 125, 0.55);
+      border-radius: 44px;
+      background: linear-gradient(180deg, #fbf7ef 0%, #fefcf9 100%);
+      padding: 2rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: inset 0 0 0 4px #ffffff, 0 2px 8px rgba(0, 0, 0, 0.02);
+      position: relative;
+    }
+    .niyam-arch__icon-wrap {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+    .niyam-arch__icon-wrap svg {
+      width: 38px;
+      height: 38px;
+      stroke: var(--niyam-terracotta);
+      fill: none;
+      stroke-width: 1.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .niyam-arch__divider {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--niyam-terracotta);
+      font-size: 0.7rem;
+      margin: 0.75rem 0;
+      opacity: 0.75;
+    }
+    .niyam-arch__divider::before,
+    .niyam-arch__divider::after {
+      content: '';
+      width: 14px;
+      height: 1px;
+      background: var(--niyam-terracotta);
+      opacity: 0.5;
+    }
+    .niyam-arch__num {
+      font-family: var(--ff-heading);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--niyam-terracotta);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .niyam-arch__keyword {
+      font-family: var(--ff-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--niyam-terracotta);
+      line-height: 1.2;
+    }
+    .niyam-arch__ornament {
+      color: var(--niyam-terracotta);
+      font-size: 0.75rem;
+      margin-top: 0.85rem;
+      opacity: 0.65;
+    }
+
+    /* Right Content Area */
+    .niyam-card__content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* Header Row (Title & Toggle Button) */
+    .niyam-card__header-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.5rem 2rem;
-      background: #ffffff;
-      border: none;
+      gap: 1.25rem;
       cursor: pointer;
-      text-align: left;
-      transition: background 0.2s ease;
-      gap: 1.25rem;
+      user-select: none;
     }
-    .niyam-card__header-btn:hover {
-      background: #fcfbfa;
-    }
-    .niyam-card__title-wrap {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      flex: 1;
-    }
-    .niyam-badge {
-      width: 48px;
-      height: 48px;
-      flex-shrink: 0;
-      border-radius: 12px;
-      background: #fdf5eb;
-      border: 1px solid rgba(224, 109, 59, 0.25);
-      color: var(--saffron-dark);
+    .niyam-card__heading {
       font-family: var(--ff-heading);
+      font-size: 1.35rem;
       font-weight: 700;
-      font-size: 1.3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-    }
-    .niyam-card-detailed.is-open .niyam-badge {
-      background: var(--saffron);
-      color: #ffffff;
-      border-color: var(--saffron);
-    }
-    .niyam-title-text {
-      font-family: var(--ff-heading);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--blue);
+      color: var(--niyam-navy);
       line-height: 1.3;
+      margin: 0;
       letter-spacing: -0.01em;
     }
-    .niyam-chevron {
-      width: 32px;
-      height: 32px;
+    .niyam-toggle-btn {
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
-      background: #f4efe8;
+      background: var(--niyam-terracotta);
+      color: #ffffff;
+      border: none;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--charcoal);
+      cursor: pointer;
       flex-shrink: 0;
-      transition: transform 0.3s ease, background 0.2s ease;
+      transition: background 0.2s ease, transform 0.25s ease;
+      box-shadow: 0 2px 6px rgba(196, 91, 40, 0.3);
     }
-    .niyam-chevron svg {
+    .niyam-toggle-btn:hover {
+      background: #ad4c1e;
+    }
+    .niyam-toggle-btn svg {
       width: 16px;
       height: 16px;
       stroke: currentColor;
-      stroke-width: 2.2;
+      stroke-width: 2.4;
       fill: none;
       transition: transform 0.3s ease;
     }
-    .niyam-card-detailed.is-open .niyam-chevron {
-      background: var(--blue);
-      color: #ffffff;
-    }
-    .niyam-card-detailed.is-open .niyam-chevron svg {
+    .niyam-card.is-closed .niyam-toggle-btn svg {
       transform: rotate(180deg);
     }
 
-    /* Accordion Body */
+    /* Collapsible Body */
     .niyam-card__body {
-      padding: 0 2rem 2.25rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.05);
-      display: block;
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+      transition: opacity 0.25s ease;
     }
-    .niyam-card-detailed:not(.is-open) .niyam-card__body {
+    .niyam-card.is-closed .niyam-card__body {
       display: none;
     }
 
-    /* Stylized Principle Quote Box */
-    .niyam-principle-quote {
-      margin-top: 1.5rem;
-      position: relative;
-      background: #fdfaf6;
-      border-left: 4px solid var(--saffron);
+    /* Quote Box for The Sacred Principle */
+    .niyam-quote-box {
+      background: #faf4eb;
+      border: 1px solid var(--niyam-border);
+      border-left: 3.5px solid var(--niyam-terracotta);
       border-radius: 0 12px 12px 0;
-      padding: 1.35rem 1.65rem 1.35rem 1.75rem;
-      border-top: 1px solid rgba(224, 109, 59, 0.12);
-      border-right: 1px solid rgba(224, 109, 59, 0.12);
-      border-bottom: 1px solid rgba(224, 109, 59, 0.12);
+      padding: 1.25rem 1.6rem;
     }
-    .niyam-principle-quote__label {
-      font-size: 0.72rem;
+    .niyam-quote-box__label {
+      font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--saffron-dark);
-      margin-bottom: 0.4rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
+      color: var(--niyam-terracotta);
+      margin-bottom: 0.45rem;
     }
-    .niyam-principle-quote__text {
+    .niyam-quote-box__text {
+      font-family: var(--ff-heading);
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Commentary Block */
+    .niyam-commentary-block {
+      padding-top: 0.25rem;
+    }
+    .niyam-commentary-block__title {
       font-family: var(--ff-heading);
       font-size: 1.15rem;
       font-weight: 700;
-      color: #1a2f4c;
-      line-height: 1.55;
-      margin: 0;
+      color: var(--niyam-terracotta);
+      margin: 0 0 0.55rem;
+      letter-spacing: -0.01em;
     }
-
-    /* Commentary Section */
-    .niyam-commentary-wrap {
-      margin-top: 1.75rem;
-    }
-    .niyam-commentary__tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
-    }
-    .niyam-commentary__tag::before {
-      content: '';
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--saffron);
-    }
-    .niyam-commentary__text {
+    .niyam-commentary-block__text {
       font-size: 1.02rem;
       line-height: 1.78;
-      color: #384252;
+      color: var(--niyam-charcoal);
       margin: 0;
     }
 
-    /* Bottom Next Steps CTA */
-    .niyams-next-cta {
-      margin-top: 4rem;
-      background: linear-gradient(135deg, #102340 0%, #1a3a6b 100%);
-      border-radius: 20px;
-      padding: 3.5rem 3rem;
-      color: #ffffff;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .niyams-next-cta::before {
-      content: 'कृण्वन्तो विश्वमार्यम्';
-      position: absolute;
-      top: -20px;
-      right: 20px;
-      font-size: 5rem;
-      font-family: var(--ff-heading);
-      color: rgba(255, 255, 255, 0.04);
-      pointer-events: none;
-      font-weight: 800;
-    }
-    .niyams-next-cta__title {
-      font-family: var(--ff-heading);
-      font-size: 2rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 0.75rem;
-    }
-    .niyams-next-cta__text {
-      font-size: 1.05rem;
-      color: rgba(255, 255, 255, 0.85);
-      max-width: 620px;
-      margin: 0 auto 2rem;
-      line-height: 1.65;
-    }
-    .niyams-next-cta__actions {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 768px) {
-      .niyams-hero { padding: 3.5rem 0 3rem; }
-      .niyam-card__header-btn { padding: 1.25rem 1.25rem; gap: 0.75rem; }
-      .niyam-card__title-wrap { gap: 0.85rem; }
-      .niyam-badge { width: 40px; height: 40px; font-size: 1.1rem; }
-      .niyam-title-text { font-size: 1.1rem; }
-      .niyam-card__body { padding: 0 1.25rem 1.75rem; }
-      .niyam-principle-quote { padding: 1.1rem 1.25rem; }
-      .niyam-principle-quote__text { font-size: 1.05rem; }
-      .niyams-next-cta { padding: 2.5rem 1.5rem; }
+    /* Responsive adjustments */
+    @media (max-width: 820px) {
+      .niyam-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.75rem 1.5rem;
+      }
+      .niyam-card__arch {
+        flex-direction: row;
+        border-radius: 20px;
+        padding: 1rem 1.5rem;
+        gap: 1.25rem;
+        justify-content: flex-start;
+      }
+      .niyam-arch__divider,
+      .niyam-arch__ornament {
+        display: none;
+      }
+      .niyam-arch__num {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+      .niyam-arch__keyword {
+        font-size: 1.2rem;
+      }
+      .niyams-main-title {
+        font-size: 2.2rem;
+      }
     }
   </style>
 </head>
@@ -1127,370 +1120,437 @@
   <a href="donate.html" class="btn btn-primary btn-sm">Donate</a>
 </div>
 
-<!-- PAGE HERO -->
-<section class="niyams-hero">
+<!-- ═══════════════════════════════════════════════════════════
+     HERO SECTION (Matching Mockup 1)
+     ═══════════════════════════════════════════════════════════ -->
+<section class="niyams-hero-section">
   <div class="container">
-    <p class="page-hero__breadcrumb" style="color: rgba(255,255,255,0.6); margin-bottom: 1rem;">
-      <a href="index.html" style="color: #ffffff;">Home</a> / <a href="about.html" style="color: #ffffff;">About Us</a> / Ten Niyams
-    </p>
     
-    <div class="niyams-hero__badge">
-      <span>✿</span>
-      <span>दश नियमाः &nbsp;·&nbsp; Ethical Philosophy</span>
+    <!-- Breadcrumb -->
+    <div class="niyams-breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span class="active-hindi">हमारे सिद्धांत</span>
+      <span class="sep">/</span>
+      <span>Ethical Philosophy</span>
     </div>
 
-    <h1 class="niyams-hero__title">The Ten Principles (Niyams) of Arya Samaj</h1>
-    <div class="niyams-hero__subtitle">The core guiding principles of the Arya Samaj.</div>
-
-    <div class="niyams-hero__intro-card">
-      The foundation of the Arya Samaj is built upon ten core principles (Niyams) established by Maharshi Dayanand Saraswati. These principles provide a practical, logical framework for seeking truth, living ethically, and fostering universal brotherhood. Below is each principle alongside its philosophical commentary.
+    <!-- Tagline Badge -->
+    <div class="niyams-tagline">
+      <span class="tag-pipe">|</span>
+      <span class="tag-hindi">दस नियम</span>
+      <span class="tag-dot">•</span>
+      <span class="tag-sub">ETHICAL PHILOSOPHY</span>
     </div>
+
+    <!-- Main Heading -->
+    <h1 class="niyams-main-title">The Ten Principles (Niyams)<br>of Arya Samaj</h1>
+    
+    <!-- Saffron Underline Accent -->
+    <div class="niyams-title-line"></div>
+
+    <!-- Subtitle -->
+    <div class="niyams-subtitle">The core guiding principles of the Arya Samaj.</div>
+
+    <!-- Introduction Card -->
+    <div class="niyams-intro-card">
+      <div class="niyams-intro-card__bar"></div>
+      <p class="niyams-intro-card__text">
+        The foundation of the Arya Samaj is built upon ten core principles (Niyams) established by Maharshi Dayanand Saraswati. These principles provide a practical, logical framework for seeking truth, living ethically, and fostering universal brotherhood. Below is each principle alongside its philosophical commentary.
+      </p>
+    </div>
+
   </div>
-  <div class="niyams-hero__watermark">ओ३म्</div>
 </section>
 
-<!-- STICKY QUICK JUMP PILLS -->
-<div class="niyams-nav-bar">
-  <div class="container niyams-nav-bar__inner">
-    <div class="niyams-pills">
-      <a href="#niyam-1" class="niyam-pill-btn">1. Knowledge</a>
-      <a href="#niyam-2" class="niyam-pill-btn">2. God's Nature</a>
-      <a href="#niyam-3" class="niyam-pill-btn">3. The Vedas</a>
-      <a href="#niyam-4" class="niyam-pill-btn">4. Truth</a>
-      <a href="#niyam-5" class="niyam-pill-btn">5. Dharma</a>
-      <a href="#niyam-6" class="niyam-pill-btn">6. Welfare</a>
-      <a href="#niyam-7" class="niyam-pill-btn">7. Love & Justice</a>
-      <a href="#niyam-8" class="niyam-pill-btn">8. Vidya (Knowledge)</a>
-      <a href="#niyam-9" class="niyam-pill-btn">9. Shared Success</a>
-      <a href="#niyam-10" class="niyam-pill-btn">10. Social Duty</a>
+<!-- ═══════════════════════════════════════════════════════════
+     PRINCIPLES LIST (Matching Mockup 2)
+     ═══════════════════════════════════════════════════════════ -->
+<main class="niyams-body-section">
+  <div class="container niyams-container">
+    <div class="niyams-cards-list">
+
+      <!-- 1. The First Principle -->
+      <article class="niyam-card" id="niyam-1">
+        <div class="niyam-card__arch">
+          <div class="niyam-arch__icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/><line x1="4" y1="21" x2="20" y2="21"/></svg>
+          </div>
+          <div class="niyam-arch__divider">❖</div>
+          <div class="niyam-arch__num">01</div>
+          <div class="niyam-arch__keyword">ज्ञान</div>
+          <div class="niyam-arch__ornament">❖</div>
+        </div>
+
+        <div class="niyam-card__content">
+          <div class="niyam-card__header-row">
+            <h2 class="niyam-card__heading">1. The First Principle: The Source of True Knowledge</h2>
+            <button class="niyam-toggle-btn" aria-label="Toggle principle details">
+              <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+          </div>
+
+          <div class="niyam-card__body">
+            <div class="niyam-quote-box">
+              <div class="niyam-quote-box__label">The Sacred Principle</div>
+              <p class="niyam-quote-box__text">
+                The first (efficient) cause of all true knowledge and all that is known through knowledge is Eeshwar (the Supreme, i.e. GOD).
+              </p>
+            </div>
+
+            <div class="niyam-commentary-block">
+              <h4 class="niyam-commentary-block__title">Philosophical Commentary</h4>
+              <p class="niyam-commentary-block__text">
+                An efficient cause is the force that brings something into existence. Just as Eeshwar shapes timeless, formless Prakriti into the physical universe, He is the ultimate source of all reality. For the Arya Samaj, God is Truth, and true knowledge—whether realized through everyday awareness, deep yogic intuition, or the foundational insights of the ancient Rishis—stems directly from Him. Our faith, at its core, is a commitment to seeking and living by that Truth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. The Second Principle -->
+      <article class="niyam-card" id="niyam-2">
+        <div class="niyam-card__arch">
+          <div class="niyam-arch__icon-wrap">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          </div>
+          <div class="niyam-arch__divider">❖</div>
+          <div class="niyam-arch__num">02</div>
+          <div class="niyam-arch__keyword">ईश्वर</div>
+          <div class="niyam-arch__ornament">❖</div>
+        </div>
+
+        <div class="niyam-card__content">
+          <div class="niyam-card__header-row">
+            <h2 class="niyam-card__heading">2. The Second Principle: The Nature of God</h2>
+            <button class="niyam-toggle-btn" aria-label="Toggle principle details">
+              <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+          </div>
+
+          <div class="niyam-card__body">
+            <div class="niyam-quote-box">
+              <div class="niyam-quote-box__label">The Sacred Principle</div>
+              <p class="niyam-quote-box__text">
+                Eeshwar (GOD) is existent, intelligent, and blissful. He is formless, omniscient, just, merciful, unborn, endless, unchangeable, beginningless, unequalled, the support of all, the master of all, omnipresent, immanent, unaging, immortal, fearless, eternal, and holy, and the maker of all. He alone is to be worthy of worship.
+              </p>
+            </div>
+
+            <div class="niyam-commentary-block">
+              <h4 class="niyam-commentary-block__title">Philosophical Commentary</h4>
+              <p class="niyam-commentary-block__text">
+                The Second Principle outlines the nature of Parameshvara (God) as Sat-Chit-Ananda—pure Existence, Consciousness, and Bliss. As a formless, infinite, and changeless Spirit, God is beyond birth, death, or physical limitation. Unbound by fear or hatred, He perfectly balances mercy and justice, providing everything souls need to live and reap the results of their actions. He is entirely self-sufficient, requiring no external help. Because God is formless (Nirakara) and purely equitable, Arya Samaj rejects flattery, idols, and the doctrine of divine incarnation—no human or creature can replace Him. Instead, true worship is reserved for God alone.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. The Third Principle -->
+      <article class="niyam-card" id="niyam-3">
+        <div class="niyam-card__arch">
+          <div class="niyam-arch__icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <div class="niyam-arch__divider">❖</div>
+          <div class="niyam-arch__num">03</div>
+          <div class="niyam-arch__keyword">वेद</div>
+          <div class="niyam-arch__ornament">❖</div>
+        </div>
+
+        <div class="niyam-card__content">
+          <div class="niyam-card__header-row">
+            <h2 class="niyam-card__heading">3. The Third Principle: The Authority of the Vedas</h2>
+            <button class="niyam-toggle-btn" aria-label="Toggle principle details">
+              <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+          </div>
+
+          <div class="niyam-card__body">
+            <div class="niyam-quote-box">
+              <div class="niyam-quote-box__label">The Sacred Principle</div>
+              <p class="niyam-quote-box__text">
+                The Vedas are the scriptures of all true knowledge. It is the paramount duty of Aryas to read them, teach them, recite them, and hear them being read.
+              </p>
+            </div>
+
+            <div class="niyam-commentary-block">
+              <h4 class="niyam-commentary-block__title">Philosophical Commentary</h4>
+              <p class="niyam-commentary-block__text">
+                The Vedas are the primary source of all true knowledge. It is our duty as Aryas to study, teach, recite, and listen to these sacred scriptures, using them as our guide for spiritual growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. The Fourth Principle -->
+      <article class="niyam-card" id="niyam-4">
+        <div class="niyam-card__arch">
+          <div class="niyam-arch__icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div class="niyam-arch__divider">❖</div>
+          <div class="niyam-arch__num">04</div>
+          <div class="niyam-arch__keyword">सत्य</div>
+          <div class="niyam-arch__ornament">❖</div>
+        </div>
+
+        <div class="niyam-card__content">
+          <div class="niyam-card__header-row">
+            <h2 class="niyam-card__heading">4. The Fourth Principle: Truth over Untruth</h2>
+            <button class="niyam-toggle-btn" aria-label="Toggle principle details">
+              <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+          </div>
+
+          <div class="niyam-card__body">
+            <div class="niyam-quote-box">
+              <div class="niyam-quote-box__label">The Sacred Principle</div>
+              <p class="niyam-quote-box__text">
+                One should always be ready to accept truth and renounce untruth.
+              </p>
+            </div>
+
+            <div class="niyam-commentary-block">
+              <h4 class="niyam-commentary-block__title">Philosophical Commentary</h4>
+              <p class="niyam-commentary-block__text">
+                We are committed to seeking the truth above all else. We remain open to new understanding and are always ready to renounce any belief that is proven false.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. The Fifth Principle -->
+      <article class="niyam-card" id="niyam-5">
+        <div class="niyam-card__arch">
+          <div class="niyam-arch__icon-wrap">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/><path d="m19.07 4.93-14.14 14.14"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="niyam-arch__divider">❖</div>
+          <div class="niyam-arch__num">05</div>
+          <div class="niyam-arch__keyword">धर्म</div>
+          <div class="niyam-arch__ornament">❖</div>
+        </div>
+
+        <div class="niyam-card__content">
+          <div class="niyam-card__header-row">
+            <h2 class="niyam-card__heading">5. The Fifth Principle: Action Guided by Dharma</h2>
+            <button class="niyam-toggle-btn" aria-label="Toggle principle details">
+              <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+          </div>
+
+          <div class="niyam-card__body">
+            <div class="niyam-quote-box">
+              <div class="niyam-quote-box__label">The Sacred Principle</div>
+              <p class="niyam-quote-box__text">
+                All acts ought to be performed in conformity to Dharma i.e., after deliberating what is right and wrong.
+              </p>
+            </div>
+
+            <div class="niyam-commentary-block">
+              <h4 class="niyam-commentary-block__title">Philosophical Commentary</h4>
+              <p class="niyam-commentary-block__text">
+                Our actions must align with Dharma. Before acting, we weigh right against wrong, ensuring our behavior is guided by moral principles rather than impulse.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. The Sixth Principle -->
+      <article class="niyam-card" id="niyam-6">
+        <div class="niyam-card__arch">
+          <div class="niyam-arch__icon-wrap">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="niyam-arch__divider">❖</div>
+          <div class="niyam-arch__num">06</div>
+          <div class="niyam-arch__keyword">कल्याण</div>
+          <div class="niyam-arch__ornament">❖</div>
+        </div>
+
+        <div class="niyam-card__content">
+          <div class="niyam-card__header-row">
+            <h2 class="niyam-card__heading">6. The Sixth Principle: Universal Welfare</h2>
+            <button class="niyam-toggle-btn" aria-label="Toggle principle details">
+              <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+          </div>
+
+          <div class="niyam-card__body">
+            <div class="niyam-quote-box">
+              <div class="niyam-quote-box__label">The Sacred Principle</div>
+              <p class="niyam-quote-box__text">
+                The prime object of the Arya Samaj is to do good to the world, i.e., to ameliorate physical, spiritual and social welfare of all.
+              </p>
+            </div>
+
+            <div class="niyam-commentary-block">
+              <h4 class="niyam-commentary-block__title">Philosophical Commentary</h4>
+              <p class="niyam-commentary-block__text">
+                The mission of the Arya Samaj is to uplift the world. We work to improve the physical, spiritual, and social well-being of all, actively engaging in service that creates a positive impact.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. The Seventh Principle -->
+      <article class="niyam-card" id="niyam-7">
+        <div class="niyam-card__arch">
+          <div class="niyam-arch__icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div class="niyam-arch__divider">❖</div>
+          <div class="niyam-arch__num">07</div>
+          <div class="niyam-arch__keyword">न्याय</div>
+          <div class="niyam-arch__ornament">❖</div>
+        </div>
+
+        <div class="niyam-card__content">
+          <div class="niyam-card__header-row">
+            <h2 class="niyam-card__heading">7. The Seventh Principle: Love and Justice</h2>
+            <button class="niyam-toggle-btn" aria-label="Toggle principle details">
+              <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+          </div>
+
+          <div class="niyam-card__body">
+            <div class="niyam-quote-box">
+              <div class="niyam-quote-box__label">The Sacred Principle</div>
+              <p class="niyam-quote-box__text">
+                All ought to be treated with affection, Justice, righteousness and due regard to their merits.
+              </p>
+            </div>
+
+            <div class="niyam-commentary-block">
+              <h4 class="niyam-commentary-block__title">Philosophical Commentary</h4>
+              <p class="niyam-commentary-block__text">
+                We treat every individual with affection, justice, and respect. We recognize the inherent merit in others and act with compassion and fairness in all our dealings.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. The Eighth Principle -->
+      <article class="niyam-card" id="niyam-8">
+        <div class="niyam-card__arch">
+          <div class="niyam-arch__icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 22 4-10 4 10"/></svg>
+          </div>
+          <div class="niyam-arch__divider">❖</div>
+          <div class="niyam-arch__num">08</div>
+          <div class="niyam-arch__keyword">विद्या</div>
+          <div class="niyam-arch__ornament">❖</div>
+        </div>
+
+        <div class="niyam-card__content">
+          <div class="niyam-card__header-row">
+            <h2 class="niyam-card__heading">8. The Eighth Principle: Promoting Knowledge</h2>
+            <button class="niyam-toggle-btn" aria-label="Toggle principle details">
+              <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+          </div>
+
+          <div class="niyam-card__body">
+            <div class="niyam-quote-box">
+              <div class="niyam-quote-box__label">The Sacred Principle</div>
+              <p class="niyam-quote-box__text">
+                One should promote Vidya (realization of true knowledge) and dispel Avidya (ignorance).
+              </p>
+            </div>
+
+            <div class="niyam-commentary-block">
+              <h4 class="niyam-commentary-block__title">Philosophical Commentary</h4>
+              <p class="niyam-commentary-block__text">
+                We actively promote Vidya (real knowledge) while working to dispel Avidya (ignorance). Our goal is to replace confusion with clarity, fostering an environment of learning and enlightenment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9. The Ninth Principle -->
+      <article class="niyam-card" id="niyam-9">
+        <div class="niyam-card__arch">
+          <div class="niyam-arch__icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="niyam-arch__divider">❖</div>
+          <div class="niyam-arch__num">09</div>
+          <div class="niyam-arch__keyword">सहयोग</div>
+          <div class="niyam-arch__ornament">❖</div>
+        </div>
+
+        <div class="niyam-card__content">
+          <div class="niyam-card__header-row">
+            <h2 class="niyam-card__heading">9. The Ninth Principle: Shared Success</h2>
+            <button class="niyam-toggle-btn" aria-label="Toggle principle details">
+              <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+          </div>
+
+          <div class="niyam-card__body">
+            <div class="niyam-quote-box">
+              <div class="niyam-quote-box__label">The Sacred Principle</div>
+              <p class="niyam-quote-box__text">
+                One should not be content with one’s own welfare alone, but should strive for one’s own welfare in the welfare of all.
+              </p>
+            </div>
+
+            <div class="niyam-commentary-block">
+              <h4 class="niyam-commentary-block__title">Philosophical Commentary</h4>
+              <p class="niyam-commentary-block__text">
+                We recognize that individual growth is inseparable from social progress. We strive for our own success by contributing to the welfare of others, understanding that our well-being is deeply connected to the community.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 10. The Tenth Principle -->
+      <article class="niyam-card" id="niyam-10">
+        <div class="niyam-card__arch">
+          <div class="niyam-arch__icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="niyam-arch__divider">❖</div>
+          <div class="niyam-arch__num">10</div>
+          <div class="niyam-arch__keyword">कर्तव्य</div>
+          <div class="niyam-arch__ornament">❖</div>
+        </div>
+
+        <div class="niyam-card__content">
+          <div class="niyam-card__header-row">
+            <h2 class="niyam-card__heading">10. The Tenth Principle: Social Duty vs. Personal Liberty</h2>
+            <button class="niyam-toggle-btn" aria-label="Toggle principle details">
+              <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+          </div>
+
+          <div class="niyam-card__body">
+            <div class="niyam-quote-box">
+              <div class="niyam-quote-box__label">The Sacred Principle</div>
+              <p class="niyam-quote-box__text">
+                In all matters affecting the well-being of the society the individual should subordinate his personal likings. In matters affecting him alone one should enjoy the freedom of action.
+              </p>
+            </div>
+
+            <div class="niyam-commentary-block">
+              <h4 class="niyam-commentary-block__title">Philosophical Commentary</h4>
+              <p class="niyam-commentary-block__text">
+                We balance personal freedom with social duty. While we enjoy individual liberty, we willingly prioritize the common good whenever the well-being of society depends on our commitment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
-    <div class="niyams-controls">
-      <button type="button" class="control-toggle-btn" id="btn-expand-all">Expand All</button>
-      <button type="button" class="control-toggle-btn" id="btn-collapse-all">Collapse All</button>
-    </div>
-  </div>
-</div>
-
-<!-- MAIN ACCORDION / CARD SECTION -->
-<main class="niyams-content-section">
-  <div class="container">
-    <div class="niyams-list">
-
-      <!-- Principle 1 -->
-      <article class="niyam-card-detailed is-open" id="niyam-1">
-        <button class="niyam-card__header-btn" aria-expanded="true">
-          <div class="niyam-card__title-wrap">
-            <div class="niyam-badge">०१</div>
-            <h2 class="niyam-title-text">1. The First Principle: The Source of True Knowledge</h2>
-          </div>
-          <div class="niyam-chevron">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-        </button>
-        <div class="niyam-card__body">
-          <div class="niyam-principle-quote">
-            <div class="niyam-principle-quote__label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
-              The Sacred Principle
-            </div>
-            <p class="niyam-principle-quote__text">
-              The first (efficient) cause of all true knowledge and all that is known through knowledge is Eeshwar (the Supreme, i.e. GOD).
-            </p>
-          </div>
-          <div class="niyam-commentary-wrap">
-            <div class="niyam-commentary__tag">Philosophical Commentary</div>
-            <p class="niyam-commentary__text">
-              An efficient cause is the force that brings something into existence. Just as Eeshwar shapes timeless, formless Prakriti into the physical universe, He is the ultimate source of all reality. For the Arya Samaj, God is Truth, and true knowledge—whether realized through everyday awareness, deep yogic intuition, or the foundational insights of the ancient Rishis—stems directly from Him. Our faith, at its core, is a commitment to seeking and living by that Truth.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Principle 2 -->
-      <article class="niyam-card-detailed is-open" id="niyam-2">
-        <button class="niyam-card__header-btn" aria-expanded="true">
-          <div class="niyam-card__title-wrap">
-            <div class="niyam-badge">०२</div>
-            <h2 class="niyam-title-text">2. The Second Principle: The Nature of God</h2>
-          </div>
-          <div class="niyam-chevron">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-        </button>
-        <div class="niyam-card__body">
-          <div class="niyam-principle-quote">
-            <div class="niyam-principle-quote__label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
-              The Sacred Principle
-            </div>
-            <p class="niyam-principle-quote__text">
-              Eeshwar (GOD) is existent, intelligent, and blissful. He is formless, omniscient, just, merciful, unborn, endless, unchangeable, beginningless, unequalled, the support of all, the master of all, omnipresent, immanent, unaging, immortal, fearless, eternal, and holy, and the maker of all. He alone is to be worthy of worship.
-            </p>
-          </div>
-          <div class="niyam-commentary-wrap">
-            <div class="niyam-commentary__tag">Philosophical Commentary</div>
-            <p class="niyam-commentary__text">
-              The Second Principle outlines the nature of Parameshvara (God) as Sat-Chit-Ananda—pure Existence, Consciousness, and Bliss. As a formless, infinite, and changeless Spirit, God is beyond birth, death, or physical limitation. Unbound by fear or hatred, He perfectly balances mercy and justice, providing everything souls need to live and reap the results of their actions. He is entirely self-sufficient, requiring no external help. Because God is formless (Nirakara) and purely equitable, Arya Samaj rejects flattery, idols, and the doctrine of divine incarnation—no human or creature can replace Him. Instead, true worship is reserved for God alone.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Principle 3 -->
-      <article class="niyam-card-detailed is-open" id="niyam-3">
-        <button class="niyam-card__header-btn" aria-expanded="true">
-          <div class="niyam-card__title-wrap">
-            <div class="niyam-badge">०३</div>
-            <h2 class="niyam-title-text">3. The Third Principle: The Authority of the Vedas</h2>
-          </div>
-          <div class="niyam-chevron">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-        </button>
-        <div class="niyam-card__body">
-          <div class="niyam-principle-quote">
-            <div class="niyam-principle-quote__label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
-              The Sacred Principle
-            </div>
-            <p class="niyam-principle-quote__text">
-              The Vedas are the scriptures of all true knowledge. It is the paramount duty of Aryas to read them, teach them, recite them, and hear them being read.
-            </p>
-          </div>
-          <div class="niyam-commentary-wrap">
-            <div class="niyam-commentary__tag">Philosophical Commentary</div>
-            <p class="niyam-commentary__text">
-              The Vedas are the primary source of all true knowledge. It is our duty as Aryas to study, teach, recite, and listen to these sacred scriptures, using them as our guide for spiritual growth.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Principle 4 -->
-      <article class="niyam-card-detailed is-open" id="niyam-4">
-        <button class="niyam-card__header-btn" aria-expanded="true">
-          <div class="niyam-card__title-wrap">
-            <div class="niyam-badge">०४</div>
-            <h2 class="niyam-title-text">4. The Fourth Principle: Truth over Untruth</h2>
-          </div>
-          <div class="niyam-chevron">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-        </button>
-        <div class="niyam-card__body">
-          <div class="niyam-principle-quote">
-            <div class="niyam-principle-quote__label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
-              The Sacred Principle
-            </div>
-            <p class="niyam-principle-quote__text">
-              One should always be ready to accept truth and renounce untruth.
-            </p>
-          </div>
-          <div class="niyam-commentary-wrap">
-            <div class="niyam-commentary__tag">Philosophical Commentary</div>
-            <p class="niyam-commentary__text">
-              We are committed to seeking the truth above all else. We remain open to new understanding and are always ready to renounce any belief that is proven false.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Principle 5 -->
-      <article class="niyam-card-detailed is-open" id="niyam-5">
-        <button class="niyam-card__header-btn" aria-expanded="true">
-          <div class="niyam-card__title-wrap">
-            <div class="niyam-badge">०५</div>
-            <h2 class="niyam-title-text">5. The Fifth Principle: Action Guided by Dharma</h2>
-          </div>
-          <div class="niyam-chevron">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-        </button>
-        <div class="niyam-card__body">
-          <div class="niyam-principle-quote">
-            <div class="niyam-principle-quote__label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
-              The Sacred Principle
-            </div>
-            <p class="niyam-principle-quote__text">
-              All acts ought to be performed in conformity to Dharma i.e., after deliberating what is right and wrong.
-            </p>
-          </div>
-          <div class="niyam-commentary-wrap">
-            <div class="niyam-commentary__tag">Philosophical Commentary</div>
-            <p class="niyam-commentary__text">
-              Our actions must align with Dharma. Before acting, we weigh right against wrong, ensuring our behavior is guided by moral principles rather than impulse.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Principle 6 -->
-      <article class="niyam-card-detailed is-open" id="niyam-6">
-        <button class="niyam-card__header-btn" aria-expanded="true">
-          <div class="niyam-card__title-wrap">
-            <div class="niyam-badge">०६</div>
-            <h2 class="niyam-title-text">6. The Sixth Principle: Universal Welfare</h2>
-          </div>
-          <div class="niyam-chevron">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-        </button>
-        <div class="niyam-card__body">
-          <div class="niyam-principle-quote">
-            <div class="niyam-principle-quote__label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
-              The Sacred Principle
-            </div>
-            <p class="niyam-principle-quote__text">
-              The prime object of the Arya Samaj is to do good to the world, i.e., to ameliorate physical, spiritual and social welfare of all.
-            </p>
-          </div>
-          <div class="niyam-commentary-wrap">
-            <div class="niyam-commentary__tag">Philosophical Commentary</div>
-            <p class="niyam-commentary__text">
-              The mission of the Arya Samaj is to uplift the world. We work to improve the physical, spiritual, and social well-being of all, actively engaging in service that creates a positive impact.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Principle 7 -->
-      <article class="niyam-card-detailed is-open" id="niyam-7">
-        <button class="niyam-card__header-btn" aria-expanded="true">
-          <div class="niyam-card__title-wrap">
-            <div class="niyam-badge">०७</div>
-            <h2 class="niyam-title-text">7. The Seventh Principle: Love and Justice</h2>
-          </div>
-          <div class="niyam-chevron">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-        </button>
-        <div class="niyam-card__body">
-          <div class="niyam-principle-quote">
-            <div class="niyam-principle-quote__label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
-              The Sacred Principle
-            </div>
-            <p class="niyam-principle-quote__text">
-              All ought to be treated with affection, Justice, righteousness and due regard to their merits.
-            </p>
-          </div>
-          <div class="niyam-commentary-wrap">
-            <div class="niyam-commentary__tag">Philosophical Commentary</div>
-            <p class="niyam-commentary__text">
-              We treat every individual with affection, justice, and respect. We recognize the inherent merit in others and act with compassion and fairness in all our dealings.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Principle 8 -->
-      <article class="niyam-card-detailed is-open" id="niyam-8">
-        <button class="niyam-card__header-btn" aria-expanded="true">
-          <div class="niyam-card__title-wrap">
-            <div class="niyam-badge">०८</div>
-            <h2 class="niyam-title-text">8. The Eighth Principle: Promoting Knowledge</h2>
-          </div>
-          <div class="niyam-chevron">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-        </button>
-        <div class="niyam-card__body">
-          <div class="niyam-principle-quote">
-            <div class="niyam-principle-quote__label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
-              The Sacred Principle
-            </div>
-            <p class="niyam-principle-quote__text">
-              One should promote Vidya (realization of true knowledge) and dispel Avidya (ignorance).
-            </p>
-          </div>
-          <div class="niyam-commentary-wrap">
-            <div class="niyam-commentary__tag">Philosophical Commentary</div>
-            <p class="niyam-commentary__text">
-              We actively promote Vidya (real knowledge) while working to dispel Avidya (ignorance). Our goal is to replace confusion with clarity, fostering an environment of learning and enlightenment.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Principle 9 -->
-      <article class="niyam-card-detailed is-open" id="niyam-9">
-        <button class="niyam-card__header-btn" aria-expanded="true">
-          <div class="niyam-card__title-wrap">
-            <div class="niyam-badge">०९</div>
-            <h2 class="niyam-title-text">9. The Ninth Principle: Shared Success</h2>
-          </div>
-          <div class="niyam-chevron">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-        </button>
-        <div class="niyam-card__body">
-          <div class="niyam-principle-quote">
-            <div class="niyam-principle-quote__label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
-              The Sacred Principle
-            </div>
-            <p class="niyam-principle-quote__text">
-              One should not be content with one’s own welfare alone, but should strive for one’s own welfare in the welfare of all.
-            </p>
-          </div>
-          <div class="niyam-commentary-wrap">
-            <div class="niyam-commentary__tag">Philosophical Commentary</div>
-            <p class="niyam-commentary__text">
-              We recognize that individual growth is inseparable from social progress. We strive for our own success by contributing to the welfare of others, understanding that our well-being is deeply connected to the community.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Principle 10 -->
-      <article class="niyam-card-detailed is-open" id="niyam-10">
-        <button class="niyam-card__header-btn" aria-expanded="true">
-          <div class="niyam-card__title-wrap">
-            <div class="niyam-badge">१०</div>
-            <h2 class="niyam-title-text">10. The Tenth Principle: Social Duty vs. Personal Liberty</h2>
-          </div>
-          <div class="niyam-chevron">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-        </button>
-        <div class="niyam-card__body">
-          <div class="niyam-principle-quote">
-            <div class="niyam-principle-quote__label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 10z"/></svg>
-              The Sacred Principle
-            </div>
-            <p class="niyam-principle-quote__text">
-              In all matters affecting the well-being of the society the individual should subordinate his personal likings. In matters affecting him alone one should enjoy the freedom of action.
-            </p>
-          </div>
-          <div class="niyam-commentary-wrap">
-            <div class="niyam-commentary__tag">Philosophical Commentary</div>
-            <p class="niyam-commentary__text">
-              We balance personal freedom with social duty. While we enjoy individual liberty, we willingly prioritize the common good whenever the well-being of society depends on our commitment.
-            </p>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <!-- Synthesis / Next Steps CTA -->
-    <div class="niyams-next-cta">
-      <h2 class="niyams-next-cta__title">Living the Ten Niyams</h2>
-      <p class="niyams-next-cta__text">
-        These ten principles form the bedrock of daily spiritual discipline, community service, and ethical living for Aryas worldwide. Explore how APSA translates these principles into active education, relief, and national initiatives.
-      </p>
-      <div class="niyams-next-cta__actions">
-        <a href="resources.html#library" class="btn btn-white">Explore Vedic Library</a>
-        <a href="programs.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.6); color: #ffffff;">View Our Programs</a>
-        <a href="about.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.6); color: #ffffff;">About APSA Leadership</a>
-      </div>
-    </div>
-
   </div>
 </main>
 
@@ -1523,7 +1583,7 @@
     </div>
 
     <div class="footer__bottom" style="justify-content:center; padding: 2rem 0; flex-direction:column; align-items:center; gap:0.5rem;">
-      <span style="font-family:var(--ff-heading); color:var(--gold-light); font-size:0.85rem; letter-spacing:0.1em;">ओ३म् शान्तिः शान्तिः शान्तिः &nbsp;|&nbsp; AUM Shanti Shanti Shanti</span>
+      <span style="font-family:var(--ff-heading); color:var(--gold-light); font-size:0.85rem; letter-spacing:0.1em;">कृण्वन्तो विश्वमार्यम् &nbsp;|&nbsp; Making the world noble through knowledge and deeds.</span>
       <span>Copyright &copy; 2026 Arya Pratinidhi Sabha America (APSA). All Rights Reserved.</span>
     </div>
   </div>
@@ -1531,56 +1591,24 @@
 
 <script src="js/main.js?v=8"></script>
 <script>
-  // Accordion Toggle Behavior
+  // Accordion Expand/Collapse Behavior
   document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.niyam-card-detailed');
+    const cards = document.querySelectorAll('.niyam-card');
     
     cards.forEach(card => {
-      const btn = card.querySelector('.niyam-card__header-btn');
-      btn.addEventListener('click', () => {
-        const isOpen = card.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      const headerRow = card.querySelector('.niyam-card__header-row');
+      const toggleBtn = card.querySelector('.niyam-toggle-btn');
+      
+      const toggleCard = () => {
+        card.classList.toggle('is-closed');
+      };
+
+      headerRow.addEventListener('click', toggleCard);
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleCard();
       });
     });
-
-    // Expand All / Collapse All Controls
-    const expandAllBtn = document.getElementById('btn-expand-all');
-    const collapseAllBtn = document.getElementById('btn-collapse-all');
-
-    if (expandAllBtn && collapseAllBtn) {
-      expandAllBtn.addEventListener('click', () => {
-        cards.forEach(card => {
-          card.classList.add('is-open');
-          card.querySelector('.niyam-card__header-btn').setAttribute('aria-expanded', 'true');
-        });
-      });
-
-      collapseAllBtn.addEventListener('click', () => {
-        cards.forEach(card => {
-          card.classList.remove('is-open');
-          card.querySelector('.niyam-card__header-btn').setAttribute('aria-expanded', 'false');
-        });
-      });
-    }
-
-    // Active pill highlight on scroll
-    const pillLinks = document.querySelectorAll('.niyam-pill-btn');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          pillLinks.forEach(link => {
-            if (link.getAttribute('href') === '#' + id) {
-              link.classList.add('active');
-            } else {
-              link.classList.remove('active');
-            }
-          });
-        }
-      });
-    }, { rootMargin: '-20% 0px -60% 0px' });
-
-    cards.forEach(card => observer.observe(card));
   });
 </script>
 </body>
