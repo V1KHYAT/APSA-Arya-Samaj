@@ -267,10 +267,10 @@
       font-size: 1rem;
       color: var(--dir-navy);
       background: #fdfbf7;
-      transition: all 0.2s ease;
+      transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
       font-family: inherit;
     }
-    .dir-search-input:focus {
+    .dir-search-input:focus-visible {
       outline: none;
       border-color: var(--dir-terracotta);
       background: #ffffff;
@@ -297,14 +297,22 @@
       padding: 0.4rem 0.85rem;
       border-radius: 999px;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
       user-select: none;
+      font-variant-numeric: tabular-nums;
     }
     .dir-pill-btn:hover,
     .dir-pill-btn.active {
       background: var(--dir-terracotta);
       color: #ffffff;
       border-color: var(--dir-terracotta);
+    }
+    .dir-pill-btn:active {
+      transform: scale(0.96);
+    }
+    .dir-pill-btn:focus-visible {
+      outline: 2px solid var(--dir-navy);
+      outline-offset: 2px;
     }
 
     .dir-results-counter {
@@ -315,6 +323,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-variant-numeric: tabular-nums;
     }
 
     /* ── Responsive Directory Table / Cards ── */
@@ -1284,28 +1293,28 @@
     </section>
 
     <!-- Search & Filter Controls -->
-    <div class="dir-controls-bar">
+    <div class="dir-controls-bar" role="search">
       <div class="dir-search-wrap">
-        <svg class="dir-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" id="dir-search" class="dir-search-input" placeholder="Search by City, State, Organization Name, or Contact..." />
+        <svg class="dir-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="dir-search" class="dir-search-input" placeholder="Search by City, State, Organization Name, or Contact..." aria-label="Search directory by City, State, Organization Name, or Contact person" />
       </div>
 
-      <div class="dir-pills-row">
-        <button class="dir-pill-btn active" data-filter="all">All Chapters (35)</button>
-        <button class="dir-pill-btn" data-filter="California">California (4)</button>
-        <button class="dir-pill-btn" data-filter="Texas">Texas (4)</button>
-        <button class="dir-pill-btn" data-filter="New York">New York (7)</button>
-        <button class="dir-pill-btn" data-filter="New Jersey">New Jersey (4)</button>
-        <button class="dir-pill-btn" data-filter="Florida">Florida (3)</button>
-        <button class="dir-pill-btn" data-filter="Canada">Canada (4)</button>
-        <button class="dir-pill-btn" data-filter="Midwest">Midwest (4)</button>
-        <button class="dir-pill-btn" data-filter="Other">Other Regions (5)</button>
+      <div class="dir-pills-row" role="tablist" aria-label="Filter chapters by region">
+        <button type="button" class="dir-pill-btn active" data-filter="all">All Chapters (35)</button>
+        <button type="button" class="dir-pill-btn" data-filter="California">California (4)</button>
+        <button type="button" class="dir-pill-btn" data-filter="Texas">Texas (4)</button>
+        <button type="button" class="dir-pill-btn" data-filter="New York">New York (7)</button>
+        <button type="button" class="dir-pill-btn" data-filter="New Jersey">New Jersey (4)</button>
+        <button type="button" class="dir-pill-btn" data-filter="Florida">Florida (3)</button>
+        <button type="button" class="dir-pill-btn" data-filter="Canada">Canada (4)</button>
+        <button type="button" class="dir-pill-btn" data-filter="Midwest">Midwest (4)</button>
+        <button type="button" class="dir-pill-btn" data-filter="Other">Other Regions (5)</button>
       </div>
     </div>
 
     <!-- Results Status -->
     <div class="dir-results-counter">
-      <span id="results-count-text">Showing all 35 chapters</span>
+      <span id="results-count-text" role="status" aria-live="polite">Showing all 35 chapters</span>
       <span style="font-size:0.82rem; color:#94a3b8;">Click on any website link to visit their portal</span>
     </div>
 
@@ -1314,10 +1323,10 @@
       <table class="dir-table" id="directory-table">
         <thead>
           <tr>
-            <th style="width: 32%;">Organization Name</th>
-            <th style="width: 22%;">Contact Person</th>
-            <th style="width: 20%;">Website</th>
-            <th style="width: 26%;">Address / Location</th>
+            <th scope="col" style="width: 32%;">Organization Name</th>
+            <th scope="col" style="width: 22%;">Contact Person</th>
+            <th scope="col" style="width: 20%;">Website</th>
+            <th scope="col" style="width: 26%;">Address / Location</th>
           </tr>
         </thead>
         <tbody id="directory-tbody">

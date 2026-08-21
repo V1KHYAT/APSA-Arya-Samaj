@@ -252,6 +252,14 @@
       gap: 1.25rem;
       cursor: pointer;
       user-select: none;
+      border-radius: 8px;
+      padding: 0.25rem 0.5rem;
+      margin: -0.25rem -0.5rem;
+      transition: background 0.2s ease;
+    }
+    .niyam-card__header-row:focus-visible {
+      outline: 2px solid var(--niyam-terracotta);
+      outline-offset: 2px;
     }
     .niyam-card__heading {
       font-family: var(--ff-heading);
@@ -261,10 +269,11 @@
       line-height: 1.3;
       margin: 0;
       letter-spacing: -0.01em;
+      text-wrap: balance;
     }
     .niyam-toggle-btn {
-      width: 34px;
-      height: 34px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       background: var(--niyam-terracotta);
       color: #ffffff;
@@ -274,11 +283,20 @@
       justify-content: center;
       cursor: pointer;
       flex-shrink: 0;
-      transition: background 0.2s ease, transform 0.25s ease;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
       box-shadow: 0 2px 6px rgba(196, 91, 40, 0.3);
     }
     .niyam-toggle-btn:hover {
       background: #ad4c1e;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(196, 91, 40, 0.4);
+    }
+    .niyam-toggle-btn:active {
+      transform: scale(0.96);
+    }
+    .niyam-toggle-btn:focus-visible {
+      outline: 2px solid var(--niyam-navy);
+      outline-offset: 2px;
     }
     .niyam-toggle-btn svg {
       width: 16px;
@@ -286,21 +304,27 @@
       stroke: currentColor;
       stroke-width: 2.4;
       fill: none;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1);
     }
     .niyam-card.is-closed .niyam-toggle-btn svg {
       transform: rotate(180deg);
     }
 
-    /* Collapsible Body */
+    /* Collapsible Body with Smooth Transition */
     .niyam-card__body {
       display: flex;
       flex-direction: column;
       gap: 1.35rem;
-      transition: opacity 0.25s ease;
+      overflow: hidden;
+      max-height: 1200px;
+      opacity: 1;
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, margin 0.3s ease;
     }
     .niyam-card.is-closed .niyam-card__body {
-      display: none;
+      max-height: 0;
+      opacity: 0;
+      margin-top: -0.5rem;
+      pointer-events: none;
     }
 
     /* Quote Box for The Sacred Principle */
@@ -326,6 +350,7 @@
       color: #1e293b;
       line-height: 1.6;
       margin: 0;
+      text-wrap: pretty;
     }
 
     /* Commentary Block */
@@ -345,6 +370,41 @@
       line-height: 1.78;
       color: var(--niyam-charcoal);
       margin: 0;
+      text-wrap: pretty;
+    }
+
+    /* Expand / Collapse All Bar */
+    .niyams-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(235, 220, 208, 0.6);
+    }
+    .niyams-toolbar__count {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #717d8e;
+    }
+    .niyams-toolbar__btn {
+      background: transparent;
+      border: 1px solid var(--niyam-border);
+      color: var(--niyam-terracotta);
+      font-family: var(--ff-heading);
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 0.35rem 0.85rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+    .niyams-toolbar__btn:hover {
+      background: #faf4eb;
+      border-color: var(--niyam-terracotta);
+    }
+    .niyams-toolbar__btn:active {
+      transform: scale(0.96);
     }
 
     /* Responsive adjustments */
@@ -1171,10 +1231,20 @@
      ═══════════════════════════════════════════════════════════ -->
 <main class="niyams-body-section">
   <div class="container niyams-container">
-    <div class="niyams-cards-list">
+    
+    <!-- Controls Toolbar -->
+    <div class="niyams-toolbar">
+      <div class="niyams-toolbar__count">10 Core Ethical Principles</div>
+      <div style="display:flex; gap:0.5rem;">
+        <button type="button" class="niyams-toolbar__btn" id="expand-all-btn">Expand All</button>
+        <button type="button" class="niyams-toolbar__btn" id="collapse-all-btn">Collapse All</button>
+      </div>
+    </div>
+
+    <div class="niyams-cards-list" role="list">
 
       <!-- 1. The First Principle -->
-      <article class="niyam-card" id="niyam-1">
+      <article class="niyam-card" id="niyam-1" role="listitem">
         <div class="niyam-card__arch">
           <div class="niyam-arch__icon-wrap">
             <svg viewBox="0 0 64 64" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -1717,24 +1787,69 @@
 
 <script src="js/main.js?v=8"></script>
 <script>
-  // Accordion Expand/Collapse Behavior
+  // Accordion Expand/Collapse Behavior with Keyboard & Toolbar Controls
   document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.niyam-card');
+    const expandAllBtn = document.getElementById('expand-all-btn');
+    const collapseAllBtn = document.getElementById('collapse-all-btn');
     
-    cards.forEach(card => {
+    cards.forEach((card, index) => {
       const headerRow = card.querySelector('.niyam-card__header-row');
       const toggleBtn = card.querySelector('.niyam-toggle-btn');
+      const cardBody = card.querySelector('.niyam-card__body');
       
+      const bodyId = `niyam-body-${index + 1}`;
+      if (cardBody) cardBody.id = bodyId;
+
+      headerRow.setAttribute('tabindex', '0');
+      headerRow.setAttribute('role', 'button');
+      headerRow.setAttribute('aria-expanded', 'true');
+      headerRow.setAttribute('aria-controls', bodyId);
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.setAttribute('aria-controls', bodyId);
+
       const toggleCard = () => {
-        card.classList.toggle('is-closed');
+        const isClosed = card.classList.toggle('is-closed');
+        const isExpanded = !isClosed;
+        headerRow.setAttribute('aria-expanded', isExpanded.toString());
+        toggleBtn.setAttribute('aria-expanded', isExpanded.toString());
       };
 
       headerRow.addEventListener('click', toggleCard);
+      headerRow.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleCard();
+        }
+      });
+
       toggleBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         toggleCard();
       });
     });
+
+    if (expandAllBtn && collapseAllBtn) {
+      expandAllBtn.addEventListener('click', () => {
+        cards.forEach(card => {
+          card.classList.remove('is-closed');
+          const headerRow = card.querySelector('.niyam-card__header-row');
+          const toggleBtn = card.querySelector('.niyam-toggle-btn');
+          if (headerRow) headerRow.setAttribute('aria-expanded', 'true');
+          if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+        });
+      });
+
+      collapseAllBtn.addEventListener('click', () => {
+        cards.forEach(card => {
+          card.classList.add('is-closed');
+          const headerRow = card.querySelector('.niyam-card__header-row');
+          const toggleBtn = card.querySelector('.niyam-toggle-btn');
+          if (headerRow) headerRow.setAttribute('aria-expanded', 'false');
+          if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
   });
 </script>
 </body>
